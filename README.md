@@ -14,9 +14,9 @@ CSSE Student at FEU Tech | Aspiring Software Developer | Python & Kotlin | AI/ML
 ---
 
 ## Tech Stack  
-**Languages:** Python, Kotlin, C++, Java, PHP, SQL  
-**Frameworks and Libraries:** TensorFlow, PyTorch, OpenCV, Flask  
-**Tools and Platforms:** Git, Android Studio, VS Code, Cursor  
+**Languages:** Python, Kotlin, C++, Java, PHP, SQL, Javascript, Typedscript
+**Frameworks and Libraries:** TensorFlow, PyTorch, OpenCV, Flask
+**Tools and Platforms:** Git, Android Studio, VS Code, Claude Code
 
 ---
 
