@@ -1,6 +1,6 @@
 # Hi, I'm Rene Vincent Cosme
 
-CSSE Student at FEU Tech | Aspiring Software Developer | Python & Kotlin | AI/ML Enthusiast | Intern
+CSSE Student at FEU Tech | Aspiring Software Developer | Python & Typescript | GenAI Enthusiast | Intern
 
 ---
 
@@ -10,11 +10,12 @@ CSSE Student at FEU Tech | Aspiring Software Developer | Python & Kotlin | AI/ML
 - Currently learning **data structures**, **algorithms**, **SQL**, and **AI/Machine Learning** techniques.  
 - Passionate about developing software that enhances safety, efficiency, and overall user experience.  
 - Open to **internships** and **software development opportunities**.
+- Currently having 2 Internship, and 1 Part-time Job.
 
 ---
 
 ## Tech Stack  
-**Languages:** Python, Kotlin, C++, Java, PHP, SQL, Javascript, Typedscript
+**Languages:** Python, Kotlin, C++, Java, PHP, SQL, Javascript, Typescript
 **Frameworks and Libraries:** TensorFlow, PyTorch, OpenCV, Flask
 **Tools and Platforms:** Git, Android Studio, VS Code, Claude Code
 
