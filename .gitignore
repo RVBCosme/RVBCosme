@@ -6,3 +6,6 @@
 
 # Dependencies and build scratch
 node_modules/
+
+# Font probe output and README preview screenshots (scripts/probe-fonts.mjs, scripts/preview.mjs)
+.preview/
