@@ -1,5 +1,6 @@
 import contact from './contact.mjs';
+import now from './now.mjs';
+import stack from './stack.mjs';
 
-// Drawings in README order. Later tasks insert the others: hero, now, anf, eyedtrack, pookies,
-// schedule, stack, certificates, contact.
-export const COMPONENTS = [contact];
+// Drawings in README order. Later tasks insert hero, anf, eyedtrack, pookies, schedule and certificates.
+export const COMPONENTS = [now, stack, contact];
