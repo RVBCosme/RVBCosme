@@ -1,0 +1,8 @@
+# Brainstorming companion sessions (mockup screens, local only)
+.superpowers/
+
+# Playwright MCP screenshots and page snapshots
+.playwright-mcp/
+
+# Dependencies and build scratch
+node_modules/
