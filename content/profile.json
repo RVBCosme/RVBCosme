@@ -1,0 +1,223 @@
+{
+  "hero": {
+    "alt": "Engineering drawing of Rene Vincent Cosme's work, drawn in on load. Business systems: React and Vite, Node and Express, SQLite and Postgres, with 4,000+ tests on the ANF system; requests flow between them. AI systems: EyeDTrack, a Kotlin app and Python server running MobileNetV2 and LLaVA; camera frames travel the pipeline in about 0.95 seconds from camera to alert at 87.12% accuracy. Timeline: co-founded Pookies August 2023, led the EyeDTrack thesis February 2025, Highly Succeed internship March 2026, built the ANF system May 2026, Araneta City web internship July 2026, marked as the latest revision.",
+    "groups": [
+      {
+        "number": "1",
+        "title": "Business systems",
+        "boxes": [
+          { "lines": ["React + Vite"], "caption": "client" },
+          { "lines": ["Node + Express"], "caption": "API" },
+          { "lines": ["SQLite, Postgres"], "caption": "data" }
+        ],
+        "edges": ["REST", "SQL"],
+        "markup": "4,000+ tests (ANF)"
+      },
+      {
+        "number": "2",
+        "title": "AI systems",
+        "boxes": [
+          { "lines": ["Kotlin app"], "caption": "in-car camera" },
+          { "lines": ["Python server"], "caption": "OpenCV, CLAHE" },
+          { "lines": ["MobileNetV2", "+ LLaVA"], "caption": "models" }
+        ],
+        "edges": ["frames", "infer"],
+        "markup": "87.12% accuracy"
+      }
+    ],
+    "dimension": "≈ 0.95 s camera to alert",
+    "revisionHeaders": ["Date", "Revision"],
+    "revisions": [
+      { "date": "08/23", "text": "Co-founded Pookies" },
+      { "date": "02/25", "text": "Led EyeDTrack thesis" },
+      { "date": "03/26", "text": "Highly Succeed intern" },
+      { "date": "05/26", "text": "Built the ANF system" },
+      { "date": "07/26", "text": "Araneta web intern" }
+    ],
+    "titleBlock": {
+      "title": { "label": "Title", "value": "Rene Vincent Cosme" },
+      "description": { "label": "Description", "value": "Full-stack developer, AI edge" },
+      "drawnBy": { "label": "Drawn by", "value": "RVC" },
+      "date": { "label": "Date", "value": "2026-09" },
+      "sheet": { "label": "Sheet", "value": "1 / 4" },
+      "scale": { "label": "Scale", "value": "1 : 1" }
+    }
+  },
+  "intro": "I'm a fourth-year Computer Science student specializing in software engineering at FEU Tech. I build web applications, database systems and AI tools that solve practical problems, and I take them from the first sketch to the working system. I'm looking for full-time software engineering or AI/ML roles, based in Manila and open to on-site, hybrid or remote work.",
+  "now": {
+    "alt": "In progress: ANF Inventory System version 1.0.10 handover to the Council; the ANF public website in Laravel, Filament and MySQL; the Pookies System update; the web development internship at Araneta City. Next: a full-time software engineering or AI/ML role, open to offers.",
+    "title": "In progress",
+    "updated": "Updated 2026-09",
+    "items": [
+      "ANF Inventory System: v1.0.10 handover to the Council",
+      "ANF public website: Laravel, Filament, MySQL",
+      "Pookies System: update",
+      "Web development internship, Araneta City"
+    ],
+    "next": { "text": "Next: a full-time software engineering or AI/ML role", "bar": "open to offers" }
+  },
+  "projects": [
+    {
+      "id": "anf",
+      "letter": "A",
+      "group": "Business systems",
+      "sheet": "Sheet 2 of 4",
+      "title": "ANF Inventory System",
+      "subtitle": "Adoración Nocturna Filipina National Council",
+      "metrics": [
+        { "value": "4,000+", "label": "automated tests" },
+        { "value": "23", "label": "screens" },
+        { "value": "127", "label": "decision records" }
+      ],
+      "titleBlock": [
+        { "label": "Role", "value": "Sole developer" },
+        { "label": "Stack", "value": "React, Express, SQLite" },
+        { "label": "Status", "value": "v1.0.10, Sep 2026" },
+        { "label": "Period", "value": "May 2026 to now" }
+      ],
+      "figure": {
+        "caption": "Official Receipts, numbered",
+        "receiptHeading": "OFFICIAL RECEIPT",
+        "receiptNumbers": ["No. 1041", "No. 1042", "No. 1043", "No. 1044"],
+        "totalLabel": "TOTAL",
+        "total": "1,250.00"
+      },
+      "paragraph": "I started it while working as the Council's assistant office manager, to automate the paperwork I was handling. It covers the Council's stock, Official Receipts, cash and check vouchers, petty cash, members, annual dues and officers, and runs on a single office PC. Officers can reach it from their phones over the office WiFi, and nothing goes to the cloud. Every peso and centavo is exact, and a checked backup is made within two minutes of any change. Built test-first, with every screen checked at eight widths from phone to desktop.",
+      "chips": ["TypeScript", "React", "Vite", "Tailwind", "Express", "SQLite", "Zod", "Vitest", "Playwright"],
+      "note": "Private repository, walkthrough on request. Next up: the Council's public website, in Laravel and Filament.",
+      "links": [],
+      "alt": "Sheet 2 of 4, detail A, business systems, with a test-runner strip turning green: ANF Inventory System for the Adoración Nocturna Filipina National Council. 4,000+ automated tests, 23 screens, 127 decision records. Sole developer; React, Express, SQLite; version 1.0.10, September 2026; May 2026 to now."
+    },
+    {
+      "id": "eyedtrack",
+      "letter": "B",
+      "group": "AI systems",
+      "sheet": "Sheet 3 of 4",
+      "title": "EyeDTrack",
+      "subtitle": "Real-time driver attention monitoring, thesis",
+      "metrics": [
+        { "value": "87.12%", "label": "detection accuracy" },
+        { "value": "96.32%", "label": "yawn precision" },
+        { "value": "0.95 s", "label": "camera to alert" }
+      ],
+      "titleBlock": [
+        { "label": "Role", "value": "Team lead" },
+        { "label": "Stack", "value": "Kotlin, Python, OpenCV" },
+        { "label": "Models", "value": "MobileNetV2, LLaVA" },
+        { "label": "Period", "value": "Feb to Jun 2025" }
+      ],
+      "figure": { "traceLabel": "eye aspect ratio, live", "alert": "alert sent" },
+      "paragraph": "I led our thesis team. A Kotlin Android app streams in-car camera frames to a Python server, which detects drowsiness, yawning and distracted head movement in real time using CLAHE, Haar Cascade, eye and mouth aspect ratios, MobileNetV2 and LLaVA. Alerts go out by voice and push, with an event log for history.",
+      "chips": ["Kotlin", "Python", "Flask", "OpenCV", "TensorFlow", "PyTorch", "scikit-learn"],
+      "note": "",
+      "links": [
+        { "text": "Android app", "href": "https://github.com/RVBCosme/thesis-eyedtrack-frontend" },
+        { "text": "Detection server", "href": "https://github.com/RVBCosme/thesis-eyedtrack-backend" }
+      ],
+      "alt": "Sheet 3 of 4, detail B, AI systems, with a live eye aspect ratio trace that raises an alert on a drowsy dip: EyeDTrack, real-time driver attention monitoring, thesis. 87.12% detection accuracy, 96.32% yawn precision, 0.95 seconds camera to alert. Team lead; Kotlin, Python, OpenCV; MobileNetV2 and LLaVA; February to June 2025."
+    },
+    {
+      "id": "pookies",
+      "letter": "C",
+      "group": "Business systems",
+      "sheet": "Sheet 4 of 4",
+      "title": "Pookies System",
+      "subtitle": "POS and inventory for Pookies, the bakery I co-founded",
+      "metrics": [],
+      "titleBlock": [
+        { "label": "Role", "value": "Co-founder, developer" },
+        { "label": "Stack", "value": "React, Express, SQLite" },
+        { "label": "Status", "value": "Update in progress" },
+        { "label": "Built", "value": "Mar to Jun 2026" }
+      ],
+      "figure": {
+        "boxes": ["React + Vite", "Express API", "SQLite, normalized"],
+        "edges": ["REST", "SQL"],
+        "dimension": "Ø 8 cm",
+        "note": "batch cost, live"
+      },
+      "paragraph": "Pookies is the bakery I co-founded in 2023. During my software engineering internship at Highly Succeed, I built its point-of-sale and inventory system, which tracks sales, stock and batch costs in real time. I designed the normalized SQLite schema, built the Express REST API, and worked with the QA and graphics teams on test cases and UI polish. I'm updating it now.",
+      "chips": ["React", "Vite", "Tailwind", "Express", "SQLite"],
+      "note": "",
+      "links": [
+        { "text": "Repository", "href": "https://github.com/RVBCosme/Pookies-Inventory-System" }
+      ],
+      "alt": "Sheet 4 of 4, detail C, business systems: Pookies System, point of sale and inventory for Pookies, the bakery Rene co-founded. React and Vite client, Express REST API, normalized SQLite. Co-founder and developer; update in progress; built March to June 2026."
+    }
+  ],
+  "experience": {
+    "alt": "Schedule, 2022 to now. BSCS at FEU Tech since August 2022. Freelance research since November 2022. Co-founder of Pookies since August 2023. Software engineering intern at Highly Succeed, March to June 2026. Assistant office manager at ANF since April 2026. Web development intern at Araneta City since July 2026.",
+    "title": "Schedule",
+    "range": "2022 to now",
+    "fromYear": 2022,
+    "now": "2026-09",
+    "nowLabel": "now",
+    "rows": [
+      { "label": "BSCS, FEU Tech", "start": "2022-08", "end": null, "outline": true },
+      { "label": "Freelance research", "start": "2022-11", "end": null },
+      { "label": "Co-founder, Pookies", "start": "2023-08", "end": null },
+      { "label": "SWE intern, Highly Succeed", "start": "2026-03", "end": "2026-06" },
+      { "label": "Office manager, ANF", "start": "2026-04", "end": null },
+      { "label": "Web dev intern, Araneta", "start": "2026-07", "end": null }
+    ],
+    "list": [
+      { "role": "Web development intern (voluntary)", "where": "Araneta City (ACI, Inc.), Quezon City", "period": "Jul 2026 to now", "detail": "Page updates in HTML, content in the CMS, and site checks for broken links and layout errors." },
+      { "role": "Assistant office manager", "where": "Adoración Nocturna Filipina main office, Manila", "period": "Apr 2026 to now", "detail": "Daily operations and sales, a three-person data-entry team, and the ANF System." },
+      { "role": "Software engineering intern", "where": "Highly Succeed, remote", "period": "Mar to Jun 2026", "detail": "Built the Pookies System. All 65 workdays with zero absences, plus four web and database certificates." },
+      { "role": "Co-founder", "where": "Pookies, Taguig", "period": "Aug 2023 to now", "detail": "Sales, stock and budgeting, the software behind them, and the cookies." },
+      { "role": "Freelance research assistant and writer", "where": "remote", "period": "Nov 2022 to now", "detail": "Research, data analysis and reports for confidential clients." }
+    ]
+  },
+  "stack": {
+    "alt": "Bill of materials. Web clients: TypeScript, JavaScript, React, Vite, Tailwind CSS. APIs and services: Node.js, Express, REST APIs, Zod. Data: SQLite, PostgreSQL, MySQL. AI and ML: Python, TensorFlow, PyTorch, OpenCV, scikit-learn, Pandas. Quality and process: Vitest, Playwright, TDD, Scrum. Also shipped with: Kotlin, Java, C++, PHP, Laravel.",
+    "title": "Bill of materials",
+    "headers": ["Item", "Parts", "Used for"],
+    "rows": [
+      { "parts": "TypeScript, JavaScript, React, Vite, Tailwind CSS", "use": "Web clients" },
+      { "parts": "Node.js, Express, REST APIs, Zod", "use": "APIs and services" },
+      { "parts": "SQLite, PostgreSQL, MySQL", "use": "Data" },
+      { "parts": "Python, TensorFlow, PyTorch, OpenCV, scikit-learn, Pandas", "use": "AI and ML" },
+      { "parts": "Vitest, Playwright, TDD, Scrum", "use": "Quality and process" },
+      { "parts": "Kotlin, Java, C++, PHP, Laravel", "use": "Also shipped with" }
+    ]
+  },
+  "certificates": {
+    "alt": "Certificates: Cisco, 5 certificates in modern AI, data science, DevNet and cybersecurity; Udacity AWS AI Practitioner Challenge, 2026; freeCodeCamp Relational Database and Responsive Web Design, 2026; PMI Project Management Ready, 2025; Certiport IT Specialist in Python, 2024.",
+    "title": "Certificates",
+    "summary": "10 certificates, 5 issuers",
+    "stamps": [
+      { "name": "Cisco", "nameSize": 28, "inner": "5 certificates", "rim": "MODERN AI · DATA SCIENCE · DEVNET · SECURITY", "ink": "red" },
+      { "name": "Udacity", "nameSize": 24, "inner": "AWS AI", "rim": "AWS AI PRACTITIONER CHALLENGE · 2026", "ink": "line" },
+      { "name": "freeCodeCamp", "nameSize": 17, "inner": "2 certificates", "rim": "RELATIONAL DATABASE · RESPONSIVE WEB · 2026", "ink": "red" },
+      { "name": "PMI", "nameSize": 28, "inner": "PM Ready", "rim": "PROJECT MANAGEMENT READY · 2025", "ink": "line" },
+      { "name": "Certiport", "nameSize": 21, "inner": "IT Specialist", "rim": "IT SPECIALIST IN PYTHON · CERTIPORT · 2024", "ink": "red" }
+    ],
+    "listSummary": "All 10 certificates",
+    "list": [
+      { "issuer": "Cisco", "items": "Introduction to Modern AI (2026), Introduction to Data Science (2026), DevNet Associate (2026), Junior Cybersecurity Analyst Career Path (2025), Introduction to Cybersecurity (2025)" },
+      { "issuer": "Udacity", "items": "AWS AI Practitioner Challenge (2026)" },
+      { "issuer": "freeCodeCamp", "items": "Relational Database (2026), Responsive Web Design (2026)" },
+      { "issuer": "Project Management Institute", "items": "Project Management Ready (2025)" },
+      { "issuer": "Certiport", "items": "IT Specialist in Python (2024)" }
+    ]
+  },
+  "contact": {
+    "alt": "Let's connect. Email: renevincentcosme@gmail.com. LinkedIn: linkedin.com/in/rene-vincent-cosme. GitHub: github.com/RVBCosme.",
+    "heading": "Let's connect",
+    "cards": [
+      { "kind": "email", "label": "Email", "value": "renevincentcosme@gmail.com", "href": "mailto:renevincentcosme@gmail.com", "linkText": "renevincentcosme@gmail.com" },
+      { "kind": "linkedin", "label": "LinkedIn", "value": "linkedin.com/in/rene-vincent-cosme", "href": "https://www.linkedin.com/in/rene-vincent-cosme", "linkText": "in/rene-vincent-cosme" },
+      { "kind": "github", "label": "GitHub", "value": "github.com/RVBCosme", "href": "https://github.com/RVBCosme", "linkText": "RVBCosme" }
+    ]
+  },
+  "readme": {
+    "headings": { "work": "Selected work", "experience": "Experience", "stack": "Stack", "certificates": "Certificates", "contact": "Contact" }
+  },
+  "sidebar": {
+    "name": "Rene Vincent Cosme",
+    "pronouns": "he/him",
+    "bio": "Full-stack developer (SERN stack) and AI enthusiast. BSCS Software Engineering senior at FEU Tech.",
+    "location": "Manila, Philippines",
+    "link": "https://www.linkedin.com/in/rene-vincent-cosme"
+  }
+}
