@@ -3,6 +3,7 @@ import { COMPONENTS } from '../components/index.mjs';
 import { assetPath } from './assets.mjs';
 import { altText } from './content.mjs';
 import { fontFaceCss } from './fonts.mjs';
+import { renderReadme } from './readme.mjs';
 import { collectGlyphs, svgDocument } from './svg.mjs';
 import { THEMES } from './tokens.mjs';
 
@@ -24,6 +25,7 @@ export async function buildAll(content) {
       }));
     }
   }
+  files.set('README.md', renderReadme(content));
   return files;
 }
 
