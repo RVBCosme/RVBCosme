@@ -4,13 +4,19 @@ import { fileURLToPath } from 'node:url';
 import * as fontkit from 'fontkit';
 import { COMPONENTS } from '../scripts/components/index.mjs';
 import { loadContent } from '../scripts/lib/content.mjs';
-import { FACES } from '../scripts/lib/fonts.mjs';
+import { FACES, subsetFace } from '../scripts/lib/fonts.mjs';
 import { collectGlyphs } from '../scripts/lib/svg.mjs';
 import { TYPE } from '../scripts/lib/typography.mjs';
+import { fixture } from './helpers/content.mjs';
+import { drawnPaths } from './helpers/drawn.mjs';
 
 const fonts = new Map();
 function font(face) {
-  if (!fonts.has(face)) fonts.set(face, fontkit.openSync(fileURLToPath(new URL(`../assets/fonts/${FACES[face].file}`, import.meta.url))));
+  if (!fonts.has(face)) {
+    const file = fontkit.openSync(fileURLToPath(new URL(`../assets/fonts/${FACES[face].file}`, import.meta.url)));
+    // A variable face (Caveat) is embedded pinned to its weight, so measure that instance, not the default.
+    fonts.set(face, FACES[face].axes ? file.getVariation(FACES[face].axes) : file);
+  }
   return fonts.get(face);
 }
 
@@ -21,34 +27,121 @@ function textWidth(cls, text, size = TYPE[cls].size) {
   return (f.layout(text).advanceWidth * size) / f.unitsPerEm + spacing * [...text].length;
 }
 
-// Content-driven text with a fixed slot in the drawings: [what, text class, widest allowed, texts].
-// The limits are the free space in the approved layout, not today's widths.
+// Content-driven text with a fixed slot in the drawings: [what, text class, widest allowed, content paths].
+// The limits are the free space in the approved layout, not today's widths. "[*]" means every item of a list.
 const SLOTS = [
-  ['hero title', 'tname', 290, (c) => [c.hero.titleBlock.title.value]],
-  ['hero description', 'tv', 290, (c) => [c.hero.titleBlock.description.value]],
-  ['revision dates', 'tv', 64, (c) => c.hero.revisions.map((r) => r.date)],
-  ['revision entries', 'tv', 205, (c) => c.hero.revisions.map((r) => r.text)],
-  ['hero box labels', 'bx', 174, (c) => c.hero.groups.flatMap((g) => g.boxes.flatMap((b) => b.lines))],
-  ['hero box captions', 'cap', 180, (c) => c.hero.groups.flatMap((g) => g.boxes.map((b) => b.caption))],
-  ['hero markups', 'note', 225, (c) => c.hero.groups.map((g) => g.markup)],
-  ['hero dimension', 'dim', 196, (c) => [c.hero.dimension]],
-  ['In progress rows', 'tv', 720, (c) => [...c.now.items, c.now.next.text]],
-  ['In progress bar label', 'tl', 330, (c) => [c.now.next.bar]],
-  ['ANF subtitle (the receipt printer starts at x 620)', 'subt', 580, (c) => [c.projects[0].subtitle]],
-  ['EyeDTrack and Pookies subtitles', 'subt', 770, (c) => c.projects.slice(1).map((p) => p.subtitle)],
-  ['ANF and EyeDTrack titles', 'ttl', 570, (c) => c.projects.slice(0, 2).map((p) => p.title)],
-  ['Pookies title (the cookie starts at x 526)', 'ttl', 470, (c) => [c.projects[2].title]],
-  ['project title block values', 'tv2', 320, (c) => c.projects.flatMap((p) => p.titleBlock.map((r) => r.value))],
-  ['Pookies status (its live dot sits at x 1044)', 'tv2', 190, (c) => [c.projects[2].titleBlock[2].value]],
-  ['metric values', 'met', 200, (c) => c.projects.flatMap((p) => p.metrics.map((m) => m.value))],
-  ['metric labels', 'metl', 200, (c) => c.projects.flatMap((p) => p.metrics.map((m) => m.label))],
-  ['Pookies diagram boxes', 'bx', 184, (c) => c.projects[2].figure.boxes],
-  ['schedule labels (the year grid starts at x 330)', 'tv', 286, (c) => c.experience.rows.map((r) => r.label)],
-  ['bill of materials parts', 'tv', 740, (c) => c.stack.rows.map((r) => r.parts)],
-  ['bill of materials uses', 'tv', 255, (c) => c.stack.rows.map((r) => r.use)],
-  ['stamp inner lines', 'stsub', 104, (c) => c.certificates.stamps.map((s) => s.inner)],
-  ['contact values', 'tv2', 460, (c) => c.contact.cards.map((k) => k.value)],
+  // hero.svg
+  ['hero group numbers (bubble radius 16)', 'bubt', 24, 'hero.groups[*].number'],
+  ['hero group titles (the AI markup can start at x 375)', 'asm', 260, 'hero.groups[*].title'],
+  ['hero box labels', 'bx', 174, 'hero.groups[*].boxes[*].lines[*]'],
+  ['hero box captions', 'cap', 180, 'hero.groups[*].boxes[*].caption'],
+  ['arrow labels (70 units between boxes)', 'edge', 60, ['hero.groups[*].edges[*]', 'projects[2].figure.edges[*]']],
+  ['hero markups', 'note', 225, 'hero.groups[*].markup'],
+  ['hero dimension', 'dim', 196, 'hero.dimension'],
+  ['revision date header (divider at x 920)', 'tl', 64, 'hero.revisionHeaders[0]'],
+  ['revision entry header', 'tl', 205, 'hero.revisionHeaders[1]'],
+  ['revision dates', 'tv', 64, 'hero.revisions[*].date'],
+  ['revision entries', 'tv', 205, 'hero.revisions[*].text'],
+  ['hero title and description labels', 'tl', 290, ['hero.titleBlock.title.label', 'hero.titleBlock.description.label']],
+  ['hero title', 'tname', 290, 'hero.titleBlock.title.value'],
+  ['hero description', 'tv', 290, 'hero.titleBlock.description.value'],
+  ['"Drawn by" label (divider at x 912)', 'tl', 58, 'hero.titleBlock.drawnBy.label'],
+  ['signature (divider at x 912)', 'sig', 56, 'hero.titleBlock.drawnBy.value'],
+  ['date label (divider at x 1010)', 'tl', 84, 'hero.titleBlock.date.label'],
+  ['date value (divider at x 1010)', 'tv', 84, 'hero.titleBlock.date.value'],
+  ['sheet and scale labels (60-unit cells)', 'tl', 56, ['hero.titleBlock.sheet.label', 'hero.titleBlock.scale.label']],
+  ['sheet and scale values (60-unit cells)', 'tv', 56, ['hero.titleBlock.sheet.value', 'hero.titleBlock.scale.value']],
+  // now, schedule, stack and certificates share a header: a title at x 36, a note right-aligned at x 1164
+  ['section titles', 'asm', 600, ['now.title', 'experience.title', 'stack.title', 'certificates.title']],
+  ['section header notes (right-aligned at x 1164)', 'tl', 400, ['now.updated', 'experience.range', 'certificates.summary']],
+  // now.svg
+  ['In progress rows', 'tv', 720, ['now.items[*]', 'now.next.text']],
+  ['In progress bar label', 'tl', 330, 'now.next.bar'],
+  // anf.svg, eyedtrack.svg, pookies.svg
+  ['sheet bubble letters (radius 20)', 'bubt', 28, 'projects[*].letter'],
+  ['sheet group names (the Pookies dimension starts at x 526)', 'asm', 420, 'projects[*].group'],
+  ['sheet numbers (right-aligned at x 790)', 'sheetno', 180, 'projects[*].sheet'],
+  ['ANF and EyeDTrack titles', 'ttl', 570, ['projects[0].title', 'projects[1].title']],
+  ['Pookies title (the cookie starts at x 526)', 'ttl', 470, 'projects[2].title'],
+  ['ANF subtitle (the receipt printer starts at x 620)', 'subt', 580, 'projects[0].subtitle'],
+  ['EyeDTrack subtitle (the trace label starts at x 630)', 'subt', 580, 'projects[1].subtitle'],
+  ['Pookies subtitle', 'subt', 770, 'projects[2].subtitle'],
+  ['metric values', 'met', 200, 'projects[*].metrics[*].value'],
+  ['metric labels', 'metl', 200, 'projects[*].metrics[*].label'],
+  ['project title block labels', 'tl2', 320, 'projects[*].titleBlock[*].label'],
+  ['project title block values', 'tv2', 320, 'projects[*].titleBlock[*].value'],
+  ['Pookies status (its live dot sits at x 1044)', 'tv2', 190, 'projects[2].titleBlock[2].value'],
+  ['ANF figure caption (the test strip ends at x 600)', 'figcap', 196, 'projects[0].figure.caption'],
+  ['receipt heading (the paper is 94 wide)', 'rct', 90, 'projects[0].figure.receiptHeading'],
+  ['receipt numbers (the paper is 94 wide)', 'rcn', 90, 'projects[0].figure.receiptNumbers[*]'],
+  ['EyeDTrack trace label (right-aligned at x 790)', 'earlabel', 160, 'projects[1].figure.traceLabel'],
+  ['EyeDTrack alert tag (its chip is 94 wide)', 'alertt', 86, 'projects[1].figure.alert'],
+  ['Pookies diagram boxes', 'bx', 184, 'projects[2].figure.boxes[*]'],
+  ['Pookies dimension (centered over the cookie)', 'edge', 80, 'projects[2].figure.dimension'],
+  ['Pookies live note (the title block starts at x 820)', 'livenote', 156, 'projects[2].figure.note'],
+  // schedule.svg
+  ['schedule labels (the year grid starts at x 330)', 'tv', 286, 'experience.rows[*].label'],
+  ['schedule now label (19 units from the frame in December)', 'nowlabel', 30, 'experience.nowLabel'],
+  // stack.svg
+  ['bill of materials item header (divider at x 92)', 'tl', 50, 'stack.headers[0]'],
+  ['bill of materials parts header', 'tl', 740, 'stack.headers[1]'],
+  ['bill of materials uses header', 'tl', 255, 'stack.headers[2]'],
+  ['bill of materials parts', 'tv', 740, 'stack.rows[*].parts'],
+  ['bill of materials uses', 'tv', 255, 'stack.rows[*].use'],
+  // certificates.svg
+  ['stamp inner lines', 'stsub', 104, 'certificates.stamps[*].inner'],
+  // contact.svg
+  ['contact heading (the wiring starts at x 456)', 'hwc', 380, 'contact.heading'],
+  ['contact labels', 'tl2', 460, 'contact.cards[*].label'],
+  ['contact values', 'tv2', 460, 'contact.cards[*].value'],
 ];
+// Drawn text measured below with its own geometry instead of a single slot.
+const OWN_GEOMETRY = ['certificates.stamps[*].name', 'certificates.stamps[*].rim', 'projects[0].figure.totalLabel', 'projects[0].figure.total'];
+
+/** Expands a content path such as 'hero.groups[*].markup' into [path, value] pairs. */
+function expand(content, pattern) {
+  let found = [['', content]];
+  for (const part of pattern.match(/[^.[\]]+|\[\*\]|\[\d+\]/g)) {
+    found = found.flatMap(([path, value]) => {
+      if (part === '[*]') return value.map((item, i) => [`${path}[${i}]`, item]);
+      if (part.startsWith('[')) return [[`${path}${part}`, value[Number(part.slice(1, -1))]]];
+      return [[path ? `${path}.${part}` : part, value[part]]];
+    });
+  }
+  return found;
+}
+
+/** One line per text that is wider than its slot. */
+function slotProblems(content) {
+  const problems = [];
+  for (const [what, cls, max, paths] of SLOTS) {
+    for (const [, text] of [paths].flat().flatMap((pattern) => expand(content, pattern))) {
+      const width = Math.round(textWidth(cls, text));
+      if (width > max) problems.push(`${what}: "${text}" is ${width} units wide; the slot allows ${max}`);
+    }
+  }
+  for (const stamp of content.certificates.stamps) {
+    const name = Math.round(textWidth('stname', stamp.name, stamp.nameSize));
+    if (name > 108) problems.push(`stamp name: "${stamp.name}" at ${stamp.nameSize}px is ${name} units wide; the stamp allows 108`);
+    const rim = Math.round(textWidth('rim', `${stamp.rim} · `));
+    if (rim > 410) problems.push(`stamp rim: "${stamp.rim}" is ${rim} units long; the rim allows 410`);
+  }
+  // The receipt's total line starts at x 668 and ends at x 742; keep 4 units between label and amount.
+  const { totalLabel, total } = content.projects[0].figure;
+  const line = Math.round(textWidth('rct', totalLabel) + textWidth('rct', total));
+  if (line > 70) problems.push(`receipt total line: "${totalLabel}" and "${total}" take ${line} units; the receipt allows 70`);
+  return problems;
+}
+
+test('the typesetting check measures each face as the build embeds it', async () => {
+  const sample = "Let's connect, RVC 0123456789";
+  for (const face of Object.keys(FACES)) {
+    const embedded = fontkit.create(await subsetFace(face, sample));
+    const measured = font(face).layout(sample).advanceWidth / font(face).unitsPerEm;
+    const built = embedded.layout(sample).advanceWidth / embedded.unitsPerEm;
+    assert.ok(Math.abs(measured - built) < 0.001, `${face}: measured ${measured.toFixed(4)} em, but the embedded subset is ${built.toFixed(4)} em`);
+  }
+});
 
 test('every character in the drawings has a glyph in its embedded font (Review Focus 3)', async () => {
   const content = await loadContent();
@@ -63,21 +156,26 @@ test('every character in the drawings has a glyph in its embedded font (Review F
 });
 
 test('copy fits its slot in the drawings (Review Focus 2)', async () => {
+  assert.deepEqual(slotProblems(await loadContent()), []);
+});
+
+test('every content-driven text in the drawings has a slot (Review Focus 2)', async () => {
   const content = await loadContent();
-  const problems = [];
-  for (const [what, cls, max, texts] of SLOTS) {
-    for (const text of texts(content)) {
-      const width = Math.round(textWidth(cls, text));
-      if (width > max) problems.push(`${what}: "${text}" is ${width} units wide; the slot allows ${max}`);
-    }
-  }
-  for (const stamp of content.certificates.stamps) {
-    const name = Math.round(textWidth('stname', stamp.name, stamp.nameSize));
-    if (name > 108) problems.push(`stamp name: "${stamp.name}" at ${stamp.nameSize}px is ${name} units wide; the stamp allows 108`);
-    const rim = Math.round(textWidth('rim', `${stamp.rim} · `));
-    if (rim > 410) problems.push(`stamp rim: "${stamp.rim}" is ${rim} units long; the rim allows 410`);
-  }
-  assert.deepEqual(problems, []);
+  const patterns = [...SLOTS.flatMap(([, , , paths]) => [paths].flat()), ...OWN_GEOMETRY];
+  const covered = new Set(patterns.flatMap((pattern) => expand(content, pattern).map(([path]) => path)));
+  assert.deepEqual([...drawnPaths(content)].filter((path) => !covered.has(path)), []);
+});
+
+test('the slot check names overlong copy where the layout has no room', () => {
+  const c = fixture();
+  c.projects[1].subtitle = 'Real-time driver attention monitoring with live alerts, thesis';
+  c.projects[1].figure.alert = 'drowsiness alert sent';
+  c.contact.heading = "Let's build together";
+  assert.deepEqual(slotProblems(c).map((line) => line.split(':')[0]), [
+    'EyeDTrack subtitle (the trace label starts at x 630)',
+    'EyeDTrack alert tag (its chip is 94 wide)',
+    'contact heading (the wiring starts at x 456)',
+  ]);
 });
 
 test('the slot check would catch an overlong status', () => {
