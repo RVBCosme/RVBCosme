@@ -4,37 +4,158 @@ import { readFileSync, writeFileSync, mkdtempSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { isDeepStrictEqual } from 'node:util';
 import { altText, loadContent, validateContent } from '../scripts/lib/content.mjs';
 import { fixture } from './helpers/content.mjs';
+import { drawnPaths } from './helpers/drawn.mjs';
 
 const SPEC = readFileSync(new URL('../docs/superpowers/specs/2026-09-23-github-profile-redesign-design.md', import.meta.url), 'utf8').replace(/\r\n/g, '\n');
 const APPENDIX = SPEC.slice(SPEC.indexOf('## Appendix A'));
 const specLines = (label) => [...APPENDIX.matchAll(new RegExp(`^- ${label}: (.+)$`, 'gm'))].map((m) => m[1].trim());
+
+// Readers for the drawing copy in appendix A.
+const part = (from, to) => APPENDIX.split(from)[1].split(to)[0];
+const line = (text, label) => new RegExp(`^- ${label}: (.+)$`, 'm').exec(text)[1];
+const quoted = (text) => [...text.matchAll(/"([^"]*)"/g)].map((m) => m[1]);
+const labelled = (text) => [...text.matchAll(/([A-Z][\w ]*?) "([^"]*)"/g)].map(([, label, value]) => ({ label, value }));
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const month = (text) => `${text.split(' ')[1]}-${String(MONTHS.indexOf(text.split(' ')[0]) + 1).padStart(2, '0')}`;
+function table(text, firstHeader) {
+  const lines = text.split('\n');
+  const start = lines.findIndex((l) => l.startsWith(`| ${firstHeader} |`));
+  const cells = (l) => l.split('|').slice(1, -1).map((cell) => cell.trim());
+  const rows = [];
+  for (let i = start + 2; lines[i]?.startsWith('|'); i += 1) rows.push(cells(lines[i]));
+  return { header: cells(lines[start]), rows };
+}
 
 test('the content file and the fixture are valid', async () => {
   await loadContent();
   assert.deepEqual(validateContent(fixture()), []);
 });
 
-test('content carries the approved copy from spec appendix A (ADR-005)', async () => {
-  const c = await loadContent();
-  assert.equal(c.intro, APPENDIX.split('**A1. Intro**')[1].split('**A2.')[0].trim());
-  assert.deepEqual(c.projects.map((p) => p.paragraph), specLines('Paragraph'));
-  assert.deepEqual(c.projects.map((p) => p.chips.join(', ')), specLines('Chips'));
-  assert.deepEqual([c.projects[0].note], specLines('Note'));
+/** The approved copy compared with the content: one line per mismatch, named by its spec section. */
+function approvedCopyProblems(c) {
+  const problems = [];
+  const check = (what, actual, expected) => {
+    if (!isDeepStrictEqual(actual, expected)) problems.push(`${what}: the content has ${JSON.stringify(actual)}, the spec has ${JSON.stringify(expected)}`);
+  };
+  check('A1 intro', c.intro, APPENDIX.split('**A1. Intro**')[1].split('**A2.')[0].trim());
+  check('A3 to A5 paragraphs', c.projects.map((p) => p.paragraph), specLines('Paragraph'));
+  check('A3 to A5 chips', c.projects.map((p) => p.chips.join(', ')), specLines('Chips'));
+  check('A3 note', [c.projects[0].note], specLines('Note'));
   const a6 = APPENDIX.split('**A6. Experience**')[1].split('Hero revision table')[0];
-  assert.deepEqual(
+  check(
+    'A6 experience list',
     c.experience.list.map((x) => `**${x.role}**, ${x.where}. ${x.period}. ${x.detail}`),
     [...a6.matchAll(/^- (\*\*.+)$/gm)].map((m) => m[1].trim()),
   );
   const a7 = APPENDIX.split('`<details>` list:')[1].split('**A8.')[0];
-  assert.deepEqual(c.certificates.list.map((e) => `**${e.issuer}:** ${e.items}`), [...a7.matchAll(/^- (\*\*.+)$/gm)].map((m) => m[1].trim()));
+  check('A7 certificate list', c.certificates.list.map((e) => `**${e.issuer}:** ${e.items}`), [...a7.matchAll(/^- (\*\*.+)$/gm)].map((m) => m[1].trim()));
   const contactLine = APPENDIX.split('Markdown under it:')[1].trim().split('\n')[0];
-  assert.equal(c.contact.cards.map((k) => `**${k.label}** [${k.linkText}](${k.href})`).join(' · '), contactLine);
+  check('A8 contact line', c.contact.cards.map((k) => `**${k.label}** [${k.linkText}](${k.href})`).join(' · '), contactLine);
   const alts = [...APPENDIX.matchAll(/^- `(\w+)\.svg`: (.+)$/gm)];
-  assert.equal(alts.length, 9);
-  for (const [, name, alt] of alts) assert.equal(altText(c, name), alt.trim(), `alt text for ${name}`);
-  assert.deepEqual([c.sidebar.name, c.sidebar.pronouns, c.sidebar.bio, c.sidebar.location], ['Name', 'Pronouns', 'Bio', 'Location'].map((k) => specLines(k)[0]));
+  check('A9 alt text count', alts.length, 9);
+  for (const [, name, alt] of alts) check(`A9 alt text for ${name}`, altText(c, name), alt.trim());
+  check('A0 sidebar', [c.sidebar.name, c.sidebar.pronouns, c.sidebar.bio, c.sidebar.location], ['Name', 'Pronouns', 'Bio', 'Location'].map((k) => specLines(k)[0]));
+
+  // The drawings' copy: every string a drawing shows, except the hero's box captions and arrow labels, which the spec doesn't list.
+  const a2 = part('**A2. ', '**A3.');
+  const nowRows = [...a2.matchAll(/^- (.+)$/gm)].map((m) => m[1]);
+  const [, nextText, bar, updated] = /^(.+) \(bar label: "(.+)"; header: "(.+)"\)$/.exec(nowRows.at(-1));
+  check('A2 title', c.now.title, a2.split('**')[0]);
+  check('A2 In progress rows', [...c.now.items, c.now.next.text], [...nowRows.slice(0, -1), nextText]);
+  check('A2 bar label and header', [c.now.next.bar, c.now.updated], [bar, updated]);
+
+  const [anf, eyed, pookies] = [['**A3. ', '**A4.'], ['**A4. ', '**A5.'], ['**A5. ', '**A6.']].map(([from, to]) => part(from, to));
+  [anf, eyed, pookies].forEach((text, i) => {
+    const p = c.projects[i];
+    const id = `A${i + 3}`;
+    const header = line(text, 'Header');
+    check(`${id} header`, [p.letter, p.group, p.sheet], [/bubble (\w)/.exec(header)[1], ...quoted(header)]);
+    check(`${id} title and subtitle`, [p.title, p.subtitle], [line(text, 'Title'), line(text, 'Subtitle')]);
+    // A value can hold a space ("0.95 s"), so each metric is compared as "value label".
+    check(`${id} metrics`, p.metrics.map((m) => `${m.value} ${m.label}`), /^- Metrics: (.+)$/m.exec(text)?.[1].split(' · ') ?? []);
+    check(`${id} title block`, p.titleBlock, labelled(line(text, 'Title block')));
+  });
+  const [receiptHeading, first, last, totalLabel, total] = quoted(/^- Receipt figure.*$/m.exec(anf)[0]);
+  const receiptNumbers = [];
+  for (let n = Number(first.match(/\d+/)[0]); n <= Number(last.match(/\d+/)[0]); n += 1) receiptNumbers.push(first.replace(/\d+/, n));
+  check('A3 figure', c.projects[0].figure, { caption: line(anf, 'Figure caption'), receiptHeading, receiptNumbers, totalLabel, total });
+  const [traceLabel, alert] = quoted(line(eyed, 'Trace label'));
+  check('A4 figure', c.projects[1].figure, { traceLabel, alert });
+  const chain = line(pookies, 'Diagram').split(/ →\((.+?)\)→ /);
+  const [dimension, note] = quoted(line(pookies, 'Figure'));
+  check('A5 figure', c.projects[2].figure, { boxes: chain.filter((_, k) => k % 2 === 0), edges: chain.filter((_, k) => k % 2 === 1), dimension, note });
+
+  const experience = part('**A6. Experience**', '**A7.');
+  const schedule = table(experience, 'Row').rows.map(([label, start, end]) => ({
+    label: label.replace(' (outlined bar)', ''), start: month(start), end: end === 'now' ? null : month(end), outline: label.endsWith('(outlined bar)'),
+  }));
+  check('A6 schedule rows', c.experience.rows.map((r) => ({ label: r.label, start: r.start, end: r.end, outline: Boolean(r.outline) })), schedule);
+  const [, nowLabel, nowMonth] = /The "(\w+)" line sits at late (\w+ \d{4})\./.exec(experience);
+  check('A6 now line', [c.experience.nowLabel, c.experience.now], [nowLabel, month(nowMonth)]);
+  const revisions = table(experience, 'Date');
+  check('A6 revision table', [c.hero.revisionHeaders, c.hero.revisions], [revisions.header, revisions.rows.map(([date, text]) => ({ date, text: text.replace(' (revision cloud)', '') }))]);
+  check('A6 hero title block', Object.values(c.hero.titleBlock), labelled(/^Title block: .+$/m.exec(experience)[0]));
+
+  const stackAndCertificates = part('**A7. Stack and certificates**', '**A8.');
+  const stack = table(stackAndCertificates, 'Item');
+  check('A7 bill of materials', [c.stack.headers, c.stack.rows], [stack.header, stack.rows.map(([, parts, use]) => ({ parts, use }))]);
+  check(
+    'A7 stamps',
+    c.certificates.stamps.map(({ name, inner, rim, ink }) => ({ name, inner, rim, ink })),
+    table(stackAndCertificates, 'Name').rows.map(([name, inner, rim, ink]) => ({ name, inner, rim, ink: ink === 'coral' ? 'red' : ink })),
+  );
+  check('A7 certificates header', [c.certificates.title, c.certificates.summary], quoted(/^Header: .+$/m.exec(stackAndCertificates)[0]));
+
+  const contact = part('**A8. Contact**', '**A9.');
+  check('A8 heading', c.contact.heading, quoted(contact)[0]);
+  check('A8 cards', c.contact.cards.map((k) => [k.label, k.value]), [...contact.matchAll(/^- (\w+): (\S+) \(/gm)].map((m) => [m[1], m[2]]));
+
+  // Section titles appear only as the first sentence of their drawing's alt text (A9).
+  const firstSentence = (name) => alts.find(([, n]) => n === name)[2].split('. ')[0];
+  check('A9 schedule title and range', `${c.experience.title}, ${c.experience.range}`, firstSentence('schedule'));
+  check('A9 bill of materials title', c.stack.title, firstSentence('stack'));
+
+  // Appendix A has no hero diagram; spec section 5 describes it.
+  const hero = SPEC.split('\n').find((l) => l.startsWith('| 1 | Hero'));
+  const groups = [...hero.matchAll(/Group (\d), ([^:]+): (.+?), with (?:the markup )?"([^"]+)"/g)];
+  check(
+    'Section 5 hero groups',
+    c.hero.groups.map((g) => [g.number, g.title.toLowerCase(), g.boxes.map((b) => b.lines.join(' ')), g.markup]),
+    groups.map(([, number, title, boxes, markup]) => [number, title.toLowerCase(), boxes.split(' → '), markup]),
+  );
+  check('Section 5 hero dimension', c.hero.dimension, /a dimension line "([^"]+)"/.exec(hero)[1]);
+  return problems;
+}
+
+test('content carries the approved copy from spec appendix A (ADR-005)', async () => {
+  assert.deepEqual(approvedCopyProblems(await loadContent()), []);
+});
+
+// The spec never lists the hero's box captions and arrow labels; the golden fixture alone pins them.
+const NOT_IN_SPEC = [/^hero\.groups\[\d+\]\.boxes\[\d+\]\.caption$/, /^hero\.groups\[\d+\]\.edges\[\d+\]$/];
+
+test('every string a drawing shows is tied to the spec (ADR-005)', async () => {
+  const c = await loadContent();
+  const untied = [];
+  for (const path of drawnPaths(c)) {
+    if (NOT_IN_SPEC.some((pattern) => pattern.test(path))) continue;
+    const changed = structuredClone(c);
+    const keys = path.match(/[^.[\]]+/g);
+    const parent = keys.slice(0, -1).reduce((node, key) => node[key], changed);
+    parent[keys.at(-1)] += ' (changed)';
+    if (approvedCopyProblems(changed).length === 0) untied.push(path);
+  }
+  assert.deepEqual(untied, []);
+});
+
+test('drawing copy that drifts from the spec is named (ADR-005)', () => {
+  const c = fixture();
+  c.now.items[0] = 'ANF Inventory System: in use at the Council';
+  c.projects[0].titleBlock[2].value = 'v1.0.10, in use';
+  assert.deepEqual(approvedCopyProblems(c).map((line) => line.split(':')[0]), ['A2 In progress rows', 'A3 title block']);
 });
 
 test('a missing or wrongly shaped field is reported by its path', () => {
