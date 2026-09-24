@@ -9,3 +9,7 @@ node_modules/
 
 # Font probe output and README preview screenshots (scripts/probe-fonts.mjs, scripts/preview.mjs)
 .preview/
+
+# Session handoffs and implementation plans stay on the owner's PC; this repository is public
+docs/superpowers/handoff/
+docs/superpowers/plans/
