@@ -1,6 +1,6 @@
 {
   "hero": {
-    "alt": "Engineering drawing of Rene Vincent Cosme's work, drawn in on load. Business systems: React and Vite, Node and Express, SQLite and Postgres, with 4,000+ tests on the ANF system; requests flow between them. AI systems: EyeDTrack, a Kotlin app and Python server running MobileNetV2 and LLaVA, with 1,200+ automated checks; camera frames travel the pipeline from camera to alert. Timeline: co-founded Pookies August 2023, led the EyeDTrack thesis February 2025, Highly Succeed internship March 2026, built the ANF system May 2026, Araneta City web internship July 2026, marked as the latest revision.",
+    "alt": "Engineering drawing of Rene Vincent Cosme's work, drawn in on load. Business systems: React and Vite, Node and Express, SQLite and Postgres, with 4,000+ tests on the ANF system; requests flow between them. AI systems: EyeDTrack, a Kotlin phone app and a Python server that finds the face with dlib's 68 facial landmarks, with 1,200+ automated checks; camera frames travel the pipeline from camera to alert. Timeline: co-founded Pookies August 2023, led the EyeDTrack thesis February 2025, Highly Succeed internship March 2026, built the ANF system May 2026, Araneta City web internship July 2026, marked as the latest revision.",
     "groups": [
       {
         "number": "1",
@@ -17,9 +17,9 @@
         "number": "2",
         "title": "AI systems",
         "boxes": [
-          { "lines": ["Kotlin app"], "caption": "in-car camera" },
-          { "lines": ["Python server"], "caption": "OpenCV, CLAHE" },
-          { "lines": ["MobileNetV2", "+ LLaVA"], "caption": "models" }
+          { "lines": ["Kotlin app"], "caption": "phone camera" },
+          { "lines": ["Python server"], "caption": "Flask, OpenCV" },
+          { "lines": ["dlib", "68 landmarks"], "caption": "eyes, mouth, head" }
         ],
         "edges": ["frames", "infer"],
         "markup": "1,200+ checks (EyeDTrack)"
@@ -94,26 +94,26 @@
       "group": "AI systems",
       "sheet": "Sheet 3 of 4",
       "title": "EyeDTrack",
-      "subtitle": "Real-time driver attention monitoring, thesis",
+      "subtitle": "Driver attention monitoring, thesis and solo rebuild",
       "metrics": [
         { "value": "713 ms", "label": "camera to result, p95" },
         { "value": "1,200+", "label": "automated checks" },
         { "value": "26 of 30", "label": "yawn alerts were real" }
       ],
       "titleBlock": [
-        { "label": "Role", "value": "Team lead" },
-        { "label": "Stack", "value": "Kotlin, Python, OpenCV" },
-        { "label": "Models", "value": "MobileNetV2, LLaVA" },
-        { "label": "Period", "value": "Feb to Jun 2025" }
+        { "label": "Role", "value": "Thesis team lead; solo rebuild" },
+        { "label": "Stack", "value": "Kotlin, Python, Flask, MySQL" },
+        { "label": "Vision", "value": "dlib 68 landmarks, OpenCV" },
+        { "label": "Period", "value": "2025 and Oct to Nov 2026" }
       ],
-      "figure": { "traceLabel": "eye aspect ratio, live", "alert": "alert sent" },
-      "paragraph": "I led our thesis team. A Kotlin Android app streams in-car camera frames to a Python server, which detects drowsiness, yawning and distracted head movement in real time using CLAHE, Haar Cascade, eye and mouth aspect ratios, MobileNetV2 and LLaVA. Alerts go out by voice and push, with an event log for history. From October 2026 I rebuilt it and tested it once on people it had never seen: it missed its accuracy targets, and the project site says so. The 713 ms is the 95th percentile from camera capture to result, on one phone at a desk on Nov 11, 2026; it rose to 887 ms with the server PC heavily loaded. The 26 of 30 is an idealized episode count from that sealed final test, which met 0 of its 15 accuracy targets, and the same count missed 22 yawn episodes.",
-      "chips": ["Kotlin", "Python", "Flask", "OpenCV", "TensorFlow", "PyTorch", "scikit-learn"],
+      "figure": { "traceLabel": "eye openness, illustrated", "alert": "alert spoken" },
+      "paragraph": "I led our thesis team in 2025, and a teammate updated the app in mid-2026. From October 2026 I rebuilt it alone, directing an AI coding agent, and measured it. A Kotlin app on an Android phone sends camera frames over the driver's own network to a Python and Flask server, which finds the face with dlib's 68 facial landmarks and OpenCV and measures how open the eyes and mouth are and where the head points. A time rule decides what counts, the app speaks the alert, and when it can't see the face it says so instead of guessing. I tested it once on people it had never seen: it met 0 of its 15 accuracy targets, and the project site says so. The 713 ms is the 95th percentile from camera capture to result, on one phone at a desk on Nov 11, 2026; it rose to 887 ms with the server PC heavily loaded. The 26 of 30 is an idealized episode count from that sealed final test, and the same count missed 22 yawn episodes. It's an academic prototype, not a safety device.",
+      "chips": ["Kotlin", "Android", "Python", "Flask", "OpenCV", "dlib", "NumPy", "MySQL"],
       "note": "Private repository, walkthrough on request.",
       "links": [
         { "text": "Project site", "href": "https://eyedtrack.vercel.app" }
       ],
-      "alt": "Sheet 3 of 4, detail B, AI systems, with a live eye aspect ratio trace that raises an alert on a drowsy dip: EyeDTrack, real-time driver attention monitoring, thesis. 713 milliseconds from camera capture to result at the 95th percentile, on one phone at a desk in November 2026; 1,200+ automated checks on the server, the app and the phone; 26 of 30 yawn alerts were real yawns, an idealized episode count from a sealed final test that met 0 of its 15 accuracy targets. Team lead; Kotlin, Python, OpenCV; MobileNetV2 and LLaVA; February to June 2025."
+      "alt": "Sheet 3 of 4, detail B, AI systems, with an illustrated eye-openness trace that raises a spoken alert on a drowsy dip: EyeDTrack, driver attention monitoring, thesis and solo rebuild. 713 milliseconds from camera capture to result at the 95th percentile, on one phone at a desk in November 2026; 1,200+ automated checks on the server, the app and the phone; 26 of 30 yawn alerts were real yawns, an idealized episode count from a sealed final test that met 0 of its 15 accuracy targets. Thesis team lead, then sole developer of the rebuild; Kotlin, Python, Flask and MySQL; dlib's 68 facial landmarks and OpenCV; 2025, and October to November 2026."
     },
     {
       "id": "pookies",

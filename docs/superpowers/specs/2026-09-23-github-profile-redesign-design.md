@@ -41,7 +41,7 @@ The profile should be unmistakably his own, with nothing that looks like a templ
 
 | Fact | Source |
 |---|---|
-| Headline, About, five roles with dates, EyeDTrack team lead and period (Feb to Jun 2025, from the project entry), the Cisco (5), Udacity and freeCodeCamp (2) certificates, pronouns he/him | LinkedIn, `linkedin.com/in/rene-vincent-cosme` (read 2026-09-23) |
+| Headline, About, five roles with dates, the EyeDTrack thesis start (Feb 2025, from the project entry; the hero's revision date), the Cisco (5), Udacity and freeCodeCamp (2) certificates, pronouns he/him | LinkedIn, `linkedin.com/in/rene-vincent-cosme` (read 2026-09-23) |
 | The PMI and Certiport certificates, which aren't on LinkedIn (8 + 2 = 10 certificates) | Resume PDF (owner's copy) |
 | EyeDTrack figures, each with its caveat: 713 ms from camera capture to result, 95th percentile (one phone at a desk, Nov 11, 2026; 887 ms with the server PC heavily loaded); 1,200+ automated checks on the server, the app and the phone; 26 of 30 yawn alerts were real yawns (an idealized episode count from the sealed final test, which met 0 of its 15 accuracy targets; the same count missed 22 yawn episodes). The rebuild from October 2026, tested once on people it had never seen, missed its accuracy targets | The owner's portfolio (its EyeDTrack entry) and the project site, `eyedtrack.vercel.app`, read 2026-11-12 |
 | ANF System: 4,170 documented automated checks, shown as "4,000+"; 23 screens; 127 decision records; release v1.0.10 on 22 Sep 2026; built 31 May to 12 Sep 2026; features; stack (React, Vite, Tailwind, Express, better-sqlite3, Zod, Vitest, Playwright) | The ANF System's private repository: its system documentation and package files |
@@ -50,7 +50,7 @@ The profile should be unmistakably his own, with nothing that looks like a templ
 | Pookies stack: React, Vite and Tailwind on the front; Express and better-sqlite3 behind | Public repo `RVBCosme/Pookies-Inventory-System` |
 | Pookies status "Update in progress" | Owner ruling, 2026-09-23 |
 | EyeDTrack and Pookies repositories are private, so both carry "Private repository, walkthrough on request"; EyeDTrack links its public project site, `eyedtrack.vercel.app`, and Pookies has no link | Owner request, 2026-11-12, matching the owner's portfolio |
-| EyeDTrack architecture: Kotlin app, Python/Flask server, OpenCV, CLAHE, Haar Cascade, MobileNetV2, LLaVA | Public repos `thesis-eyedtrack-frontend` and `thesis-eyedtrack-backend`, plus the resume |
+| EyeDTrack as rebuilt in Oct to Nov 2026, the system its figures were measured on: a Kotlin app on an Android phone, a Python and Flask server, dlib's 68 facial landmarks, OpenCV, NumPy and MySQL; a time rule; spoken alerts; "says so" when it can't see the face; role "Thesis team lead; sole developer of the rebuild"; period "2025 and Oct to Nov 2026"; a teammate updated the app in mid-2026; built with an AI coding agent | The owner's portfolio (its EyeDTrack entry and skills list), read 2026-11-12 |
 
 Rules (ADR-005): never invent a number, round growing numbers down, and name the source of every change.
 
@@ -68,11 +68,11 @@ The README follows this order. Each visual is a `<picture>` with light and dark 
 
 | # | Block | Asset (viewBox) | What it shows | Markdown text |
 |---|---|---|---|---|
-| 1 | Hero, sheet 1 of 4 | `hero.svg` (1200×470) | Group 1, business systems: React + Vite → Node + Express → SQLite, Postgres, with the markup "4,000+ tests (ANF)". Group 2, AI systems: Kotlin app → Python server → MobileNetV2 + LLaVA, with "1,200+ checks (EyeDTrack)" and a dimension line "camera to alert". Revision table by date. Title block with the RVC signature. | none |
+| 1 | Hero, sheet 1 of 4 | `hero.svg` (1200×470) | Group 1, business systems: React + Vite → Node + Express → SQLite, Postgres, with the markup "4,000+ tests (ANF)". Group 2, AI systems: Kotlin app → Python server → dlib 68 landmarks, with "1,200+ checks (EyeDTrack)" and a dimension line "camera to alert". Revision table by date. Title block with the RVC signature. | none |
 | 2 | Intro | none | none | Intro paragraph (appendix A1) |
 | 3 | In progress | `now.svg` (1200×262) | Four live rows and a "Next" row | none |
 | 4 | Selected work, A | `anf.svg` (1200×300) | ANF System sheet: metrics, title block, test strip, receipt printer | Paragraph, chips, note (A3) |
-| 5 | Selected work, B | `eyedtrack.svg` (1200×300) | EyeDTrack sheet: metrics, title block, eye-aspect-ratio trace, landmark eye | Paragraph, chips, note, link (A4) |
+| 5 | Selected work, B | `eyedtrack.svg` (1200×300) | EyeDTrack sheet: metrics, title block, an illustrated eye-openness trace, landmark eye | Paragraph, chips, note, link (A4) |
 | 6 | Selected work, C | `pookies.svg` (1200×300) | Pookies sheet: mini diagram, title block, cookie figure | Paragraph, chips, note (A5) |
 | 7 | Experience | `schedule.svg` (1200×352) | Schedule chart of the roles, 2022 to now | Five-item list (A6) |
 | 8 | Stack | `stack.svg` (1200×316) | Bill of materials with six rows | none |
@@ -94,7 +94,7 @@ ADR-004 sets the policy. The values below are the canonical timings from the app
 | now | Stripes slide; live dots ping (staggered 0.4 s); the "Next" ring turns | 0.8 s / 1.8 s / 6 s |
 | anf | Test strip (38 ticks, 40 to 600) turns mint in a wave | 4.2 s per tick, 0.06 s stagger |
 | anf | Receipt printer: Official Receipts No. 1041 to 1044 print, hold, then tear off | 12 s loop, receipts 3 s apart |
-| eyedtrack | Eye-aspect-ratio trace scrolls. Eye blinks at 14.7%, 38.7% and 57.3%. Drowsy closure from 76.7% to 84.7%, when the landmarks turn coral and "alert sent" shows from 78% to 93%. | 6 s loop, all in sync |
+| eyedtrack | Eye-openness trace scrolls (an illustration, not driver data). Eye blinks at 14.7%, 38.7% and 57.3%. Drowsy closure from 76.7% to 84.7%, when the landmarks turn coral and "alert spoken" shows from 78% to 93%. | 6 s loop, all in sync |
 | pookies | Request flow like the hero's; status dot pings; cookie turns | 3.2 s / 1.8 s / 24 s |
 | schedule | "Now" line pulses; ongoing bars have sliding stripe tips | 2.4 s / 0.8 s |
 | stack | Checkmarks draw down the six rows | 6 s loop, 0.35 s stagger |
@@ -211,7 +211,7 @@ gh api -X PATCH /user -f name=... -f bio=... -f location=...
 Questions 1 and 2 were resolved in the owner's review. Questions 3 and 4 are still open.
 
 1. **ANF status wording.** Resolved 2026-09-23: keep "v1.0.10 handover to the Council" and "v1.0.10, Sep 2026". The owner says when they should change to "in use"; then appendix A, the content file and both alt texts change together.
-2. **EyeDTrack period.** Resolved 2026-09-23: "Feb to Jun 2025", from LinkedIn's project entry. The hero's revision date is "02/25".
+2. **EyeDTrack period.** Resolved 2026-09-23: "Feb to Jun 2025", from LinkedIn's project entry. The hero's revision date is "02/25". Updated 2026-11-12: the sheet's period is "2025 and Oct to Nov 2026", as on the owner's portfolio; the hero's revision date stays "02/25".
 3. **Pinned repositories.** Which four to six? Asked at the sidebar step (section 9).
 4. **Fonts.** Embedded subset fonts are the default. The font probe (section 7) decides whether any text has to be outlined instead, and the owner confirms with that evidence in hand.
 
@@ -243,6 +243,12 @@ These are separate efforts.
 - A4 and A5: the two EyeDTrack repositories the profile linked return 404, and the Pookies repository is now private. Both projects now carry the note "Private repository, walkthrough on request." EyeDTrack links its public project site instead; Pookies has no link, as on the owner's portfolio.
 - Section 3, A4 and A9: EyeDTrack's résumé figures are retired, because the project's own sealed final test superseded them. The sheet shows the figures the owner's portfolio publishes, and the paragraph and the alt text carry their caveats. No accuracy percentage is shown.
 - Sections 5 and 6, A9 and ADR-004: the hero's AI markup is "1,200+ checks (EyeDTrack)", and its dimension line reads "camera to alert" with no time. The published 713 ms was measured on the 2026 rebuild, on one phone at a desk, which the project site describes without MobileNetV2 or LLaVA, so it isn't drawn across the in-car chain the hero shows. That loop keeps its timings and is not to scale.
+
+**2026-11-12, matching the owner's updated portfolio**
+
+The owner's portfolio was brought up to date on 2026-11-12, and these changes make the profile agree with it (section 3 names each source).
+
+- Sections 3, 5 and 6, A4, A9 and ADR-004: EyeDTrack's sheet and the hero's AI boxes describe the 2026 rebuild that its figures were measured on: a Kotlin app on an Android phone, a Python and Flask server, and dlib's 68 facial landmarks with OpenCV, NumPy and MySQL. The thesis pipeline (MobileNetV2, LLaVA, CLAHE, Haar Cascade) is no longer drawn. The role, period, chips and paragraph follow the portfolio; the trace is labeled as an illustration, and the alert is spoken.
 
 ---
 
@@ -285,12 +291,12 @@ I'm a fourth-year Computer Science student specializing in software engineering 
 
 - Header: bubble B, "AI systems", "Sheet 3 of 4"
 - Title: EyeDTrack
-- Subtitle: Real-time driver attention monitoring, thesis
+- Subtitle: Driver attention monitoring, thesis and solo rebuild
 - Metrics: 713 ms camera to result, p95 · 1,200+ automated checks · 26 of 30 yawn alerts were real
-- Title block: Role "Team lead"; Stack "Kotlin, Python, OpenCV"; Models "MobileNetV2, LLaVA"; Period "Feb to Jun 2025"
-- Trace label: "eye aspect ratio, live". Alert tag: "alert sent"
-- Paragraph: I led our thesis team. A Kotlin Android app streams in-car camera frames to a Python server, which detects drowsiness, yawning and distracted head movement in real time using CLAHE, Haar Cascade, eye and mouth aspect ratios, MobileNetV2 and LLaVA. Alerts go out by voice and push, with an event log for history. From October 2026 I rebuilt it and tested it once on people it had never seen: it missed its accuracy targets, and the project site says so. The 713 ms is the 95th percentile from camera capture to result, on one phone at a desk on Nov 11, 2026; it rose to 887 ms with the server PC heavily loaded. The 26 of 30 is an idealized episode count from that sealed final test, which met 0 of its 15 accuracy targets, and the same count missed 22 yawn episodes.
-- Chips: Kotlin, Python, Flask, OpenCV, TensorFlow, PyTorch, scikit-learn
+- Title block: Role "Thesis team lead; solo rebuild"; Stack "Kotlin, Python, Flask, MySQL"; Vision "dlib 68 landmarks, OpenCV"; Period "2025 and Oct to Nov 2026"
+- Trace label: "eye openness, illustrated". Alert tag: "alert spoken"
+- Paragraph: I led our thesis team in 2025, and a teammate updated the app in mid-2026. From October 2026 I rebuilt it alone, directing an AI coding agent, and measured it. A Kotlin app on an Android phone sends camera frames over the driver's own network to a Python and Flask server, which finds the face with dlib's 68 facial landmarks and OpenCV and measures how open the eyes and mouth are and where the head points. A time rule decides what counts, the app speaks the alert, and when it can't see the face it says so instead of guessing. I tested it once on people it had never seen: it met 0 of its 15 accuracy targets, and the project site says so. The 713 ms is the 95th percentile from camera capture to result, on one phone at a desk on Nov 11, 2026; it rose to 887 ms with the server PC heavily loaded. The 26 of 30 is an idealized episode count from that sealed final test, and the same count missed 22 yawn episodes. It's an academic prototype, not a safety device.
+- Chips: Kotlin, Android, Python, Flask, OpenCV, dlib, NumPy, MySQL
 - Note: Private repository, walkthrough on request.
 - Link: [Project site](https://eyedtrack.vercel.app)
 
@@ -391,10 +397,10 @@ No phone number.
 
 **A9. Alt text** (verbatim; each is the `aria-label` of the same SVG in the mockup)
 
-- `hero.svg`: Engineering drawing of Rene Vincent Cosme's work, drawn in on load. Business systems: React and Vite, Node and Express, SQLite and Postgres, with 4,000+ tests on the ANF system; requests flow between them. AI systems: EyeDTrack, a Kotlin app and Python server running MobileNetV2 and LLaVA, with 1,200+ automated checks; camera frames travel the pipeline from camera to alert. Timeline: co-founded Pookies August 2023, led the EyeDTrack thesis February 2025, Highly Succeed internship March 2026, built the ANF system May 2026, Araneta City web internship July 2026, marked as the latest revision.
+- `hero.svg`: Engineering drawing of Rene Vincent Cosme's work, drawn in on load. Business systems: React and Vite, Node and Express, SQLite and Postgres, with 4,000+ tests on the ANF system; requests flow between them. AI systems: EyeDTrack, a Kotlin phone app and a Python server that finds the face with dlib's 68 facial landmarks, with 1,200+ automated checks; camera frames travel the pipeline from camera to alert. Timeline: co-founded Pookies August 2023, led the EyeDTrack thesis February 2025, Highly Succeed internship March 2026, built the ANF system May 2026, Araneta City web internship July 2026, marked as the latest revision.
 - `now.svg`: In progress: ANF Inventory System version 1.0.10 handover to the Council; the ANF public website in Laravel, Filament and MySQL; the Pookies System update; the web development internship at Araneta City. Next: a full-time software engineering or AI/ML role, open to offers.
 - `anf.svg`: Sheet 2 of 4, detail A, business systems, with a test-runner strip turning green: ANF Inventory System for the Adoración Nocturna Filipina National Council. 4,000+ automated tests, 23 screens, 127 decision records. Sole developer; React, Express, SQLite; version 1.0.10, September 2026; May 2026 to now.
-- `eyedtrack.svg`: Sheet 3 of 4, detail B, AI systems, with a live eye aspect ratio trace that raises an alert on a drowsy dip: EyeDTrack, real-time driver attention monitoring, thesis. 713 milliseconds from camera capture to result at the 95th percentile, on one phone at a desk in November 2026; 1,200+ automated checks on the server, the app and the phone; 26 of 30 yawn alerts were real yawns, an idealized episode count from a sealed final test that met 0 of its 15 accuracy targets. Team lead; Kotlin, Python, OpenCV; MobileNetV2 and LLaVA; February to June 2025.
+- `eyedtrack.svg`: Sheet 3 of 4, detail B, AI systems, with an illustrated eye-openness trace that raises a spoken alert on a drowsy dip: EyeDTrack, driver attention monitoring, thesis and solo rebuild. 713 milliseconds from camera capture to result at the 95th percentile, on one phone at a desk in November 2026; 1,200+ automated checks on the server, the app and the phone; 26 of 30 yawn alerts were real yawns, an idealized episode count from a sealed final test that met 0 of its 15 accuracy targets. Thesis team lead, then sole developer of the rebuild; Kotlin, Python, Flask and MySQL; dlib's 68 facial landmarks and OpenCV; 2025, and October to November 2026.
 - `pookies.svg`: Sheet 4 of 4, detail C, business systems: Pookies System, point of sale and inventory for Pookies, the bakery Rene co-founded. React and Vite client, Express REST API, normalized SQLite. Co-founder and developer; update in progress; built March to June 2026.
 - `schedule.svg`: Schedule, 2022 to now. BSCS at FEU Tech since August 2022. Freelance research since November 2022. Co-founder of Pookies since August 2023. Software engineering intern at Highly Succeed, March to June 2026. Assistant office manager at ANF since April 2026. Web development intern at Araneta City since July 2026.
 - `stack.svg`: Bill of materials. Web clients: TypeScript, JavaScript, React, Vite, Tailwind CSS. APIs and services: Node.js, Express, REST APIs, Zod. Data: SQLite, PostgreSQL, MySQL. AI and ML: Python, TensorFlow, PyTorch, OpenCV, scikit-learn, Pandas. Quality and process: Vitest, Playwright, TDD, Scrum. Also shipped with: Kotlin, Java, C++, PHP, Laravel.

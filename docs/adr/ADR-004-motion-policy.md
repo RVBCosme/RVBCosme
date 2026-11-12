@@ -14,7 +14,7 @@ The owner asked twice for more motion, and it has to feel enjoyable. Images star
    - request flow through React → Express → SQLite
    - frames running the AI pipeline from camera to alert, in step with the dimension-line pulse and ending in an alert ping. This loop is not to scale: EyeDTrack's published timing was measured on a later rebuild, not on the chain the hero draws (spec section 13, 2026-11-12).
    - the ANF test-runner strip and receipt printer (Official Receipts No. 1041 to 1044)
-   - the EyeDTrack eye-aspect-ratio trace, with the landmark eye blinking in sync, the drowsy closure and "alert sent"
+   - the EyeDTrack eye-openness trace, an illustration of its time rule, with the landmark eye blinking in sync, the drowsy closure and "alert spoken"
    - the Pookies cookie turning, with "batch cost, live"
    - the In progress stripes, the schedule's "now" line, the bill-of-materials checkmarks and the stamps pressing in
    - "Let's connect" handwriting, with signals running to the contact cards

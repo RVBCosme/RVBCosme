@@ -31,7 +31,7 @@ test('every drawing appears once as a <picture>, in order, with its alt text ver
 test('project blocks: picture, paragraph, then chips as inline code with the note or links', () => {
   for (const p of content.projects) assert.ok(readme.includes(`\n\n${p.paragraph}\n\n`), p.id);
   assert.ok(readme.includes("`TypeScript` `React` `Vite` `Tailwind` `Express` `SQLite` `Zod` `Vitest` `Playwright`<br>Private repository, walkthrough on request. Next up: the Council's public website, in Laravel and Filament."));
-  assert.ok(readme.includes('`Kotlin` `Python` `Flask` `OpenCV` `TensorFlow` `PyTorch` `scikit-learn`<br>Private repository, walkthrough on request. [Project site](https://eyedtrack.vercel.app)\n'));
+  assert.ok(readme.includes('`Kotlin` `Android` `Python` `Flask` `OpenCV` `dlib` `NumPy` `MySQL`<br>Private repository, walkthrough on request. [Project site](https://eyedtrack.vercel.app)\n'));
   assert.ok(readme.includes('`React` `Vite` `Tailwind` `Express` `SQLite`<br>Private repository, walkthrough on request.\n'));
 });
 
@@ -60,7 +60,7 @@ test('a project with neither note nor links gets no dangling line break', () => 
   const c = fixture();
   c.projects[1].note = '';
   c.projects[1].links = [];
-  assert.ok(renderReadme(c).includes('`scikit-learn`\n\n<picture>'));
+  assert.ok(renderReadme(c).includes('`MySQL`\n\n<picture>'));
 });
 
 test('the build writes the README', async () => {
