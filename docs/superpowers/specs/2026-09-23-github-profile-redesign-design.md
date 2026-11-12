@@ -11,7 +11,7 @@
 
 Recruiters and hiring managers should know in about ten seconds:
 
-- who Rene is: a full-stack developer (TypeScript, React, Node, SQLite) with an AI edge
+- who Rene is: an AI engineer and full-stack developer (Python and computer vision; TypeScript, React, Node, SQLite)
 - what proves it: the ANF System, EyeDTrack and the Pookies Platform
 - how to reach him: email, LinkedIn and GitHub
 
@@ -51,6 +51,7 @@ The profile should be unmistakably his own, with nothing that looks like a templ
 | Pookies stack: React, Vite and Tailwind on the front; Express and better-sqlite3 behind | Public repo `RVBCosme/Pookies-Inventory-System` |
 | Pookies status "Update in progress" | Owner ruling, 2026-09-23 |
 | Pookies: the name "Pookies Platform" and the period "Mar 2026 to now" | The owner's portfolio (its Pookies entry), read 2026-11-12 |
+| Positioning "AI engineer and full-stack developer"; open to full-time roles now, on-site, hybrid or remote, from Manila; expects to graduate in January 2027; wants a software engineering or AI and machine learning role; what is in progress in November 2026 (NASA Space Apps Challenge 2026 as team owner, Nov 14 to 15; online ordering for the ANF System; EyeDTrack's newer yawn detector, frozen until it is tested once on new people; the Pookies update) | The owner's portfolio (profile, now list and FAQ), read 2026-11-12 |
 | EyeDTrack and Pookies repositories are private, so both carry "Private repository, walkthrough on request"; EyeDTrack links its public project site, `eyedtrack.vercel.app`, and Pookies has no link | Owner request, 2026-11-12, matching the owner's portfolio |
 | EyeDTrack as rebuilt in Oct to Nov 2026, the system its figures were measured on: a Kotlin app on an Android phone, a Python and Flask server, dlib's 68 facial landmarks, OpenCV, NumPy and MySQL; a time rule; spoken alerts; "says so" when it can't see the face; role "Thesis team lead; sole developer of the rebuild"; period "2025 and Oct to Nov 2026"; a teammate updated the app in mid-2026; built with an AI coding agent | The owner's portfolio (its EyeDTrack entry and skills list), read 2026-11-12 |
 
@@ -170,7 +171,7 @@ The owner performs or approves each of these. All of them are outward-facing.
 | Field | Today | Target | How |
 |---|---|---|---|
 | Name | Rene Cosme | Rene Vincent Cosme | API or settings |
-| Bio | empty | Full-stack developer (SERN stack) and AI enthusiast. BSCS Software Engineering senior at FEU Tech. | API or settings |
+| Bio | empty | AI engineer and full-stack developer. BSCS Software Engineering senior at FEU Tech, graduating in January 2027. | API or settings |
 | Pronouns | none | he/him | Settings, Public profile (not in the REST API) |
 | Location | empty | Manila, Philippines | API or settings |
 | Social account | none | https://www.linkedin.com/in/rene-vincent-cosme | `POST /user/social_accounts` or settings |
@@ -254,6 +255,7 @@ The owner's portfolio was brought up to date on 2026-11-12, and these changes ma
 - Sections 5 and 6, A9 and ADR-004: with the boxes naming the pipeline the 713 ms was measured on, the hero's dimension line carries the time again, "713 ms to result (p95)", and the AI loop runs in 2.25 s, so its pulse (the first 31.67%) lasts 0.71 s, to scale. The caveat that doesn't fit the drawing (one phone at a desk, November 2026) is in the hero's alt text and the EyeDTrack paragraph.
 - Sections 3 and 5, A3 and A9: the ANF sheet is titled "ANF System", shows 20+ screens and 140+ decision records, reads "In use since Sep 2026", and calls its 4,000+ "automated checks", as the portfolio does (the hero's markup too). The paragraph says every screen is checked at nine widths in two browser engines, 1,000+ layout checks, that online ordering is being added, and carries each number's caveat. The note no longer calls the public website "next up": it is built and not live yet, and its online shop is in progress.
 - Sections 1 and 3, A2, A5, A6 and A9: the Pookies system is named "Pookies Platform", as on the portfolio, and its title block reads Period "Mar 2026 to now" instead of Built "Mar to Jun 2026": he built it during the Highly Succeed internship and is still updating it.
+- Sections 1, 3 and 9, A0, A1, A2, A6 and A9: the positioning is "AI engineer and full-stack developer" (the hero's title block, the intro and the sidebar bio), the intro says he expects to graduate in January 2027 and is open to full-time roles now, and the month shown in three places is 2026-11. The In progress board follows the portfolio's November list: NASA Space Apps Challenge 2026, online ordering for the ANF System, EyeDTrack's newer yawn detector and the Pookies update, with the next role "available now". The ended Araneta internship and the built ANF website leave the board.
 
 ---
 
@@ -263,21 +265,21 @@ The owner's portfolio was brought up to date on 2026-11-12, and these changes ma
 
 - Name: Rene Vincent Cosme
 - Pronouns: he/him
-- Bio: Full-stack developer (SERN stack) and AI enthusiast. BSCS Software Engineering senior at FEU Tech.
+- Bio: AI engineer and full-stack developer. BSCS Software Engineering senior at FEU Tech, graduating in January 2027.
 - Location: Manila, Philippines
 - Link: LinkedIn
 
 **A1. Intro**
 
-I'm a fourth-year Computer Science student specializing in software engineering at FEU Tech. I build web applications, database systems and AI tools that solve practical problems, and I take them from the first sketch to the working system. I'm looking for full-time software engineering or AI/ML roles, based in Manila and open to on-site, hybrid or remote work.
+I'm an AI engineer and full-stack developer, and a fourth-year Computer Science student specializing in software engineering at FEU Tech. I expect to graduate in January 2027. I build web applications, database systems and AI tools that solve practical problems, and I take them from the first sketch to the working system. I'm open to full-time software engineering or AI/ML roles now: on-site, hybrid or remote, from Manila.
 
 **A2. In progress** (`now.svg`)
 
-- ANF Inventory System: v1.0.10 handover to the Council
-- ANF public website: Laravel, Filament, MySQL
+- NASA Space Apps Challenge 2026, Manila: team owner, Nov 14 to 15
+- ANF System: adding online ordering; the shop pages are in progress
+- EyeDTrack: still improving; a newer yawn detector awaits a test on new people
 - Pookies Platform: update
-- Web development internship, Araneta City
-- Next: a full-time software engineering or AI/ML role (bar label: "open to offers"; header: "Updated 2026-09")
+- Next: a full-time software engineering or AI/ML role (bar label: "available now"; header: "Updated 2026-11")
 
 **A3. A: ANF System** (`anf.svg`)
 
@@ -331,7 +333,7 @@ I'm a fourth-year Computer Science student specializing in software engineering 
 | Office manager, ANF | Apr 2026 | now |
 | Web dev intern, Araneta | Jul 2026 | now |
 
-The "now" line sits at late Sep 2026.
+The "now" line sits at late Nov 2026.
 
 List:
 
@@ -351,7 +353,7 @@ Hero revision table (Date, Revision):
 | 05/26 | Built the ANF system |
 | 07/26 | Araneta web intern (revision cloud) |
 
-Title block: Title "Rene Vincent Cosme"; Description "Full-stack developer, AI edge"; Drawn by "RVC" (signature); Date "2026-09"; Sheet "1 / 4"; Scale "1 : 1".
+Title block: Title "Rene Vincent Cosme"; Description "AI engineer and full-stack developer"; Drawn by "RVC" (signature); Date "2026-11"; Sheet "1 / 4"; Scale "1 : 1".
 
 **A7. Stack and certificates**
 
@@ -403,7 +405,7 @@ No phone number.
 **A9. Alt text** (verbatim; each is the `aria-label` of the same SVG in the mockup)
 
 - `hero.svg`: Engineering drawing of Rene Vincent Cosme's work, drawn in on load. Business systems: React and Vite, Node and Express, SQLite and Postgres, with 4,000+ automated checks on the ANF system (4,170, all passing, in September 2026); requests flow between them. AI systems: EyeDTrack, a Kotlin phone app and a Python server that finds the face with dlib's 68 facial landmarks, with 1,200+ automated checks; camera frames travel the pipeline in 713 milliseconds from camera capture to result, the 95th percentile on one phone at a desk in November 2026, and the loop runs to that time. Timeline: co-founded Pookies August 2023, led the EyeDTrack thesis February 2025, Highly Succeed internship March 2026, built the ANF system May 2026, Araneta City web internship July 2026, marked as the latest revision.
-- `now.svg`: In progress: ANF Inventory System version 1.0.10 handover to the Council; the ANF public website in Laravel, Filament and MySQL; the Pookies Platform update; the web development internship at Araneta City. Next: a full-time software engineering or AI/ML role, open to offers.
+- `now.svg`: In progress, updated November 2026: NASA Space Apps Challenge 2026 in Manila, as team owner, November 14 to 15; adding online ordering to the ANF System, with the shop pages in progress; EyeDTrack, still improving, with a newer yawn detector waiting to be tested once on new people; the Pookies Platform update. Next: a full-time software engineering or AI/ML role, available now.
 - `anf.svg`: Sheet 2 of 4, detail A, business systems, with a test-runner strip turning green: ANF System for the Adoración Nocturna Filipina National Council. 4,000+ automated checks (4,170, all passing, on September 12, 2026), 20+ screens, 140+ decision records. Sole developer; React, Express, SQLite; in use since September 2026, with online ordering in progress; May 2026 to now.
 - `eyedtrack.svg`: Sheet 3 of 4, detail B, AI systems, with an illustrated eye-openness trace that raises a spoken alert on a drowsy dip: EyeDTrack, driver attention monitoring, thesis and solo rebuild. 713 milliseconds from camera capture to result at the 95th percentile, on one phone at a desk in November 2026; 1,200+ automated checks on the server, the app and the phone; 26 of 30 yawn alerts were real yawns, an idealized episode count from a sealed final test that met 0 of its 15 accuracy targets. Thesis team lead, then sole developer of the rebuild; Kotlin, Python, Flask and MySQL; dlib's 68 facial landmarks and OpenCV; 2025, and October to November 2026.
 - `pookies.svg`: Sheet 4 of 4, detail C, business systems: Pookies Platform, point of sale and inventory for Pookies, the bakery Rene co-founded. React and Vite client, Express REST API, normalized SQLite. Co-founder and developer; update in progress; March 2026 to now.

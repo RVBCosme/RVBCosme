@@ -36,25 +36,25 @@
     ],
     "titleBlock": {
       "title": { "label": "Title", "value": "Rene Vincent Cosme" },
-      "description": { "label": "Description", "value": "Full-stack developer, AI edge" },
+      "description": { "label": "Description", "value": "AI engineer and full-stack developer" },
       "drawnBy": { "label": "Drawn by", "value": "RVC" },
-      "date": { "label": "Date", "value": "2026-09" },
+      "date": { "label": "Date", "value": "2026-11" },
       "sheet": { "label": "Sheet", "value": "1 / 4" },
       "scale": { "label": "Scale", "value": "1 : 1" }
     }
   },
-  "intro": "I'm a fourth-year Computer Science student specializing in software engineering at FEU Tech. I build web applications, database systems and AI tools that solve practical problems, and I take them from the first sketch to the working system. I'm looking for full-time software engineering or AI/ML roles, based in Manila and open to on-site, hybrid or remote work.",
+  "intro": "I'm an AI engineer and full-stack developer, and a fourth-year Computer Science student specializing in software engineering at FEU Tech. I expect to graduate in January 2027. I build web applications, database systems and AI tools that solve practical problems, and I take them from the first sketch to the working system. I'm open to full-time software engineering or AI/ML roles now: on-site, hybrid or remote, from Manila.",
   "now": {
-    "alt": "In progress: ANF Inventory System version 1.0.10 handover to the Council; the ANF public website in Laravel, Filament and MySQL; the Pookies Platform update; the web development internship at Araneta City. Next: a full-time software engineering or AI/ML role, open to offers.",
+    "alt": "In progress, updated November 2026: NASA Space Apps Challenge 2026 in Manila, as team owner, November 14 to 15; adding online ordering to the ANF System, with the shop pages in progress; EyeDTrack, still improving, with a newer yawn detector waiting to be tested once on new people; the Pookies Platform update. Next: a full-time software engineering or AI/ML role, available now.",
     "title": "In progress",
-    "updated": "Updated 2026-09",
+    "updated": "Updated 2026-11",
     "items": [
-      "ANF Inventory System: v1.0.10 handover to the Council",
-      "ANF public website: Laravel, Filament, MySQL",
-      "Pookies Platform: update",
-      "Web development internship, Araneta City"
+      "NASA Space Apps Challenge 2026, Manila: team owner, Nov 14 to 15",
+      "ANF System: adding online ordering; the shop pages are in progress",
+      "EyeDTrack: still improving; a newer yawn detector awaits a test on new people",
+      "Pookies Platform: update"
     ],
-    "next": { "text": "Next: a full-time software engineering or AI/ML role", "bar": "open to offers" }
+    "next": { "text": "Next: a full-time software engineering or AI/ML role", "bar": "available now" }
   },
   "projects": [
     {
@@ -147,7 +147,7 @@
     "title": "Schedule",
     "range": "2022 to now",
     "fromYear": 2022,
-    "now": "2026-09",
+    "now": "2026-11",
     "nowLabel": "now",
     "rows": [
       { "label": "BSCS, FEU Tech", "start": "2022-08", "end": null, "outline": true },
@@ -213,7 +213,7 @@
   "sidebar": {
     "name": "Rene Vincent Cosme",
     "pronouns": "he/him",
-    "bio": "Full-stack developer (SERN stack) and AI enthusiast. BSCS Software Engineering senior at FEU Tech.",
+    "bio": "AI engineer and full-stack developer. BSCS Software Engineering senior at FEU Tech, graduating in January 2027.",
     "location": "Manila, Philippines",
     "link": "https://www.linkedin.com/in/rene-vincent-cosme"
   }

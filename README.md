@@ -5,11 +5,11 @@
   <img src="assets/profile/light/hero.svg" width="100%" alt="Engineering drawing of Rene Vincent Cosme's work, drawn in on load. Business systems: React and Vite, Node and Express, SQLite and Postgres, with 4,000+ automated checks on the ANF system (4,170, all passing, in September 2026); requests flow between them. AI systems: EyeDTrack, a Kotlin phone app and a Python server that finds the face with dlib's 68 facial landmarks, with 1,200+ automated checks; camera frames travel the pipeline in 713 milliseconds from camera capture to result, the 95th percentile on one phone at a desk in November 2026, and the loop runs to that time. Timeline: co-founded Pookies August 2023, led the EyeDTrack thesis February 2025, Highly Succeed internship March 2026, built the ANF system May 2026, Araneta City web internship July 2026, marked as the latest revision.">
 </picture>
 
-I'm a fourth-year Computer Science student specializing in software engineering at FEU Tech. I build web applications, database systems and AI tools that solve practical problems, and I take them from the first sketch to the working system. I'm looking for full-time software engineering or AI/ML roles, based in Manila and open to on-site, hybrid or remote work.
+I'm an AI engineer and full-stack developer, and a fourth-year Computer Science student specializing in software engineering at FEU Tech. I expect to graduate in January 2027. I build web applications, database systems and AI tools that solve practical problems, and I take them from the first sketch to the working system. I'm open to full-time software engineering or AI/ML roles now: on-site, hybrid or remote, from Manila.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/profile/dark/now.svg">
-  <img src="assets/profile/light/now.svg" width="100%" alt="In progress: ANF Inventory System version 1.0.10 handover to the Council; the ANF public website in Laravel, Filament and MySQL; the Pookies Platform update; the web development internship at Araneta City. Next: a full-time software engineering or AI/ML role, open to offers.">
+  <img src="assets/profile/light/now.svg" width="100%" alt="In progress, updated November 2026: NASA Space Apps Challenge 2026 in Manila, as team owner, November 14 to 15; adding online ordering to the ANF System, with the shop pages in progress; EyeDTrack, still improving, with a newer yawn detector waiting to be tested once on new people; the Pookies Platform update. Next: a full-time software engineering or AI/ML role, available now.">
 </picture>
 
 ## Selected work

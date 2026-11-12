@@ -29,6 +29,6 @@ test('a new year adds a column and the drawing rescales', () => {
 test('a finished role ends where the month after its end begins; an ongoing one ends at the now line', () => {
   const body = schedule.render(fixture());
   assert.match(body, /<rect class="gbar" x="1013\.3" y="225" width="54\.7" height="16" rx="3"\/>/);
-  assert.match(body, /<rect class="gbar" x="1068" y="301" width="37\.6" height="16" rx="3"\/>/);
-  assert.match(body, /<path class="nowline" d="M1105\.6 94V330"\/>/);
+  assert.match(body, /<rect class="gbar" x="1068" y="301" width="64\.9" height="16" rx="3"\/>/);
+  assert.match(body, /<path class="nowline" d="M1132\.9 94V330"\/>/);
 });
