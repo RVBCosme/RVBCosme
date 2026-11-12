@@ -1,6 +1,6 @@
 # ADR-005: Content is sourced, private details stay out, and the text works without the images
 
-- Status: Accepted, 2026-09-23
+- Status: Accepted, 2026-09-23. Amended 2026-11-12, proposed for the owner's sign-off: the project order follows his portfolio, and Lusot's demo joins EyeDTrack's site as a live link (rule 4).
 - Reference: spec section 3 (sources) and appendix A (approved copy)
 
 ## Decision
@@ -11,8 +11,9 @@
    - no phone number anywhere on the profile (owner's choice, 2026-09-23)
    - no internal install status or other private-repo internals beyond the approved copy
    - private work is labeled "Private repository, walkthrough on request"
-4. **Owner rulings from 2026-09-23:**
-   - Projects appear in the order ANF System, EyeDTrack (thesis), Pookies System.
+4. **Owner rulings from 2026-09-23, amended 2026-11-12:**
+   - Projects appear in the owner's order. On 2026-09-23 that was ANF System, EyeDTrack (thesis), Pookies System. Since 2026-11-12 it is the order in which his portfolio features his work: Lusot, EyeDTrack, RATCHET, ANF System, Pookies Platform. The portfolio lists the Araneta system between ANF and Pookies; the profile shows it under Experience. When the portfolio's order changes, this one follows it.
+   - Only Lusot and EyeDTrack link a live site (Lusot's demo and EyeDTrack's project site), as on his portfolio.
    - Pookies' status is "Update in progress", never "Live on Vercel", and there's no demo link until the update ships.
    - Contact is exactly three items: email, LinkedIn and GitHub.
 5. **Accessibility and phones:**

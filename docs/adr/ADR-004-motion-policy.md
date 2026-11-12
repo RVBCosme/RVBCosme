@@ -1,6 +1,6 @@
 # ADR-004: Motion policy, where every animation tells a true story
 
-- Status: Accepted, 2026-09-23. Amended 2026-11-12 at the owner's request: the hero's AI loop no longer claims a time (rule 2). Amended again 2026-11-12: once the hero drew the rebuilt pipeline, the loop was timed to its published 713 ms (rule 2).
+- Status: Accepted, 2026-09-23. Amended 2026-11-12 at the owner's request: the hero's AI loop no longer claims a time (rule 2). Amended again 2026-11-12: once the hero drew the rebuilt pipeline, the loop was timed to its published 713 ms (rule 2). Amended a third time 2026-11-12, proposed for the owner's sign-off: the Lusot and RATCHET loops (rule 2).
 - Reference: approved mockup, whose timings are canonical; spec section 6
 
 ## Context
@@ -15,6 +15,8 @@ The owner asked twice for more motion, and it has to feel enjoyable. Images star
    - frames running EyeDTrack's pipeline from camera to result, in step with the dimension-line pulse and ending in an alert ping. The pulse lasts 0.71 s of a 2.25 s loop, the published 713 ms (95th percentile, one phone at a desk), so the loop is to scale (spec section 13, 2026-11-12).
    - the ANF test-runner strip and receipt printer (Official Receipts No. 1041 to 1044)
    - the EyeDTrack eye-openness trace, an illustration of its time rule, with the landmark eye blinking in sync, the drowsy closure and "alert spoken"
+   - Lusot reading a sample street photo: water rises up a car's wheel and the nine-level gauge fills to the same level, knee; then a photo with no wheel or adult clear enough to read gets "can't tell", the answer Lusot gives instead of guessing
+   - a RATCHET run moving through its five phases, the hook refusing a call outside the phase, each step written to the chained ledger as it happens, and the verify script checking the records in order
    - the Pookies cookie turning, with "batch cost, live"
    - the In progress stripes, the schedule's "now" line, the bill-of-materials checkmarks and the stamps pressing in
    - "Let's connect" handwriting, with signals running to the contact cards
