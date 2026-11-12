@@ -221,6 +221,17 @@ test('owner rulings are enforced: project order and exactly three contact links'
   assert.ok(errors.includes('contact.cards kinds must be email, linkedin, github in that order; got email, linkedin, phone'), errors.join('\n'));
 });
 
+test('sheet numbers count the hero and every project sheet', () => {
+  const c = fixture();
+  const sheets = c.projects.length + 1;
+  c.hero.titleBlock.sheet.value = `1 / ${sheets - 1}`;
+  c.projects.at(-1).sheet = `Sheet ${sheets} of ${sheets - 1}`;
+  assert.deepEqual(validateContent(c), [
+    `hero.titleBlock.sheet.value must be "1 / ${sheets}": the hero and ${sheets - 1} project sheets`,
+    `projects[${sheets - 2}].sheet must be "Sheet ${sheets} of ${sheets}"`,
+  ]);
+});
+
 test('the month shown in three places must agree (Review Focus 5)', () => {
   const c = fixture();
   c.experience.now = '2026-12';

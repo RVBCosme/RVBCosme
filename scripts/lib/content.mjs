@@ -1,6 +1,7 @@
 import { readFile } from 'node:fs/promises';
 
 export const CONTENT_URL = new URL('../../content/profile.json', import.meta.url);
+// The project sheets in README order, an owner ruling (ADR-005).
 export const PROJECT_IDS = ['anf', 'eyedtrack', 'pookies'];
 export const CONTACT_KINDS = ['email', 'linkedin', 'github'];
 
@@ -23,7 +24,7 @@ const SCHEMA = obj({
   }),
   intro: STR,
   now: obj({ alt: STR, title: STR, updated: STR, items: list(4, STR), next: obj({ text: STR, bar: STR }) }),
-  projects: list(3, obj({
+  projects: list(PROJECT_IDS.length, obj({
     id: STR, letter: STR, group: STR, sheet: STR, title: STR, subtitle: STR,
     metrics: list([0, 3], obj({ value: STR, label: STR })),
     titleBlock: list(4, CELL),
@@ -118,10 +119,14 @@ export function validateContent(content) {
   if (errors.length) return errors;
 
   const { hero, now, projects, experience, certificates, contact } = content;
-  // Owner ruling (ADR-005): ANF System, EyeDTrack, Pookies System, lettered A, B, C.
+  // The hero is sheet 1; each project is a sheet after it, lettered from A in the owner's order (ADR-001, ADR-005).
+  const sheets = projects.length + 1;
+  if (hero.titleBlock.sheet.value !== `1 / ${sheets}`) errors.push(`hero.titleBlock.sheet.value must be "1 / ${sheets}": the hero and ${projects.length} project sheets`);
   projects.forEach((project, i) => {
+    const letter = String.fromCharCode(65 + i);
     if (project.id !== PROJECT_IDS[i]) errors.push(`projects[${i}].id must be "${PROJECT_IDS[i]}" (order: ${PROJECT_IDS.join(', ')})`);
-    if (project.letter !== 'ABC'[i]) errors.push(`projects[${i}].letter must be "${'ABC'[i]}"`);
+    if (project.letter !== letter) errors.push(`projects[${i}].letter must be "${letter}"`);
+    if (project.sheet !== `Sheet ${i + 2} of ${sheets}`) errors.push(`projects[${i}].sheet must be "Sheet ${i + 2} of ${sheets}"`);
     if (FIGURES[project.id]) check(project.figure, FIGURES[project.id], `projects[${i}].figure`, errors);
     if (project.id in METRIC_COUNTS && project.metrics.length !== METRIC_COUNTS[project.id]) {
       errors.push(`projects[${i}].metrics must have ${METRIC_COUNTS[project.id]} item(s)`);
