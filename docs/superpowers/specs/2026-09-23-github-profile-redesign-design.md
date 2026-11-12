@@ -44,8 +44,9 @@ The profile should be unmistakably his own, with nothing that looks like a templ
 | Headline, About, five roles with dates, the EyeDTrack thesis start (Feb 2025, from the project entry; the hero's revision date), the Cisco (5), Udacity and freeCodeCamp (2) certificates, pronouns he/him | LinkedIn, `linkedin.com/in/rene-vincent-cosme` (read 2026-09-23) |
 | The PMI and Certiport certificates, which aren't on LinkedIn (8 + 2 = 10 certificates) | Resume PDF (owner's copy) |
 | EyeDTrack figures, each with its caveat: 713 ms from camera capture to result, 95th percentile (one phone at a desk, Nov 11, 2026; 887 ms with the server PC heavily loaded); 1,200+ automated checks on the server, the app and the phone; 26 of 30 yawn alerts were real yawns (an idealized episode count from the sealed final test, which met 0 of its 15 accuracy targets; the same count missed 22 yawn episodes). The rebuild from October 2026, tested once on people it had never seen, missed its accuracy targets | The owner's portfolio (its EyeDTrack entry) and the project site, `eyedtrack.vercel.app`, read 2026-11-12 |
-| ANF System: 4,170 documented automated checks, shown as "4,000+"; 23 screens; 127 decision records; release v1.0.10 on 22 Sep 2026; built 31 May to 12 Sep 2026; features; stack (React, Vite, Tailwind, Express, better-sqlite3, Zod, Vitest, Playwright) | The ANF System's private repository: its system documentation and package files |
-| ANF status reads "v1.0.10 handover" until the owner says it should read "in use" | Owner ruling, 2026-09-23 |
+| ANF System: 4,170 documented automated checks on Sep 12, 2026, all passing, shown as "4,000+"; built 31 May to 12 Sep 2026; features; stack (React, Vite, Tailwind, Express, better-sqlite3, Zod, Vitest, Playwright) | The ANF System's private repository: its system documentation and package files |
+| ANF System: the name "ANF System"; "20+" screens (the documentation counts them two ways, so rounded down); "140+" decision records; every screen checked at nine widths in two browser engines, 1,000+ layout checks (1,092 at the release of Sep 24, 2026); status "In use since Sep 2026; online ordering in progress"; the new public website is built, not live yet, and its online shop is in progress | The owner's portfolio (its ANF System entry and More work), read 2026-11-12 |
+| ANF status reads "In use since Sep 2026". The 2026-09-23 ruling kept "v1.0.10 handover" until the owner said "in use"; his portfolio now says so | The owner's portfolio, read 2026-11-12 |
 | ANF public website: Laravel 13, Filament, MySQL, Pest, Playwright | The ANF website's private repository: its README |
 | Pookies stack: React, Vite and Tailwind on the front; Express and better-sqlite3 behind | Public repo `RVBCosme/Pookies-Inventory-System` |
 | Pookies status "Update in progress" | Owner ruling, 2026-09-23 |
@@ -68,7 +69,7 @@ The README follows this order. Each visual is a `<picture>` with light and dark 
 
 | # | Block | Asset (viewBox) | What it shows | Markdown text |
 |---|---|---|---|---|
-| 1 | Hero, sheet 1 of 4 | `hero.svg` (1200×470) | Group 1, business systems: React + Vite → Node + Express → SQLite, Postgres, with the markup "4,000+ tests (ANF)". Group 2, AI systems: Kotlin app → Python server → dlib 68 landmarks, with "1,200+ checks (EyeDTrack)" and a dimension line "713 ms to result (p95)". Revision table by date. Title block with the RVC signature. | none |
+| 1 | Hero, sheet 1 of 4 | `hero.svg` (1200×470) | Group 1, business systems: React + Vite → Node + Express → SQLite, Postgres, with the markup "4,000+ checks (ANF)". Group 2, AI systems: Kotlin app → Python server → dlib 68 landmarks, with "1,200+ checks (EyeDTrack)" and a dimension line "713 ms to result (p95)". Revision table by date. Title block with the RVC signature. | none |
 | 2 | Intro | none | none | Intro paragraph (appendix A1) |
 | 3 | In progress | `now.svg` (1200×262) | Four live rows and a "Next" row | none |
 | 4 | Selected work, A | `anf.svg` (1200×300) | ANF System sheet: metrics, title block, test strip, receipt printer | Paragraph, chips, note (A3) |
@@ -210,7 +211,7 @@ gh api -X PATCH /user -f name=... -f bio=... -f location=...
 
 Questions 1 and 2 were resolved in the owner's review. Questions 3 and 4 are still open.
 
-1. **ANF status wording.** Resolved 2026-09-23: keep "v1.0.10 handover to the Council" and "v1.0.10, Sep 2026". The owner says when they should change to "in use"; then appendix A, the content file and both alt texts change together.
+1. **ANF status wording.** Resolved 2026-09-23: keep "v1.0.10 handover to the Council" and "v1.0.10, Sep 2026". The owner says when they should change to "in use"; then appendix A, the content file and both alt texts change together. Updated 2026-11-12: the owner's portfolio says "In use since Sep 2026", so the sheet, the In progress board and both alt texts now follow it.
 2. **EyeDTrack period.** Resolved 2026-09-23: "Feb to Jun 2025", from LinkedIn's project entry. The hero's revision date is "02/25". Updated 2026-11-12: the sheet's period is "2025 and Oct to Nov 2026", as on the owner's portfolio; the hero's revision date stays "02/25".
 3. **Pinned repositories.** Which four to six? Asked at the sidebar step (section 9).
 4. **Fonts.** Embedded subset fonts are the default. The font probe (section 7) decides whether any text has to be outlined instead, and the owner confirms with that evidence in hand.
@@ -250,6 +251,7 @@ The owner's portfolio was brought up to date on 2026-11-12, and these changes ma
 
 - Sections 3, 5 and 6, A4, A9 and ADR-004: EyeDTrack's sheet and the hero's AI boxes describe the 2026 rebuild that its figures were measured on: a Kotlin app on an Android phone, a Python and Flask server, and dlib's 68 facial landmarks with OpenCV, NumPy and MySQL. The thesis pipeline (MobileNetV2, LLaVA, CLAHE, Haar Cascade) is no longer drawn. The role, period, chips and paragraph follow the portfolio; the trace is labeled as an illustration, and the alert is spoken.
 - Sections 5 and 6, A9 and ADR-004: with the boxes naming the pipeline the 713 ms was measured on, the hero's dimension line carries the time again, "713 ms to result (p95)", and the AI loop runs in 2.25 s, so its pulse (the first 31.67%) lasts 0.71 s, to scale. The caveat that doesn't fit the drawing (one phone at a desk, November 2026) is in the hero's alt text and the EyeDTrack paragraph.
+- Sections 3 and 5, A3 and A9: the ANF sheet is titled "ANF System", shows 20+ screens and 140+ decision records, reads "In use since Sep 2026", and calls its 4,000+ "automated checks", as the portfolio does (the hero's markup too). The paragraph says every screen is checked at nine widths in two browser engines, 1,000+ layout checks, that online ordering is being added, and carries each number's caveat. The note no longer calls the public website "next up": it is built and not live yet, and its online shop is in progress.
 
 ---
 
@@ -275,18 +277,18 @@ I'm a fourth-year Computer Science student specializing in software engineering 
 - Web development internship, Araneta City
 - Next: a full-time software engineering or AI/ML role (bar label: "open to offers"; header: "Updated 2026-09")
 
-**A3. A: ANF Inventory System** (`anf.svg`)
+**A3. A: ANF System** (`anf.svg`)
 
 - Header: bubble A, "Business systems", "Sheet 2 of 4"
-- Title: ANF Inventory System
+- Title: ANF System
 - Subtitle: Adoración Nocturna Filipina National Council
-- Metrics: 4,000+ automated tests · 23 screens · 127 decision records
-- Title block: Role "Sole developer"; Stack "React, Express, SQLite"; Status "v1.0.10, Sep 2026"; Period "May 2026 to now"
+- Metrics: 4,000+ automated checks · 20+ screens · 140+ decision records
+- Title block: Role "Sole developer"; Stack "React, Express, SQLite"; Status "In use since Sep 2026"; Period "May 2026 to now"
 - Figure caption: Official Receipts, numbered
 - Receipt figure (an illustration with sample values, not data): each receipt reads "OFFICIAL RECEIPT", "No. 1041" to "No. 1044", and "TOTAL" with "1,250.00"
-- Paragraph: I started it while working as the Council's assistant office manager, to automate the paperwork I was handling. It covers the Council's stock, Official Receipts, cash and check vouchers, petty cash, members, annual dues and officers, and runs on a single office PC. Officers can reach it from their phones over the office WiFi, and nothing goes to the cloud. Every peso and centavo is exact, and a checked backup is made within two minutes of any change. Built test-first, with every screen checked at eight widths from phone to desktop.
+- Paragraph: I started it while working as the Council's assistant office manager, to automate the paperwork I was handling. It covers the Council's stock, Official Receipts, cash and check vouchers, petty cash, members, annual dues and officers, and runs on a single office PC. Officers can reach it from their phones over the office WiFi, and nothing goes to the cloud. Every peso and centavo is exact, and a checked backup is made within about two minutes of any change. Built test-first, with every screen checked at nine widths in two browser engines, 1,000+ layout checks in all. It has been in use since September 2026, and I'm adding online ordering. The 4,000+ is 4,170 checks, all passing, on Sep 12, 2026, and the layout checks were 1,092 at the release of Sep 24, 2026; both have grown since. The documentation counts the screens two ways, so I round down to 20+.
 - Chips: TypeScript, React, Vite, Tailwind, Express, SQLite, Zod, Vitest, Playwright
-- Note: Private repository, walkthrough on request. Next up: the Council's public website, in Laravel and Filament.
+- Note: Private repository, walkthrough on request. I also built the Council's new public website, in Laravel and Filament; it isn't live yet, and its online shop is in progress.
 
 **A4. B: EyeDTrack** (`eyedtrack.svg`)
 
@@ -398,9 +400,9 @@ No phone number.
 
 **A9. Alt text** (verbatim; each is the `aria-label` of the same SVG in the mockup)
 
-- `hero.svg`: Engineering drawing of Rene Vincent Cosme's work, drawn in on load. Business systems: React and Vite, Node and Express, SQLite and Postgres, with 4,000+ tests on the ANF system; requests flow between them. AI systems: EyeDTrack, a Kotlin phone app and a Python server that finds the face with dlib's 68 facial landmarks, with 1,200+ automated checks; camera frames travel the pipeline in 713 milliseconds from camera capture to result, the 95th percentile on one phone at a desk in November 2026, and the loop runs to that time. Timeline: co-founded Pookies August 2023, led the EyeDTrack thesis February 2025, Highly Succeed internship March 2026, built the ANF system May 2026, Araneta City web internship July 2026, marked as the latest revision.
+- `hero.svg`: Engineering drawing of Rene Vincent Cosme's work, drawn in on load. Business systems: React and Vite, Node and Express, SQLite and Postgres, with 4,000+ automated checks on the ANF system (4,170, all passing, in September 2026); requests flow between them. AI systems: EyeDTrack, a Kotlin phone app and a Python server that finds the face with dlib's 68 facial landmarks, with 1,200+ automated checks; camera frames travel the pipeline in 713 milliseconds from camera capture to result, the 95th percentile on one phone at a desk in November 2026, and the loop runs to that time. Timeline: co-founded Pookies August 2023, led the EyeDTrack thesis February 2025, Highly Succeed internship March 2026, built the ANF system May 2026, Araneta City web internship July 2026, marked as the latest revision.
 - `now.svg`: In progress: ANF Inventory System version 1.0.10 handover to the Council; the ANF public website in Laravel, Filament and MySQL; the Pookies System update; the web development internship at Araneta City. Next: a full-time software engineering or AI/ML role, open to offers.
-- `anf.svg`: Sheet 2 of 4, detail A, business systems, with a test-runner strip turning green: ANF Inventory System for the Adoración Nocturna Filipina National Council. 4,000+ automated tests, 23 screens, 127 decision records. Sole developer; React, Express, SQLite; version 1.0.10, September 2026; May 2026 to now.
+- `anf.svg`: Sheet 2 of 4, detail A, business systems, with a test-runner strip turning green: ANF System for the Adoración Nocturna Filipina National Council. 4,000+ automated checks (4,170, all passing, on September 12, 2026), 20+ screens, 140+ decision records. Sole developer; React, Express, SQLite; in use since September 2026, with online ordering in progress; May 2026 to now.
 - `eyedtrack.svg`: Sheet 3 of 4, detail B, AI systems, with an illustrated eye-openness trace that raises a spoken alert on a drowsy dip: EyeDTrack, driver attention monitoring, thesis and solo rebuild. 713 milliseconds from camera capture to result at the 95th percentile, on one phone at a desk in November 2026; 1,200+ automated checks on the server, the app and the phone; 26 of 30 yawn alerts were real yawns, an idealized episode count from a sealed final test that met 0 of its 15 accuracy targets. Thesis team lead, then sole developer of the rebuild; Kotlin, Python, Flask and MySQL; dlib's 68 facial landmarks and OpenCV; 2025, and October to November 2026.
 - `pookies.svg`: Sheet 4 of 4, detail C, business systems: Pookies System, point of sale and inventory for Pookies, the bakery Rene co-founded. React and Vite client, Express REST API, normalized SQLite. Co-founder and developer; update in progress; built March to June 2026.
 - `schedule.svg`: Schedule, 2022 to now. BSCS at FEU Tech since August 2022. Freelance research since November 2022. Co-founder of Pookies since August 2023. Software engineering intern at Highly Succeed, March to June 2026. Assistant office manager at ANF since April 2026. Web development intern at Araneta City since July 2026.

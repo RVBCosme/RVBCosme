@@ -1,6 +1,6 @@
 {
   "hero": {
-    "alt": "Engineering drawing of Rene Vincent Cosme's work, drawn in on load. Business systems: React and Vite, Node and Express, SQLite and Postgres, with 4,000+ tests on the ANF system; requests flow between them. AI systems: EyeDTrack, a Kotlin phone app and a Python server that finds the face with dlib's 68 facial landmarks, with 1,200+ automated checks; camera frames travel the pipeline in 713 milliseconds from camera capture to result, the 95th percentile on one phone at a desk in November 2026, and the loop runs to that time. Timeline: co-founded Pookies August 2023, led the EyeDTrack thesis February 2025, Highly Succeed internship March 2026, built the ANF system May 2026, Araneta City web internship July 2026, marked as the latest revision.",
+    "alt": "Engineering drawing of Rene Vincent Cosme's work, drawn in on load. Business systems: React and Vite, Node and Express, SQLite and Postgres, with 4,000+ automated checks on the ANF system (4,170, all passing, in September 2026); requests flow between them. AI systems: EyeDTrack, a Kotlin phone app and a Python server that finds the face with dlib's 68 facial landmarks, with 1,200+ automated checks; camera frames travel the pipeline in 713 milliseconds from camera capture to result, the 95th percentile on one phone at a desk in November 2026, and the loop runs to that time. Timeline: co-founded Pookies August 2023, led the EyeDTrack thesis February 2025, Highly Succeed internship March 2026, built the ANF system May 2026, Araneta City web internship July 2026, marked as the latest revision.",
     "groups": [
       {
         "number": "1",
@@ -11,7 +11,7 @@
           { "lines": ["SQLite, Postgres"], "caption": "data" }
         ],
         "edges": ["REST", "SQL"],
-        "markup": "4,000+ tests (ANF)"
+        "markup": "4,000+ checks (ANF)"
       },
       {
         "number": "2",
@@ -62,17 +62,17 @@
       "letter": "A",
       "group": "Business systems",
       "sheet": "Sheet 2 of 4",
-      "title": "ANF Inventory System",
+      "title": "ANF System",
       "subtitle": "Adoración Nocturna Filipina National Council",
       "metrics": [
-        { "value": "4,000+", "label": "automated tests" },
-        { "value": "23", "label": "screens" },
-        { "value": "127", "label": "decision records" }
+        { "value": "4,000+", "label": "automated checks" },
+        { "value": "20+", "label": "screens" },
+        { "value": "140+", "label": "decision records" }
       ],
       "titleBlock": [
         { "label": "Role", "value": "Sole developer" },
         { "label": "Stack", "value": "React, Express, SQLite" },
-        { "label": "Status", "value": "v1.0.10, Sep 2026" },
+        { "label": "Status", "value": "In use since Sep 2026" },
         { "label": "Period", "value": "May 2026 to now" }
       ],
       "figure": {
@@ -82,11 +82,11 @@
         "totalLabel": "TOTAL",
         "total": "1,250.00"
       },
-      "paragraph": "I started it while working as the Council's assistant office manager, to automate the paperwork I was handling. It covers the Council's stock, Official Receipts, cash and check vouchers, petty cash, members, annual dues and officers, and runs on a single office PC. Officers can reach it from their phones over the office WiFi, and nothing goes to the cloud. Every peso and centavo is exact, and a checked backup is made within two minutes of any change. Built test-first, with every screen checked at eight widths from phone to desktop.",
+      "paragraph": "I started it while working as the Council's assistant office manager, to automate the paperwork I was handling. It covers the Council's stock, Official Receipts, cash and check vouchers, petty cash, members, annual dues and officers, and runs on a single office PC. Officers can reach it from their phones over the office WiFi, and nothing goes to the cloud. Every peso and centavo is exact, and a checked backup is made within about two minutes of any change. Built test-first, with every screen checked at nine widths in two browser engines, 1,000+ layout checks in all. It has been in use since September 2026, and I'm adding online ordering. The 4,000+ is 4,170 checks, all passing, on Sep 12, 2026, and the layout checks were 1,092 at the release of Sep 24, 2026; both have grown since. The documentation counts the screens two ways, so I round down to 20+.",
       "chips": ["TypeScript", "React", "Vite", "Tailwind", "Express", "SQLite", "Zod", "Vitest", "Playwright"],
-      "note": "Private repository, walkthrough on request. Next up: the Council's public website, in Laravel and Filament.",
+      "note": "Private repository, walkthrough on request. I also built the Council's new public website, in Laravel and Filament; it isn't live yet, and its online shop is in progress.",
       "links": [],
-      "alt": "Sheet 2 of 4, detail A, business systems, with a test-runner strip turning green: ANF Inventory System for the Adoración Nocturna Filipina National Council. 4,000+ automated tests, 23 screens, 127 decision records. Sole developer; React, Express, SQLite; version 1.0.10, September 2026; May 2026 to now."
+      "alt": "Sheet 2 of 4, detail A, business systems, with a test-runner strip turning green: ANF System for the Adoración Nocturna Filipina National Council. 4,000+ automated checks (4,170, all passing, on September 12, 2026), 20+ screens, 140+ decision records. Sole developer; React, Express, SQLite; in use since September 2026, with online ordering in progress; May 2026 to now."
     },
     {
       "id": "eyedtrack",
