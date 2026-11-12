@@ -65,15 +65,16 @@ Pookies is the bakery I co-founded in 2023. During my software engineering inter
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/profile/dark/certificates.svg">
-  <img src="assets/profile/light/certificates.svg" width="100%" alt="Certificates: Cisco, 5 certificates in modern AI, data science, DevNet and cybersecurity; Udacity AWS AI Practitioner Challenge, 2026; freeCodeCamp Relational Database and Responsive Web Design, 2026; PMI Project Management Ready, 2025; Certiport IT Specialist in Python, 2024.">
+  <img src="assets/profile/light/certificates.svg" width="100%" alt="Certificates: 14 certificates and badges from 6 issuers. Stamps for AWS Certified AI Practitioner, AIF-C01, 2026; Cisco, 6 badges in modern AI, data science, DevNet, networks and cybersecurity, two of them course badges; freeCodeCamp, 4 certificates in relational databases and responsive web design, 2026; PMI Project Management Ready, 2025; and Certiport IT Specialist in Python, 2024. The list below also names Udacity's AWS AI Practitioner Challenge, 2026.">
 </picture>
 
 <details>
-<summary>All 10 certificates</summary>
+<summary>All 14 certificates and badges</summary>
 
-- **Cisco:** Introduction to Modern AI (2026), Introduction to Data Science (2026), DevNet Associate (2026), Junior Cybersecurity Analyst Career Path (2025), Introduction to Cybersecurity (2025)
+- **Amazon Web Services:** AWS Certified AI Practitioner, AIF-C01 (2026)
+- **Cisco:** Introduction to Modern AI (2026), Introduction to Data Science (2026), DevNet Associate course badge (2026), Junior Cybersecurity Analyst Career Path (2025), Introduction to Cybersecurity (2025), CCNA: Introduction to Networks course badge (2024)
 - **Udacity:** AWS AI Practitioner Challenge (2026)
-- **freeCodeCamp:** Relational Database (2026), Responsive Web Design (2026)
+- **freeCodeCamp:** Relational Database (2026), Relational Database V8 (2026), Responsive Web Design (2026), Legacy Responsive Web Design V8 (2026)
 - **Project Management Institute:** Project Management Ready (2025)
 - **Certiport:** IT Specialist in Python (2024)
 

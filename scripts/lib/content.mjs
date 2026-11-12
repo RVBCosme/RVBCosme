@@ -47,7 +47,8 @@ const SCHEMA = obj({
     alt: STR, title: STR, summary: STR,
     stamps: list(5, obj({ name: STR, nameSize: { type: 'number' }, inner: STR, rim: STR, ink: { type: 'enum', values: ['red', 'line'] } })),
     listSummary: STR,
-    list: list(5, obj({ issuer: STR, items: STR })),
+    // The README list isn't drawn, so it names every issuer; the five stamps show some of them.
+    list: list([1, 12], obj({ issuer: STR, items: STR })),
   }),
   contact: obj({ alt: STR, heading: STR, cards: list(3, obj({ kind: STR, label: STR, value: STR, href: STR, linkText: STR })) }),
   readme: obj({ headings: obj({ work: STR, experience: STR, stack: STR, certificates: STR, contact: STR }) }),
@@ -145,7 +146,7 @@ export function validateContent(content) {
   const issuers = Number(/(\d+) issuers$/.exec(certificates.summary)?.[1]);
   if (total !== listed) errors.push(`certificates.summary says ${total} certificates but certificates.list names ${listed}`);
   if (!certificates.listSummary.includes(String(listed))) errors.push(`certificates.listSummary must mention ${listed}`);
-  if (issuers !== certificates.list.length || issuers !== certificates.stamps.length) {
+  if (issuers !== certificates.list.length || certificates.stamps.length > issuers) {
     errors.push(`certificates.summary says ${issuers} issuers; certificates.list has ${certificates.list.length} and certificates.stamps has ${certificates.stamps.length}`);
   }
   return errors;

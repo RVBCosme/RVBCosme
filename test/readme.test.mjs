@@ -38,7 +38,8 @@ test('project blocks: picture, paragraph, then chips as inline code with the not
 test('experience list and certificate details (spec A6, A7)', () => {
   assert.ok(readme.includes("- **Web development intern**, Araneta City (ACI, Inc.), Quezon City. Jul to Nov 2026.<br>Built an internal IT technical inventory system in CakePHP and MySQL in seven milestones, with 2,406 unit, property and browser tests, all passing in GitHub Actions CI on Oct 16, 2026. Manual and automated QA on the company's other products, and website updates through the CMS."));
   assert.equal((readme.match(/^- \*\*.+\*\*, .+<br>.+$/gm) ?? []).length, 5);
-  assert.match(readme, /<details>\n<summary>All 10 certificates<\/summary>\n\n- \*\*Cisco:\*\* Introduction to Modern AI \(2026\), /);
+  assert.match(readme, /<details>\n<summary>All 14 certificates and badges<\/summary>\n\n- \*\*Amazon Web Services:\*\* AWS Certified AI Practitioner, AIF-C01 \(2026\)\n- \*\*Cisco:\*\* Introduction to Modern AI \(2026\), /);
+  assert.match(readme, /DevNet Associate course badge \(2026\), .+, CCNA: Introduction to Networks course badge \(2024\)\n/);
   assert.match(readme, /- \*\*Certiport:\*\* IT Specialist in Python \(2024\)\n\n<\/details>/);
 });
 

@@ -192,11 +192,19 @@ test('the month shown in three places must agree (Review Focus 5)', () => {
 
 test('certificate counts must agree with the list', () => {
   const c = fixture();
-  c.certificates.list[1].items += ', AWS Cloud Practitioner (2026)';
+  c.certificates.list[0].items += ', AWS Cloud Practitioner (2026)';
   assert.deepEqual(validateContent(c), [
-    'certificates.summary says 10 certificates but certificates.list names 11',
-    'certificates.listSummary must mention 11',
+    'certificates.summary says 14 certificates but certificates.list names 15',
+    'certificates.listSummary must mention 15',
   ]);
+});
+
+test('the summary counts the issuers the list names; the five stamps show some of them', () => {
+  const c = fixture();
+  assert.equal(c.certificates.list.length, 6);
+  assert.equal(c.certificates.stamps.length, 5);
+  c.certificates.summary = c.certificates.summary.replace('6 issuers', '5 issuers');
+  assert.deepEqual(validateContent(c), ['certificates.summary says 5 issuers; certificates.list has 6 and certificates.stamps has 5']);
 });
 
 test('schedule dates must sit inside the drawn range', () => {

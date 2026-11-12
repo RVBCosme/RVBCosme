@@ -43,6 +43,7 @@ The profile should be unmistakably his own, with nothing that looks like a templ
 |---|---|
 | Headline, About, five roles with dates, the EyeDTrack thesis start (Feb 2025, from the project entry; the hero's revision date), the Cisco (5), Udacity and freeCodeCamp (2) certificates, pronouns he/him | LinkedIn, `linkedin.com/in/rene-vincent-cosme` (read 2026-09-23) |
 | The PMI and Certiport certificates, which aren't on LinkedIn (8 + 2 = 10 certificates) | Resume PDF (owner's copy) |
+| Certificates, 14 from 6 issuers: the four the profile lacked, AWS Certified AI Practitioner (AIF-C01, issued Sep 2026, the portfolio's featured one), CCNA: Introduction to Networks (Cisco), Relational Database V8 and Legacy Responsive Web Design V8 (freeCodeCamp); DevNet Associate and CCNA: Introduction to Networks are course badges; "certificates and course badges" | The owner's portfolio (its certifications list and FAQ), read 2026-11-12 |
 | EyeDTrack figures, each with its caveat: 713 ms from camera capture to result, 95th percentile (one phone at a desk, Nov 11, 2026; 887 ms with the server PC heavily loaded); 1,200+ automated checks on the server, the app and the phone; 26 of 30 yawn alerts were real yawns (an idealized episode count from the sealed final test, which met 0 of its 15 accuracy targets; the same count missed 22 yawn episodes). The rebuild from October 2026, tested once on people it had never seen, missed its accuracy targets | The owner's portfolio (its EyeDTrack entry) and the project site, `eyedtrack.vercel.app`, read 2026-11-12 |
 | ANF System: 4,170 documented automated checks on Sep 12, 2026, all passing, shown as "4,000+"; built 31 May to 12 Sep 2026; features; stack (React, Vite, Tailwind, Express, better-sqlite3, Zod, Vitest, Playwright) | The ANF System's private repository: its system documentation and package files |
 | ANF System: the name "ANF System"; "20+" screens (the documentation counts them two ways, so rounded down); "140+" decision records; every screen checked at nine widths in two browser engines, 1,000+ layout checks (1,092 at the release of Sep 24, 2026); status "In use since Sep 2026; online ordering in progress"; the new public website is built, not live yet, and its online shop is in progress | The owner's portfolio (its ANF System entry and More work), read 2026-11-12 |
@@ -80,7 +81,7 @@ The README follows this order. Each visual is a `<picture>` with light and dark 
 | 6 | Selected work, C | `pookies.svg` (1200×300) | Pookies sheet: mini diagram, title block, cookie figure | Paragraph, chips, note (A5) |
 | 7 | Experience | `schedule.svg` (1200×352) | Schedule chart of the roles, 2022 to now | Five-item list (A6) |
 | 8 | Stack | `stack.svg` (1200×316) | Bill of materials with six rows | none |
-| 9 | Certificates | `certificates.svg` (1200×290) | Five issuer stamps | `<details>` titled "All 10 certificates" (A7) |
+| 9 | Certificates | `certificates.svg` (1200×290) | Five issuer stamps, led by AWS | `<details>` titled "All 14 certificates and badges" (A7) |
 | 10 | Contact | `contact.svg` (1200×280) | "Let's connect", wired to the Email, LinkedIn and GitHub cards | Three links (A8) |
 
 There's no H1 in the README, because the profile sidebar already shows the name. Section headings are H2: Selected work, Experience, Stack, Certificates, Contact.
@@ -162,7 +163,7 @@ Port the geometry and timings from the approved mockup. In the mockup the SVGs a
 
 - Chips are inline code, for example `` `TypeScript` `React` ``.
 - Links are plain markdown links.
-- The certificate list sits inside `<details><summary>All 10 certificates</summary>…</details>`.
+- The certificate list sits inside `<details><summary>All 14 certificates and badges</summary>…</details>`.
 - GitHub markdown can't color or resize text, so the lines the mockup shows in muted gray (chips, notes, experience details) render as normal text. That difference is expected when comparing against the mockup.
 
 ## 9. Sidebar checklist
@@ -258,6 +259,7 @@ The owner's portfolio was brought up to date on 2026-11-12, and these changes ma
 - Sections 1 and 3, A2, A5, A6 and A9: the Pookies system is named "Pookies Platform", as on the portfolio, and its title block reads Period "Mar 2026 to now" instead of Built "Mar to Jun 2026": he built it during the Highly Succeed internship and is still updating it.
 - Sections 1, 3 and 9, A0, A1, A2, A6 and A9: the positioning is "AI engineer and full-stack developer" (the hero's title block, the intro and the sidebar bio), the intro says he expects to graduate in January 2027 and is open to full-time roles now, and the month shown in three places is 2026-11. The In progress board follows the portfolio's November list: NASA Space Apps Challenge 2026, online ordering for the ANF System, EyeDTrack's newer yawn detector and the Pookies update, with the next role "available now". The ended Araneta internship and the built ANF website leave the board.
 - Sections 3, A6 and A9: the Araneta internship ran from July to November 2026 and has ended, so its schedule bar stops at the now line (a role that ends in the current month no longer runs past it) and loses its striped tip. Its entry describes the IT technical inventory system he built there and his QA work, from the portfolio, and drops "(voluntary)", which the portfolio doesn't say. The ANF schedule row reads "Assistant office manager, ANF", his actual title, instead of "Office manager, ANF".
+- Sections 3, 5 and 8, A7 and A9: the certificates follow the portfolio's list of 14 from 6 issuers. The AWS Certified AI Practitioner, its featured one, takes the first stamp; Cisco's stamp counts 6 badges and freeCodeCamp's 4 certificates; Udacity's AWS AI Practitioner Challenge moves to the list only. DevNet Associate and CCNA: Introduction to Networks are labeled course badges, as on the portfolio. The README list isn't drawn, so the content check now lets it name more issuers than the five stamps show.
 
 ---
 
@@ -374,19 +376,20 @@ Title block: Title "Rene Vincent Cosme"; Description "AI engineer and full-stack
 
 | Name | Inner line | Rim text | Ink |
 |---|---|---|---|
-| Cisco | 5 certificates | MODERN AI · DATA SCIENCE · DEVNET · SECURITY | coral |
-| Udacity | AWS AI | AWS AI PRACTITIONER CHALLENGE · 2026 | line |
-| freeCodeCamp | 2 certificates | RELATIONAL DATABASE · RESPONSIVE WEB · 2026 | coral |
+| AWS | AI Practitioner | AWS CERTIFIED AI PRACTITIONER · AIF-C01 · 2026 | coral |
+| Cisco | 6 badges | MODERN AI · DATA SCIENCE · DEVNET · NETWORKS · SECURITY | line |
+| freeCodeCamp | 4 certificates | RELATIONAL DATABASE · RESPONSIVE WEB · 2026 | coral |
 | PMI | PM Ready | PROJECT MANAGEMENT READY · 2025 | line |
 | Certiport | IT Specialist | IT SPECIALIST IN PYTHON · CERTIPORT · 2024 | coral |
 
-Header: "Certificates", with "10 certificates, 5 issuers".
+Header: "Certificates", with "14 certificates and badges, 6 issuers". The five stamps show five of the six issuers; Udacity is in the list.
 
 `<details>` list:
 
-- **Cisco:** Introduction to Modern AI (2026), Introduction to Data Science (2026), DevNet Associate (2026), Junior Cybersecurity Analyst Career Path (2025), Introduction to Cybersecurity (2025)
+- **Amazon Web Services:** AWS Certified AI Practitioner, AIF-C01 (2026)
+- **Cisco:** Introduction to Modern AI (2026), Introduction to Data Science (2026), DevNet Associate course badge (2026), Junior Cybersecurity Analyst Career Path (2025), Introduction to Cybersecurity (2025), CCNA: Introduction to Networks course badge (2024)
 - **Udacity:** AWS AI Practitioner Challenge (2026)
-- **freeCodeCamp:** Relational Database (2026), Responsive Web Design (2026)
+- **freeCodeCamp:** Relational Database (2026), Relational Database V8 (2026), Responsive Web Design (2026), Legacy Responsive Web Design V8 (2026)
 - **Project Management Institute:** Project Management Ready (2025)
 - **Certiport:** IT Specialist in Python (2024)
 
@@ -413,5 +416,5 @@ No phone number.
 - `pookies.svg`: Sheet 4 of 4, detail C, business systems: Pookies Platform, point of sale and inventory for Pookies, the bakery Rene co-founded. React and Vite client, Express REST API, normalized SQLite. Co-founder and developer; update in progress; March 2026 to now.
 - `schedule.svg`: Schedule, 2022 to now. BSCS at FEU Tech since August 2022. Freelance research since November 2022. Co-founder of Pookies since August 2023. Software engineering intern at Highly Succeed, March to June 2026. Assistant office manager at ANF since April 2026. Web development intern at Araneta City, July to November 2026.
 - `stack.svg`: Bill of materials. Web clients: TypeScript, JavaScript, React, Vite, Tailwind CSS. APIs and services: Node.js, Express, REST APIs, Zod. Data: SQLite, PostgreSQL, MySQL. AI and ML: Python, TensorFlow, PyTorch, OpenCV, scikit-learn, Pandas. Quality and process: Vitest, Playwright, TDD, Scrum. Also shipped with: Kotlin, Java, C++, PHP, Laravel.
-- `certificates.svg`: Certificates: Cisco, 5 certificates in modern AI, data science, DevNet and cybersecurity; Udacity AWS AI Practitioner Challenge, 2026; freeCodeCamp Relational Database and Responsive Web Design, 2026; PMI Project Management Ready, 2025; Certiport IT Specialist in Python, 2024.
+- `certificates.svg`: Certificates: 14 certificates and badges from 6 issuers. Stamps for AWS Certified AI Practitioner, AIF-C01, 2026; Cisco, 6 badges in modern AI, data science, DevNet, networks and cybersecurity, two of them course badges; freeCodeCamp, 4 certificates in relational databases and responsive web design, 2026; PMI Project Management Ready, 2025; and Certiport IT Specialist in Python, 2024. The list below also names Udacity's AWS AI Practitioner Challenge, 2026.
 - `contact.svg`: Let's connect. Email: renevincentcosme@gmail.com. LinkedIn: linkedin.com/in/rene-vincent-cosme. GitHub: github.com/RVBCosme.
