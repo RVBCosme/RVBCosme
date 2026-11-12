@@ -18,7 +18,7 @@ test('the test strip has 38 ticks from x 40 to 600, 0.06 s apart (spec section 6
 
 test('receipts, metrics and title block come from the content file', () => {
   const content = fixture();
-  const anfContent = content.projects[0];
+  const anfContent = content.projects.find((p) => p.id === 'anf');
   anfContent.figure.receiptNumbers = ['No. 2001', 'No. 2002', 'No. 2003', 'No. 2004'];
   anfContent.titleBlock[2].value = 'In use, v1.0.10';
   const body = anf.render(content);

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { fileURLToPath } from 'node:url';
 import * as fontkit from 'fontkit';
 import { COMPONENTS } from '../scripts/components/index.mjs';
-import { loadContent } from '../scripts/lib/content.mjs';
+import { PROJECT_IDS, loadContent } from '../scripts/lib/content.mjs';
 import { FACES, subsetFace } from '../scripts/lib/fonts.mjs';
 import { collectGlyphs } from '../scripts/lib/svg.mjs';
 import { TYPE } from '../scripts/lib/typography.mjs';
@@ -27,6 +27,9 @@ function textWidth(cls, text, size = TYPE[cls].size) {
   return (f.layout(text).advanceWidth * size) / f.unitsPerEm + spacing * [...text].length;
 }
 
+// A project's content path by its id, so the slots don't depend on the order of the sheets.
+const P = Object.fromEntries(PROJECT_IDS.map((id, i) => [id, `projects[${i}]`]));
+
 // Content-driven text with a fixed slot in the drawings: [what, text class, widest allowed, content paths].
 // The limits are the free space in the approved layout, not today's widths. "[*]" means every item of a list.
 const SLOTS = [
@@ -35,7 +38,7 @@ const SLOTS = [
   ['hero group titles (the AI markup can start at x 375)', 'asm', 260, 'hero.groups[*].title'],
   ['hero box labels', 'bx', 174, 'hero.groups[*].boxes[*].lines[*]'],
   ['hero box captions', 'cap', 180, 'hero.groups[*].boxes[*].caption'],
-  ['arrow labels (70 units between boxes)', 'edge', 60, ['hero.groups[*].edges[*]', 'projects[2].figure.edges[*]']],
+  ['arrow labels (70 units between boxes)', 'edge', 60, ['hero.groups[*].edges[*]', `${P.pookies}.figure.edges[*]`]],
   ['hero markups', 'note', 225, 'hero.groups[*].markup'],
   ['hero dimension', 'dim', 196, 'hero.dimension'],
   ['revision date header (divider at x 920)', 'tl', 64, 'hero.revisionHeaders[0]'],
@@ -61,24 +64,24 @@ const SLOTS = [
   ['sheet bubble letters (radius 20)', 'bubt', 28, 'projects[*].letter'],
   ['sheet group names (the Pookies dimension starts at x 526)', 'asm', 420, 'projects[*].group'],
   ['sheet numbers (right-aligned at x 790)', 'sheetno', 180, 'projects[*].sheet'],
-  ['ANF and EyeDTrack titles', 'ttl', 570, ['projects[0].title', 'projects[1].title']],
-  ['Pookies title (the cookie starts at x 526)', 'ttl', 470, 'projects[2].title'],
-  ['ANF subtitle (the receipt printer starts at x 620)', 'subt', 580, 'projects[0].subtitle'],
-  ['EyeDTrack subtitle (the trace label starts at x 630)', 'subt', 580, 'projects[1].subtitle'],
-  ['Pookies subtitle', 'subt', 770, 'projects[2].subtitle'],
+  ['ANF and EyeDTrack titles', 'ttl', 570, [`${P.anf}.title`, `${P.eyedtrack}.title`]],
+  ['Pookies title (the cookie starts at x 526)', 'ttl', 470, `${P.pookies}.title`],
+  ['ANF subtitle (the receipt printer starts at x 620)', 'subt', 580, `${P.anf}.subtitle`],
+  ['EyeDTrack subtitle (the trace label starts at x 630)', 'subt', 580, `${P.eyedtrack}.subtitle`],
+  ['Pookies subtitle', 'subt', 770, `${P.pookies}.subtitle`],
   ['metric values', 'met', 200, 'projects[*].metrics[*].value'],
   ['metric labels', 'metl', 200, 'projects[*].metrics[*].label'],
   ['project title block labels', 'tl2', 320, 'projects[*].titleBlock[*].label'],
   ['project title block values', 'tv2', 320, 'projects[*].titleBlock[*].value'],
-  ['Pookies status (its live dot sits at x 1044)', 'tv2', 190, 'projects[2].titleBlock[2].value'],
-  ['ANF figure caption (the test strip ends at x 600)', 'figcap', 196, 'projects[0].figure.caption'],
-  ['receipt heading (the paper is 94 wide)', 'rct', 90, 'projects[0].figure.receiptHeading'],
-  ['receipt numbers (the paper is 94 wide)', 'rcn', 90, 'projects[0].figure.receiptNumbers[*]'],
-  ['EyeDTrack trace label (right-aligned at x 790)', 'earlabel', 160, 'projects[1].figure.traceLabel'],
-  ['EyeDTrack alert tag (its chip is 94 wide)', 'alertt', 86, 'projects[1].figure.alert'],
-  ['Pookies diagram boxes', 'bx', 184, 'projects[2].figure.boxes[*]'],
-  ['Pookies dimension (centered over the cookie)', 'edge', 80, 'projects[2].figure.dimension'],
-  ['Pookies live note (the title block starts at x 820)', 'livenote', 156, 'projects[2].figure.note'],
+  ['Pookies status (its live dot sits at x 1044)', 'tv2', 190, `${P.pookies}.titleBlock[2].value`],
+  ['ANF figure caption (the test strip ends at x 600)', 'figcap', 196, `${P.anf}.figure.caption`],
+  ['receipt heading (the paper is 94 wide)', 'rct', 90, `${P.anf}.figure.receiptHeading`],
+  ['receipt numbers (the paper is 94 wide)', 'rcn', 90, `${P.anf}.figure.receiptNumbers[*]`],
+  ['EyeDTrack trace label (right-aligned at x 790)', 'earlabel', 160, `${P.eyedtrack}.figure.traceLabel`],
+  ['EyeDTrack alert tag (its chip is 94 wide)', 'alertt', 86, `${P.eyedtrack}.figure.alert`],
+  ['Pookies diagram boxes', 'bx', 184, `${P.pookies}.figure.boxes[*]`],
+  ['Pookies dimension (centered over the cookie)', 'edge', 80, `${P.pookies}.figure.dimension`],
+  ['Pookies live note (the title block starts at x 820)', 'livenote', 156, `${P.pookies}.figure.note`],
   // schedule.svg
   ['schedule labels (the year grid starts at x 330)', 'tv', 286, 'experience.rows[*].label'],
   ['schedule now label (19 units from the frame in December)', 'nowlabel', 30, 'experience.nowLabel'],
@@ -96,7 +99,7 @@ const SLOTS = [
   ['contact values', 'tv2', 460, 'contact.cards[*].value'],
 ];
 // Drawn text measured below with its own geometry instead of a single slot.
-const OWN_GEOMETRY = ['certificates.stamps[*].name', 'certificates.stamps[*].rim', 'projects[0].figure.totalLabel', 'projects[0].figure.total'];
+const OWN_GEOMETRY = ['certificates.stamps[*].name', 'certificates.stamps[*].rim', `${P.anf}.figure.totalLabel`, `${P.anf}.figure.total`];
 
 /** Expands a content path such as 'hero.groups[*].markup' into [path, value] pairs. */
 function expand(content, pattern) {
@@ -127,7 +130,7 @@ function slotProblems(content) {
     if (rim > 410) problems.push(`stamp rim: "${stamp.rim}" is ${rim} units long; the rim allows 410`);
   }
   // The receipt's total line starts at x 668 and ends at x 742; keep 4 units between label and amount.
-  const { totalLabel, total } = content.projects[0].figure;
+  const { totalLabel, total } = content.projects.find((p) => p.id === 'anf').figure;
   const line = Math.round(textWidth('rct', totalLabel) + textWidth('rct', total));
   if (line > 70) problems.push(`receipt total line: "${totalLabel}" and "${total}" take ${line} units; the receipt allows 70`);
   return problems;
@@ -168,8 +171,9 @@ test('every content-driven text in the drawings has a slot (Review Focus 2)', as
 
 test('the slot check names overlong copy where the layout has no room', () => {
   const c = fixture();
-  c.projects[1].subtitle = 'Real-time driver attention monitoring with live alerts, thesis';
-  c.projects[1].figure.alert = 'drowsiness alert sent';
+  const eyed = c.projects.find((p) => p.id === 'eyedtrack');
+  eyed.subtitle = 'Real-time driver attention monitoring with live alerts, thesis';
+  eyed.figure.alert = 'drowsiness alert sent';
   c.contact.heading = "Let's build together";
   assert.deepEqual(slotProblems(c).map((line) => line.split(':')[0]), [
     'EyeDTrack subtitle (the trace label starts at x 630)',

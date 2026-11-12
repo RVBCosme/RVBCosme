@@ -5,17 +5,33 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { isDeepStrictEqual } from 'node:util';
-import { altText, loadContent, validateContent } from '../scripts/lib/content.mjs';
+import { COMPONENTS } from '../scripts/components/index.mjs';
+import { PROJECT_IDS, altText, loadContent, validateContent } from '../scripts/lib/content.mjs';
 import { fixture } from './helpers/content.mjs';
 import { drawnPaths } from './helpers/drawn.mjs';
 
 const SPEC = readFileSync(new URL('../docs/superpowers/specs/2026-09-23-github-profile-redesign-design.md', import.meta.url), 'utf8').replace(/\r\n/g, '\n');
 const APPENDIX = SPEC.slice(SPEC.indexOf('## Appendix A'));
-const specLines = (label) => [...APPENDIX.matchAll(new RegExp(`^- ${label}: (.+)$`, 'gm'))].map((m) => m[1].trim());
+
+// Appendix A, split at its numbered headings. A section is found by its title or by the drawing its
+// heading names ("**A3. A: ANF System** (`anf.svg`)"), never by its number, so adding a sheet renumbers nothing here.
+const SECTIONS = APPENDIX.split(/^(?=\*\*A\d+\. )/m).slice(1).map((text) => {
+  const [heading, id, title] = /^\*\*(A\d+)\. (.+?)\*\*.*$/m.exec(text);
+  return { id, title, drawing: /\(`(\w+)\.svg`\)/.exec(heading)?.[1], text };
+});
+function section(find) {
+  const found = SECTIONS.find(find);
+  if (!found) throw new Error(`Spec appendix A has no section for ${find}`);
+  return found;
+}
+const titled = (title) => section((s) => s.title === title);
+const drawing = (name) => section((s) => s.drawing === name);
+// The project sheets are the sections titled with their bubble letter, "A: ANF System".
+const SHEETS = SECTIONS.filter((s) => /^[A-Z]: /.test(s.title));
 
 // Readers for the drawing copy in appendix A.
-const part = (from, to) => APPENDIX.split(from)[1].split(to)[0];
-const line = (text, label) => new RegExp(`^- ${label}: (.+)$`, 'm').exec(text)[1];
+const line = (text, label) => new RegExp(`^- ${label}: (.+)$`, 'm').exec(text)[1].trim();
+const optionalLine = (text, label) => new RegExp(`^- ${label}: (.+)$`, 'm').exec(text)?.[1].trim();
 const quoted = (text) => [...text.matchAll(/"([^"]*)"/g)].map((m) => m[1]);
 const labelled = (text) => [...text.matchAll(/([A-Z][\w ]*?) "([^"]*)"/g)].map(([, label, value]) => ({ label, value }));
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -29,6 +45,25 @@ function table(text, firstHeader) {
   return { header: cells(lines[start]), rows };
 }
 
+// Each project sheet draws its own figure; these read its copy from the sheet's section.
+const FIGURE_COPY = {
+  anf(text) {
+    const [receiptHeading, first, last, totalLabel, total] = quoted(/^- Receipt figure.*$/m.exec(text)[0]);
+    const receiptNumbers = [];
+    for (let n = Number(first.match(/\d+/)[0]); n <= Number(last.match(/\d+/)[0]); n += 1) receiptNumbers.push(first.replace(/\d+/, n));
+    return { caption: line(text, 'Figure caption'), receiptHeading, receiptNumbers, totalLabel, total };
+  },
+  eyedtrack(text) {
+    const [traceLabel, alert] = quoted(line(text, 'Trace label'));
+    return { traceLabel, alert };
+  },
+  pookies(text) {
+    const chain = line(text, 'Diagram').split(/ →\((.+?)\)→ /);
+    const [dimension, note] = quoted(line(text, 'Figure'));
+    return { boxes: chain.filter((_, k) => k % 2 === 0), edges: chain.filter((_, k) => k % 2 === 1), dimension, note };
+  },
+};
+
 test('the content file and the fixture are valid', async () => {
   await loadContent();
   assert.deepEqual(validateContent(fixture()), []);
@@ -40,83 +75,81 @@ function approvedCopyProblems(c) {
   const check = (what, actual, expected) => {
     if (!isDeepStrictEqual(actual, expected)) problems.push(`${what}: the content has ${JSON.stringify(actual)}, the spec has ${JSON.stringify(expected)}`);
   };
-  check('A1 intro', c.intro, APPENDIX.split('**A1. Intro**')[1].split('**A2.')[0].trim());
-  check('A3 to A5 paragraphs', c.projects.map((p) => p.paragraph), specLines('Paragraph'));
-  check('A3 to A5 chips', c.projects.map((p) => p.chips.join(', ')), specLines('Chips'));
-  check('A3 to A5 notes', c.projects.map((p) => p.note), specLines('Note'));
-  const a6 = APPENDIX.split('**A6. Experience**')[1].split('Hero revision table')[0];
+  const intro = titled('Intro');
+  check(`${intro.id} intro`, c.intro, intro.text.replace(/^.*\n/, '').trim());
+  const experience = titled('Experience');
   check(
-    'A6 experience list',
+    `${experience.id} experience list`,
     c.experience.list.map((x) => `**${x.role}**, ${x.where}. ${x.period}. ${x.detail}`),
-    [...a6.matchAll(/^- (\*\*.+)$/gm)].map((m) => m[1].trim()),
+    [...experience.text.split('Hero revision table')[0].matchAll(/^- (\*\*.+)$/gm)].map((m) => m[1].trim()),
   );
-  const a7 = APPENDIX.split('`<details>` list:')[1].split('**A8.')[0];
-  check('A7 certificate list', c.certificates.list.map((e) => `**${e.issuer}:** ${e.items}`), [...a7.matchAll(/^- (\*\*.+)$/gm)].map((m) => m[1].trim()));
-  const contactLine = APPENDIX.split('Markdown under it:')[1].trim().split('\n')[0];
-  check('A8 contact line', c.contact.cards.map((k) => `**${k.label}** [${k.linkText}](${k.href})`).join(' · '), contactLine);
-  const alts = [...APPENDIX.matchAll(/^- `(\w+)\.svg`: (.+)$/gm)];
-  check('A9 alt text count', alts.length, 9);
-  for (const [, name, alt] of alts) check(`A9 alt text for ${name}`, altText(c, name), alt.trim());
-  check('A0 sidebar', [c.sidebar.name, c.sidebar.pronouns, c.sidebar.bio, c.sidebar.location], ['Name', 'Pronouns', 'Bio', 'Location'].map((k) => specLines(k)[0]));
+  const stackAndCertificates = titled('Stack and certificates');
+  const certificateList = stackAndCertificates.text.split('`<details>` list:')[1];
+  check(`${stackAndCertificates.id} certificate list`, c.certificates.list.map((e) => `**${e.issuer}:** ${e.items}`), [...certificateList.matchAll(/^- (\*\*.+)$/gm)].map((m) => m[1].trim()));
+  const contact = drawing('contact');
+  const contactLine = contact.text.split('Markdown under it:')[1].trim().split('\n')[0];
+  check(`${contact.id} contact line`, c.contact.cards.map((k) => `**${k.label}** [${k.linkText}](${k.href})`).join(' · '), contactLine);
+  const altSection = titled('Alt text');
+  const alts = [...altSection.text.matchAll(/^- `(\w+)\.svg`: (.+)$/gm)];
+  check(`${altSection.id} alt text count`, alts.length, COMPONENTS.length);
+  for (const [, name, alt] of alts) check(`${altSection.id} alt text for ${name}`, altText(c, name), alt.trim());
+  const sidebar = titled('Sidebar');
+  check(`${sidebar.id} sidebar`, [c.sidebar.name, c.sidebar.pronouns, c.sidebar.bio, c.sidebar.location], ['Name', 'Pronouns', 'Bio', 'Location'].map((k) => line(sidebar.text, k)));
 
   // The drawings' copy: every string a drawing shows, except the hero's box captions and arrow labels, which the spec doesn't list.
-  const a2 = part('**A2. ', '**A3.');
-  const nowRows = [...a2.matchAll(/^- (.+)$/gm)].map((m) => m[1]);
+  const now = drawing('now');
+  const nowRows = [...now.text.matchAll(/^- (.+)$/gm)].map((m) => m[1]);
   const [, nextText, bar, updated] = /^(.+) \(bar label: "(.+)"; header: "(.+)"\)$/.exec(nowRows.at(-1));
-  check('A2 title', c.now.title, a2.split('**')[0]);
-  check('A2 In progress rows', [...c.now.items, c.now.next.text], [...nowRows.slice(0, -1), nextText]);
-  check('A2 bar label and header', [c.now.next.bar, c.now.updated], [bar, updated]);
+  check(`${now.id} title`, c.now.title, now.title);
+  check(`${now.id} In progress rows`, [...c.now.items, c.now.next.text], [...nowRows.slice(0, -1), nextText]);
+  check(`${now.id} bar label and header`, [c.now.next.bar, c.now.updated], [bar, updated]);
 
-  const [anf, eyed, pookies] = [['**A3. ', '**A4.'], ['**A4. ', '**A5.'], ['**A5. ', '**A6.']].map(([from, to]) => part(from, to));
-  [anf, eyed, pookies].forEach((text, i) => {
-    const p = c.projects[i];
-    const id = `A${i + 3}`;
+  // Each project against its own sheet in appendix A, which lists the sheets in README order.
+  check('Appendix A project sheets, in order', SHEETS.map((s) => s.drawing), c.projects.map((p) => p.id));
+  for (const p of c.projects) {
+    const sheet = SHEETS.find((s) => s.drawing === p.id);
+    if (!sheet) continue;
+    const { id, text } = sheet;
     const header = line(text, 'Header');
     check(`${id} header`, [p.letter, p.group, p.sheet], [/bubble (\w)/.exec(header)[1], ...quoted(header)]);
     check(`${id} title and subtitle`, [p.title, p.subtitle], [line(text, 'Title'), line(text, 'Subtitle')]);
     // A value can hold a space ("713 ms"), so each metric is compared as "value label".
-    check(`${id} metrics`, p.metrics.map((m) => `${m.value} ${m.label}`), /^- Metrics: (.+)$/m.exec(text)?.[1].split(' · ') ?? []);
+    check(`${id} metrics`, p.metrics.map((m) => `${m.value} ${m.label}`), optionalLine(text, 'Metrics')?.split(' · ') ?? []);
     check(`${id} title block`, p.titleBlock, labelled(line(text, 'Title block')));
-  });
-  const [receiptHeading, first, last, totalLabel, total] = quoted(/^- Receipt figure.*$/m.exec(anf)[0]);
-  const receiptNumbers = [];
-  for (let n = Number(first.match(/\d+/)[0]); n <= Number(last.match(/\d+/)[0]); n += 1) receiptNumbers.push(first.replace(/\d+/, n));
-  check('A3 figure', c.projects[0].figure, { caption: line(anf, 'Figure caption'), receiptHeading, receiptNumbers, totalLabel, total });
-  const [traceLabel, alert] = quoted(line(eyed, 'Trace label'));
-  check('A4 figure', c.projects[1].figure, { traceLabel, alert });
-  const chain = line(pookies, 'Diagram').split(/ →\((.+?)\)→ /);
-  const [dimension, note] = quoted(line(pookies, 'Figure'));
-  check('A5 figure', c.projects[2].figure, { boxes: chain.filter((_, k) => k % 2 === 0), edges: chain.filter((_, k) => k % 2 === 1), dimension, note });
+    check(`${id} figure`, p.figure, FIGURE_COPY[p.id]?.(text));
+    check(`${id} paragraph`, p.paragraph, line(text, 'Paragraph'));
+    check(`${id} chips`, p.chips.join(', '), line(text, 'Chips'));
+    check(`${id} note`, p.note, line(text, 'Note'));
+    const links = [...(optionalLine(text, 'Links?') ?? '').matchAll(/\[([^\]]+)\]\(([^)]+)\)/g)].map(([, linkText, href]) => ({ text: linkText, href }));
+    check(`${id} links`, p.links, links);
+  }
 
-  const experience = part('**A6. Experience**', '**A7.');
-  const schedule = table(experience, 'Row').rows.map(([label, start, end]) => ({
+  const schedule = table(experience.text, 'Row').rows.map(([label, start, end]) => ({
     label: label.replace(' (outlined bar)', ''), start: month(start), end: end === 'now' ? null : month(end), outline: label.endsWith('(outlined bar)'),
   }));
-  check('A6 schedule rows', c.experience.rows.map((r) => ({ label: r.label, start: r.start, end: r.end, outline: Boolean(r.outline) })), schedule);
-  const [, nowLabel, nowMonth] = /The "(\w+)" line sits at late (\w+ \d{4})\./.exec(experience);
-  check('A6 now line', [c.experience.nowLabel, c.experience.now], [nowLabel, month(nowMonth)]);
-  const revisions = table(experience, 'Date');
-  check('A6 revision table', [c.hero.revisionHeaders, c.hero.revisions], [revisions.header, revisions.rows.map(([date, text]) => ({ date, text: text.replace(' (revision cloud)', '') }))]);
-  check('A6 hero title block', Object.values(c.hero.titleBlock), labelled(/^Title block: .+$/m.exec(experience)[0]));
+  check(`${experience.id} schedule rows`, c.experience.rows.map((r) => ({ label: r.label, start: r.start, end: r.end, outline: Boolean(r.outline) })), schedule);
+  const [, nowLabel, nowMonth] = /The "(\w+)" line sits at late (\w+ \d{4})\./.exec(experience.text);
+  check(`${experience.id} now line`, [c.experience.nowLabel, c.experience.now], [nowLabel, month(nowMonth)]);
+  const revisions = table(experience.text, 'Date');
+  check(`${experience.id} revision table`, [c.hero.revisionHeaders, c.hero.revisions], [revisions.header, revisions.rows.map(([date, text]) => ({ date, text: text.replace(' (revision cloud)', '') }))]);
+  check(`${experience.id} hero title block`, Object.values(c.hero.titleBlock), labelled(/^Title block: .+$/m.exec(experience.text)[0]));
 
-  const stackAndCertificates = part('**A7. Stack and certificates**', '**A8.');
-  const stack = table(stackAndCertificates, 'Item');
-  check('A7 bill of materials', [c.stack.headers, c.stack.rows], [stack.header, stack.rows.map(([, parts, use]) => ({ parts, use }))]);
+  const stack = table(stackAndCertificates.text, 'Item');
+  check(`${stackAndCertificates.id} bill of materials`, [c.stack.headers, c.stack.rows], [stack.header, stack.rows.map(([, parts, use]) => ({ parts, use }))]);
   check(
-    'A7 stamps',
+    `${stackAndCertificates.id} stamps`,
     c.certificates.stamps.map(({ name, inner, rim, ink }) => ({ name, inner, rim, ink })),
-    table(stackAndCertificates, 'Name').rows.map(([name, inner, rim, ink]) => ({ name, inner, rim, ink: ink === 'coral' ? 'red' : ink })),
+    table(stackAndCertificates.text, 'Name').rows.map(([name, inner, rim, ink]) => ({ name, inner, rim, ink: ink === 'coral' ? 'red' : ink })),
   );
-  check('A7 certificates header', [c.certificates.title, c.certificates.summary], quoted(/^Header: .+$/m.exec(stackAndCertificates)[0]));
+  check(`${stackAndCertificates.id} certificates header`, [c.certificates.title, c.certificates.summary], quoted(/^Header: .+$/m.exec(stackAndCertificates.text)[0]));
 
-  const contact = part('**A8. Contact**', '**A9.');
-  check('A8 heading', c.contact.heading, quoted(contact)[0]);
-  check('A8 cards', c.contact.cards.map((k) => [k.label, k.value]), [...contact.matchAll(/^- (\w+): (\S+) \(/gm)].map((m) => [m[1], m[2]]));
+  check(`${contact.id} heading`, c.contact.heading, quoted(contact.text)[0]);
+  check(`${contact.id} cards`, c.contact.cards.map((k) => [k.label, k.value]), [...contact.text.matchAll(/^- (\w+): (\S+) \(/gm)].map((m) => [m[1], m[2]]));
 
-  // Section titles appear only as the first sentence of their drawing's alt text (A9).
+  // Section titles appear only as the first sentence of their drawing's alt text.
   const firstSentence = (name) => alts.find(([, n]) => n === name)[2].split('. ')[0];
-  check('A9 schedule title and range', `${c.experience.title}, ${c.experience.range}`, firstSentence('schedule'));
-  check('A9 bill of materials title', c.stack.title, firstSentence('stack'));
+  check(`${altSection.id} schedule title and range`, `${c.experience.title}, ${c.experience.range}`, firstSentence('schedule'));
+  check(`${altSection.id} bill of materials title`, c.stack.title, firstSentence('stack'));
 
   // Appendix A has no hero diagram; spec section 5 describes it.
   const hero = SPEC.split('\n').find((l) => l.startsWith('| 1 | Hero'));
@@ -158,6 +191,13 @@ test('drawing copy that drifts from the spec is named (ADR-005)', () => {
   assert.deepEqual(approvedCopyProblems(c).map((line) => line.split(':')[0]), ['A2 In progress rows', 'A3 title block']);
 });
 
+test('a project link that drifts from its sheet in the spec is named (ADR-005)', () => {
+  const c = fixture();
+  const eyed = c.projects.findIndex((p) => p.id === 'eyedtrack');
+  c.projects[eyed].links[0].href = 'https://example.com';
+  assert.deepEqual(approvedCopyProblems(c).map((line) => line.split(':')[0]), [`${SHEETS.find((s) => s.drawing === 'eyedtrack').id} links`]);
+});
+
 test('a missing or wrongly shaped field is reported by its path', () => {
   const c = fixture();
   c.now.items.push('A fifth thing');
@@ -177,7 +217,7 @@ test('owner rulings are enforced: project order and exactly three contact links'
   c.projects.reverse();
   c.contact.cards[2].kind = 'phone';
   const errors = validateContent(c);
-  assert.ok(errors.includes('projects[0].id must be "anf" (order: anf, eyedtrack, pookies)'), errors.join('\n'));
+  assert.ok(errors.includes(`projects[0].id must be "${PROJECT_IDS[0]}" (order: ${PROJECT_IDS.join(', ')})`), errors.join('\n'));
   assert.ok(errors.includes('contact.cards kinds must be email, linkedin, github in that order; got email, linkedin, phone'), errors.join('\n'));
 });
 

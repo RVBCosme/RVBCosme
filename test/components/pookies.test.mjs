@@ -16,8 +16,9 @@ test('Pookies shows its status from the content file and has no metrics row (own
 
 test('diagram labels and the cookie note come from the content file', () => {
   const content = fixture();
-  content.projects[2].figure.boxes[1] = 'Express REST API';
-  content.projects[2].figure.note = 'batch cost, per tray';
+  const { figure } = content.projects.find((p) => p.id === 'pookies');
+  figure.boxes[1] = 'Express REST API';
+  figure.note = 'batch cost, per tray';
   const body = pookies.render(content);
   assert.match(body, /<text class="bx" x="410" y="239">Express REST API<\/text>/);
   assert.match(body, /<text class="livenote" x="656" y="113">batch cost, per tray<\/text>/);
