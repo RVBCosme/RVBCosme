@@ -43,7 +43,7 @@ function approvedCopyProblems(c) {
   check('A1 intro', c.intro, APPENDIX.split('**A1. Intro**')[1].split('**A2.')[0].trim());
   check('A3 to A5 paragraphs', c.projects.map((p) => p.paragraph), specLines('Paragraph'));
   check('A3 to A5 chips', c.projects.map((p) => p.chips.join(', ')), specLines('Chips'));
-  check('A3 note', [c.projects[0].note], specLines('Note'));
+  check('A3 to A5 notes', c.projects.map((p) => p.note), specLines('Note'));
   const a6 = APPENDIX.split('**A6. Experience**')[1].split('Hero revision table')[0];
   check(
     'A6 experience list',

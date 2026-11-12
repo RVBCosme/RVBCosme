@@ -30,7 +30,7 @@ I started it while working as the Council's assistant office manager, to automat
 
 I led our thesis team. A Kotlin Android app streams in-car camera frames to a Python server, which detects drowsiness, yawning and distracted head movement in real time using CLAHE, Haar Cascade, eye and mouth aspect ratios, MobileNetV2 and LLaVA. Alerts go out by voice and push, with an event log for history.
 
-`Kotlin` `Python` `Flask` `OpenCV` `TensorFlow` `PyTorch` `scikit-learn`<br>[Android app](https://github.com/RVBCosme/thesis-eyedtrack-frontend) · [Detection server](https://github.com/RVBCosme/thesis-eyedtrack-backend)
+`Kotlin` `Python` `Flask` `OpenCV` `TensorFlow` `PyTorch` `scikit-learn`<br>Private repository, walkthrough on request. [Project site](https://eyedtrack.vercel.app)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/profile/dark/pookies.svg">
@@ -39,7 +39,7 @@ I led our thesis team. A Kotlin Android app streams in-car camera frames to a Py
 
 Pookies is the bakery I co-founded in 2023. During my software engineering internship at Highly Succeed, I built its point-of-sale and inventory system, which tracks sales, stock and batch costs in real time. I designed the normalized SQLite schema, built the Express REST API, and worked with the QA and graphics teams on test cases and UI polish. I'm updating it now.
 
-`React` `Vite` `Tailwind` `Express` `SQLite`<br>[Repository](https://github.com/RVBCosme/Pookies-Inventory-System)
+`React` `Vite` `Tailwind` `Express` `SQLite`<br>Private repository, walkthrough on request.
 
 ## Experience
 

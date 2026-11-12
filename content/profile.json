@@ -109,10 +109,9 @@
       "figure": { "traceLabel": "eye aspect ratio, live", "alert": "alert sent" },
       "paragraph": "I led our thesis team. A Kotlin Android app streams in-car camera frames to a Python server, which detects drowsiness, yawning and distracted head movement in real time using CLAHE, Haar Cascade, eye and mouth aspect ratios, MobileNetV2 and LLaVA. Alerts go out by voice and push, with an event log for history.",
       "chips": ["Kotlin", "Python", "Flask", "OpenCV", "TensorFlow", "PyTorch", "scikit-learn"],
-      "note": "",
+      "note": "Private repository, walkthrough on request.",
       "links": [
-        { "text": "Android app", "href": "https://github.com/RVBCosme/thesis-eyedtrack-frontend" },
-        { "text": "Detection server", "href": "https://github.com/RVBCosme/thesis-eyedtrack-backend" }
+        { "text": "Project site", "href": "https://eyedtrack.vercel.app" }
       ],
       "alt": "Sheet 3 of 4, detail B, AI systems, with a live eye aspect ratio trace that raises an alert on a drowsy dip: EyeDTrack, real-time driver attention monitoring, thesis. 87.12% detection accuracy, 96.32% yawn precision, 0.95 seconds camera to alert. Team lead; Kotlin, Python, OpenCV; MobileNetV2 and LLaVA; February to June 2025."
     },
@@ -138,10 +137,8 @@
       },
       "paragraph": "Pookies is the bakery I co-founded in 2023. During my software engineering internship at Highly Succeed, I built its point-of-sale and inventory system, which tracks sales, stock and batch costs in real time. I designed the normalized SQLite schema, built the Express REST API, and worked with the QA and graphics teams on test cases and UI polish. I'm updating it now.",
       "chips": ["React", "Vite", "Tailwind", "Express", "SQLite"],
-      "note": "",
-      "links": [
-        { "text": "Repository", "href": "https://github.com/RVBCosme/Pookies-Inventory-System" }
-      ],
+      "note": "Private repository, walkthrough on request.",
+      "links": [],
       "alt": "Sheet 4 of 4, detail C, business systems: Pookies System, point of sale and inventory for Pookies, the bakery Rene co-founded. React and Vite client, Express REST API, normalized SQLite. Co-founder and developer; update in progress; built March to June 2026."
     }
   ],

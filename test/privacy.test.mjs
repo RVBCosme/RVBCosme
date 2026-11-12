@@ -11,6 +11,8 @@ const PHONE_PATTERNS = [/\+\d{1,3}[\s.-]?\(?\d{2,4}\)?[\s.-]?\d{3,4}[\s.-]?\d{3,
 // The repository is public: a user's home folder (Windows or Git Bash form) or a coding-session link has no place in it.
 const LOCAL_PATTERNS = [/\b[A-Za-z]:[\\/]+Users[\\/]/, /\/[a-z]\/Users\//i, /claude\.ai\/code\/session_/];
 const withoutFontData = (text) => text.replace(/url\(data:[^)]*\)/g, 'url(data:)');
+// The one live site the profile links is EyeDTrack's project site (owner request, 2026-11-12).
+const LIVE_SITES = new Set(['eyedtrack.vercel.app']);
 
 async function published() {
   const content = readFileSync(new URL('../content/profile.json', import.meta.url), 'utf8');
@@ -26,7 +28,8 @@ test('no phone number appears in the content, the README or any drawing', async 
 test('Pookies is never called live and has no demo link (owner ruling, ADR-005)', async () => {
   for (const [path, text] of await published()) {
     assert.doesNotMatch(text, /live on vercel/i, path);
-    assert.doesNotMatch(text, /vercel\.app/i, path);
+    const sites = [...text.matchAll(/[\w.-]*vercel\.app/gi)].map((m) => m[0].toLowerCase());
+    assert.deepEqual(sites.filter((site) => !LIVE_SITES.has(site)), [], path);
   }
 });
 

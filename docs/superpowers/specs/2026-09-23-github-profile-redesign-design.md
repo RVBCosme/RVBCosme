@@ -48,6 +48,7 @@ The profile should be unmistakably his own, with nothing that looks like a templ
 | ANF public website: Laravel 13, Filament, MySQL, Pest, Playwright | The ANF website's private repository: its README |
 | Pookies stack: React, Vite and Tailwind on the front; Express and better-sqlite3 behind | Public repo `RVBCosme/Pookies-Inventory-System` |
 | Pookies status "Update in progress" | Owner ruling, 2026-09-23 |
+| EyeDTrack and Pookies repositories are private, so both carry "Private repository, walkthrough on request"; EyeDTrack links its public project site, `eyedtrack.vercel.app`, and Pookies has no link | Owner request, 2026-11-12, matching the owner's portfolio |
 | EyeDTrack architecture: Kotlin app, Python/Flask server, OpenCV, CLAHE, Haar Cascade, MobileNetV2, LLaVA | Public repos `thesis-eyedtrack-frontend` and `thesis-eyedtrack-backend`, plus the resume |
 
 Rules (ADR-005): never invent a number, round growing numbers down, and name the source of every change.
@@ -70,8 +71,8 @@ The README follows this order. Each visual is a `<picture>` with light and dark 
 | 2 | Intro | none | none | Intro paragraph (appendix A1) |
 | 3 | In progress | `now.svg` (1200×262) | Four live rows and a "Next" row | none |
 | 4 | Selected work, A | `anf.svg` (1200×300) | ANF System sheet: metrics, title block, test strip, receipt printer | Paragraph, chips, note (A3) |
-| 5 | Selected work, B | `eyedtrack.svg` (1200×300) | EyeDTrack sheet: metrics, title block, eye-aspect-ratio trace, landmark eye | Paragraph, chips, links (A4) |
-| 6 | Selected work, C | `pookies.svg` (1200×300) | Pookies sheet: mini diagram, title block, cookie figure | Paragraph, chips, link (A5) |
+| 5 | Selected work, B | `eyedtrack.svg` (1200×300) | EyeDTrack sheet: metrics, title block, eye-aspect-ratio trace, landmark eye | Paragraph, chips, note, link (A4) |
+| 6 | Selected work, C | `pookies.svg` (1200×300) | Pookies sheet: mini diagram, title block, cookie figure | Paragraph, chips, note (A5) |
 | 7 | Experience | `schedule.svg` (1200×352) | Schedule chart of the roles, 2022 to now | Five-item list (A6) |
 | 8 | Stack | `stack.svg` (1200×316) | Bill of materials with six rows | none |
 | 9 | Certificates | `certificates.svg` (1200×290) | Five issuer stamps | `<details>` titled "All 10 certificates" (A7) |
@@ -236,6 +237,10 @@ These are separate efforts.
 - ADR-001: the letters-and-numbers rule applies to bubbles, so the hero's zone numbers and the bill-of-materials item numbers don't break it.
 - Mockup: copy updated to match this spec, and one review note removed.
 
+**2026-11-12, owner request**
+
+- A4 and A5: the two EyeDTrack repositories the profile linked return 404, and the Pookies repository is now private. Both projects now carry the note "Private repository, walkthrough on request." EyeDTrack links its public project site instead; Pookies has no link, as on the owner's portfolio.
+
 ---
 
 ## Appendix A: Approved copy (verbatim)
@@ -283,7 +288,8 @@ I'm a fourth-year Computer Science student specializing in software engineering 
 - Trace label: "eye aspect ratio, live". Alert tag: "alert sent"
 - Paragraph: I led our thesis team. A Kotlin Android app streams in-car camera frames to a Python server, which detects drowsiness, yawning and distracted head movement in real time using CLAHE, Haar Cascade, eye and mouth aspect ratios, MobileNetV2 and LLaVA. Alerts go out by voice and push, with an event log for history.
 - Chips: Kotlin, Python, Flask, OpenCV, TensorFlow, PyTorch, scikit-learn
-- Links: [Android app](https://github.com/RVBCosme/thesis-eyedtrack-frontend) · [Detection server](https://github.com/RVBCosme/thesis-eyedtrack-backend)
+- Note: Private repository, walkthrough on request.
+- Link: [Project site](https://eyedtrack.vercel.app)
 
 **A5. C: Pookies System** (`pookies.svg`)
 
@@ -295,7 +301,8 @@ I'm a fourth-year Computer Science student specializing in software engineering 
 - Title block: Role "Co-founder, developer"; Stack "React, Express, SQLite"; Status "Update in progress"; Built "Mar to Jun 2026"
 - Paragraph: Pookies is the bakery I co-founded in 2023. During my software engineering internship at Highly Succeed, I built its point-of-sale and inventory system, which tracks sales, stock and batch costs in real time. I designed the normalized SQLite schema, built the Express REST API, and worked with the QA and graphics teams on test cases and UI polish. I'm updating it now.
 - Chips: React, Vite, Tailwind, Express, SQLite
-- Link: [Repository](https://github.com/RVBCosme/Pookies-Inventory-System). No demo link until the update ships.
+- Note: Private repository, walkthrough on request.
+- Links: none. No demo link until the update ships.
 
 **A6. Experience**
 
