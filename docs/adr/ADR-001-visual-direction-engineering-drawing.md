@@ -1,6 +1,6 @@
 # ADR-001: Visual direction is an engineering drawing set
 
-- Status: Accepted, 2026-09-23. Wording of the letters-and-numbers rule clarified in the owner's spec review the same day; the visuals didn't change. Amended 2026-11-12, proposed for the owner's sign-off: two project sheets are added, Lusot and RATCHET, so the set has six sheets (spec section 13).
+- Status: Accepted, 2026-09-23. Wording of the letters-and-numbers rule clarified in the owner's spec review the same day; the visuals didn't change. Amended 2026-11-12 and approved by the owner the same day: two project sheets are added, Lusot and RATCHET, so the set has six sheets (spec section 13).
 - Deciders: Rene Vincent Cosme (owner)
 - Reference: `docs/superpowers/mockups/2026-09-23-profile-final.html` (approved mockup)
 

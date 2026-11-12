@@ -1,6 +1,6 @@
 # ADR-005: Content is sourced, private details stay out, and the text works without the images
 
-- Status: Accepted, 2026-09-23. Amended 2026-11-12, proposed for the owner's sign-off: the project order follows his portfolio, and Lusot's demo joins EyeDTrack's site as a live link (rule 4).
+- Status: Accepted, 2026-09-23. Amended 2026-11-12 and approved by the owner the same day: the project order follows his portfolio, and Lusot's demo joins EyeDTrack's site as a live link (rule 4).
 - Reference: spec section 3 (sources) and appendix A (approved copy)
 
 ## Decision

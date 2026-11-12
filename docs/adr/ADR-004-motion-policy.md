@@ -1,6 +1,6 @@
 # ADR-004: Motion policy, where every animation tells a true story
 
-- Status: Accepted, 2026-09-23. Amended 2026-11-12 at the owner's request: the hero's AI loop no longer claims a time (rule 2). Amended again 2026-11-12: once the hero drew the rebuilt pipeline, the loop was timed to its published 713 ms (rule 2). Amended a third time 2026-11-12, proposed for the owner's sign-off: the Lusot and RATCHET loops (rule 2).
+- Status: Accepted, 2026-09-23. Amended 2026-11-12 at the owner's request: the hero's AI loop no longer claims a time (rule 2). Amended again 2026-11-12: once the hero drew the rebuilt pipeline, the loop was timed to its published 713 ms (rule 2). Amended a third time 2026-11-12 and approved by the owner the same day: the Lusot and RATCHET loops (rule 2).
 - Reference: approved mockup, whose timings are canonical; spec section 6
 
 ## Context
