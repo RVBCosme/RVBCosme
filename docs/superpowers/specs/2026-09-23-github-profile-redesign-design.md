@@ -68,7 +68,7 @@ The README follows this order. Each visual is a `<picture>` with light and dark 
 
 | # | Block | Asset (viewBox) | What it shows | Markdown text |
 |---|---|---|---|---|
-| 1 | Hero, sheet 1 of 4 | `hero.svg` (1200×470) | Group 1, business systems: React + Vite → Node + Express → SQLite, Postgres, with the markup "4,000+ tests (ANF)". Group 2, AI systems: Kotlin app → Python server → dlib 68 landmarks, with "1,200+ checks (EyeDTrack)" and a dimension line "camera to alert". Revision table by date. Title block with the RVC signature. | none |
+| 1 | Hero, sheet 1 of 4 | `hero.svg` (1200×470) | Group 1, business systems: React + Vite → Node + Express → SQLite, Postgres, with the markup "4,000+ tests (ANF)". Group 2, AI systems: Kotlin app → Python server → dlib 68 landmarks, with "1,200+ checks (EyeDTrack)" and a dimension line "713 ms to result (p95)". Revision table by date. Title block with the RVC signature. | none |
 | 2 | Intro | none | none | Intro paragraph (appendix A1) |
 | 3 | In progress | `now.svg` (1200×262) | Four live rows and a "Next" row | none |
 | 4 | Selected work, A | `anf.svg` (1200×300) | ANF System sheet: metrics, title block, test strip, receipt printer | Paragraph, chips, note (A3) |
@@ -89,7 +89,7 @@ ADR-004 sets the policy. The values below are the canonical timings from the app
 |---|---|---|
 | hero | One-time plot. Frame 0 to 0.9 s; boxes from 0.55 to 1.15 s; arrows from 1.1 to 1.55 s; dimension line at 1.7 s; revision table from 1.6 s; title block from 1.75 s; markups from 2.25 to 2.55 s; RVC signature from 2.65 s (1.1 s long); revision cloud from 3.0 s. A mint crosshair tours the drawing from 0 to 3.9 s. | once |
 | hero | Business request flow: packet, API box lights up, packet, data box lights up | 3.2 s loop, starts at 3.4 s |
-| hero | AI chain from camera to alert, not to scale: three frames, server, inference, models, while the dimension-line pulse covers 0 to 31.67% of the loop, then an alert ring. REC dot blinks. | 3 s loop, starts at 3.5 s |
+| hero | AI chain from camera to result, to scale: three frames, server, inference, landmarks, while the dimension-line pulse covers 0 to 31.67% of the loop (0.71 s, EyeDTrack's published 713 ms), then an alert ring. REC dot blinks. | 2.25 s loop, starts at 3.5 s |
 | hero | Revision cloud breathes | 3 s loop |
 | now | Stripes slide; live dots ping (staggered 0.4 s); the "Next" ring turns | 0.8 s / 1.8 s / 6 s |
 | anf | Test strip (38 ticks, 40 to 600) turns mint in a wave | 4.2 s per tick, 0.06 s stagger |
@@ -249,6 +249,7 @@ These are separate efforts.
 The owner's portfolio was brought up to date on 2026-11-12, and these changes make the profile agree with it (section 3 names each source).
 
 - Sections 3, 5 and 6, A4, A9 and ADR-004: EyeDTrack's sheet and the hero's AI boxes describe the 2026 rebuild that its figures were measured on: a Kotlin app on an Android phone, a Python and Flask server, and dlib's 68 facial landmarks with OpenCV, NumPy and MySQL. The thesis pipeline (MobileNetV2, LLaVA, CLAHE, Haar Cascade) is no longer drawn. The role, period, chips and paragraph follow the portfolio; the trace is labeled as an illustration, and the alert is spoken.
+- Sections 5 and 6, A9 and ADR-004: with the boxes naming the pipeline the 713 ms was measured on, the hero's dimension line carries the time again, "713 ms to result (p95)", and the AI loop runs in 2.25 s, so its pulse (the first 31.67%) lasts 0.71 s, to scale. The caveat that doesn't fit the drawing (one phone at a desk, November 2026) is in the hero's alt text and the EyeDTrack paragraph.
 
 ---
 
@@ -397,7 +398,7 @@ No phone number.
 
 **A9. Alt text** (verbatim; each is the `aria-label` of the same SVG in the mockup)
 
-- `hero.svg`: Engineering drawing of Rene Vincent Cosme's work, drawn in on load. Business systems: React and Vite, Node and Express, SQLite and Postgres, with 4,000+ tests on the ANF system; requests flow between them. AI systems: EyeDTrack, a Kotlin phone app and a Python server that finds the face with dlib's 68 facial landmarks, with 1,200+ automated checks; camera frames travel the pipeline from camera to alert. Timeline: co-founded Pookies August 2023, led the EyeDTrack thesis February 2025, Highly Succeed internship March 2026, built the ANF system May 2026, Araneta City web internship July 2026, marked as the latest revision.
+- `hero.svg`: Engineering drawing of Rene Vincent Cosme's work, drawn in on load. Business systems: React and Vite, Node and Express, SQLite and Postgres, with 4,000+ tests on the ANF system; requests flow between them. AI systems: EyeDTrack, a Kotlin phone app and a Python server that finds the face with dlib's 68 facial landmarks, with 1,200+ automated checks; camera frames travel the pipeline in 713 milliseconds from camera capture to result, the 95th percentile on one phone at a desk in November 2026, and the loop runs to that time. Timeline: co-founded Pookies August 2023, led the EyeDTrack thesis February 2025, Highly Succeed internship March 2026, built the ANF system May 2026, Araneta City web internship July 2026, marked as the latest revision.
 - `now.svg`: In progress: ANF Inventory System version 1.0.10 handover to the Council; the ANF public website in Laravel, Filament and MySQL; the Pookies System update; the web development internship at Araneta City. Next: a full-time software engineering or AI/ML role, open to offers.
 - `anf.svg`: Sheet 2 of 4, detail A, business systems, with a test-runner strip turning green: ANF Inventory System for the Adoración Nocturna Filipina National Council. 4,000+ automated tests, 23 screens, 127 decision records. Sole developer; React, Express, SQLite; version 1.0.10, September 2026; May 2026 to now.
 - `eyedtrack.svg`: Sheet 3 of 4, detail B, AI systems, with an illustrated eye-openness trace that raises a spoken alert on a drowsy dip: EyeDTrack, driver attention monitoring, thesis and solo rebuild. 713 milliseconds from camera capture to result at the 95th percentile, on one phone at a desk in November 2026; 1,200+ automated checks on the server, the app and the phone; 26 of 30 yawn alerts were real yawns, an idealized episode count from a sealed final test that met 0 of its 15 accuracy targets. Thesis team lead, then sole developer of the rebuild; Kotlin, Python, Flask and MySQL; dlib's 68 facial landmarks and OpenCV; 2025, and October to November 2026.

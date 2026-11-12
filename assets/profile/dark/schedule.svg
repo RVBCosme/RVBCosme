@@ -96,14 +96,14 @@
 @keyframes h1{0%,18%{opacity:0}20%,28%{opacity:1}30.5%,100%{opacity:0}}
 @keyframes a2{0%,29.7%{opacity:0;transform:translateX(0)}31.5%{opacity:1}46.5%{opacity:1}48.4%,100%{opacity:0;transform:translateX(62px)}}
 @keyframes h2{0%,48%{opacity:0}50%,57%{opacity:1}59.5%,100%{opacity:0}}
-.f1{animation:fr 3s linear 3.5s infinite}
-.f2{animation:fr 3s linear 3.55s infinite}
-.f3{animation:fr 3s linear 3.6s infinite}
-.hp{animation:hp 3s linear 3.5s infinite}
-.b2{animation:b2 3s linear 3.5s infinite}
-.hm{animation:hm 3s linear 3.5s infinite}
-.tpulse{fill:var(--red);opacity:0;animation:tp 3s linear 3.5s infinite}
-.ring{fill:none;stroke:var(--red);stroke-width:2.5;opacity:0;transform-box:fill-box;transform-origin:center;animation:ring 3s ease-out 3.5s infinite}
+.f1{animation:fr 2.25s linear 3.5s infinite}
+.f2{animation:fr 2.25s linear 3.55s infinite}
+.f3{animation:fr 2.25s linear 3.6s infinite}
+.hp{animation:hp 2.25s linear 3.5s infinite}
+.b2{animation:b2 2.25s linear 3.5s infinite}
+.hm{animation:hm 2.25s linear 3.5s infinite}
+.tpulse{fill:var(--red);opacity:0;animation:tp 2.25s linear 3.5s infinite}
+.ring{fill:none;stroke:var(--red);stroke-width:2.5;opacity:0;transform-box:fill-box;transform-origin:center;animation:ring 2.25s ease-out 3.5s infinite}
 .rec{fill:var(--red);opacity:0;animation:fadein .3s ease-out 3.2s forwards,rec 1.2s steps(1,end) 3.5s infinite}
 @keyframes fr{0%{opacity:0;transform:translateX(0)}1%{opacity:1}7.5%{opacity:1}8.4%,100%{opacity:0;transform:translateX(62px)}}
 @keyframes hp{0%,11%{opacity:0}12%,16%{opacity:1}17.5%,100%{opacity:0}}

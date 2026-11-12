@@ -333,11 +333,11 @@
 @keyframes a2 { 0%, 29.7% { opacity:0; transform:translateX(0); } 31.5% { opacity:1; } 46.5% { opacity:1; } 48.4%, 100% { opacity:0; transform:translateX(62px); } }
 @keyframes h2 { 0%, 48% { opacity:0; } 50%, 57% { opacity:1; } 59.5%, 100% { opacity:0; } }
 
-/* camera to alert: the chain runs in the first 31.67% of a 3 s loop, not to scale */
-.dC .f1 { animation:fr 3s linear 3.5s infinite; } .dC .f2 { animation:fr 3s linear 3.55s infinite; } .dC .f3 { animation:fr 3s linear 3.6s infinite; }
-.dC .hp { animation:hp 3s linear 3.5s infinite; } .dC .b2 { animation:b2 3s linear 3.5s infinite; } .dC .hm { animation:hm 3s linear 3.5s infinite; }
-.dC .tpulse { fill:var(--red); opacity:0; animation:tp 3s linear 3.5s infinite; }
-.dC .ring { fill:none; stroke:var(--red); stroke-width:2.5; opacity:0; transform-box:fill-box; transform-origin:center; animation:ring 3s ease-out 3.5s infinite; }
+/* camera to result: the chain runs in the first 31.67% of a 2.25 s loop, 0.71 s, EyeDTrack's published 713 ms */
+.dC .f1 { animation:fr 2.25s linear 3.5s infinite; } .dC .f2 { animation:fr 2.25s linear 3.55s infinite; } .dC .f3 { animation:fr 2.25s linear 3.6s infinite; }
+.dC .hp { animation:hp 2.25s linear 3.5s infinite; } .dC .b2 { animation:b2 2.25s linear 3.5s infinite; } .dC .hm { animation:hm 2.25s linear 3.5s infinite; }
+.dC .tpulse { fill:var(--red); opacity:0; animation:tp 2.25s linear 3.5s infinite; }
+.dC .ring { fill:none; stroke:var(--red); stroke-width:2.5; opacity:0; transform-box:fill-box; transform-origin:center; animation:ring 2.25s ease-out 3.5s infinite; }
 .dC .rec { fill:var(--red); opacity:0; animation:fadein .3s ease-out 3.2s forwards, rec 1.2s steps(1,end) 3.5s infinite; }
 @keyframes fr { 0% { opacity:0; transform:translateX(0); } 1% { opacity:1; } 7.5% { opacity:1; } 8.4%, 100% { opacity:0; transform:translateX(62px); } }
 @keyframes hp { 0%, 11% { opacity:0; } 12%, 16% { opacity:1; } 17.5%, 100% { opacity:0; } }
@@ -509,7 +509,7 @@
         <div class="gh-body">
 
           <!-- HERO (sheet 1 of 4) -->
-          <svg class="rv-anim dC" viewBox="0 0 1200 470" role="img" aria-label="Engineering drawing of Rene Vincent Cosme's work, drawn in on load. Business systems: React and Vite, Node and Express, SQLite and Postgres, with 4,000+ tests on the ANF system; requests flow between them. AI systems: EyeDTrack, a Kotlin phone app and a Python server that finds the face with dlib's 68 facial landmarks, with 1,200+ automated checks; camera frames travel the pipeline from camera to alert. Timeline: co-founded Pookies August 2023, led the EyeDTrack thesis February 2025, Highly Succeed internship March 2026, built the ANF system May 2026, Araneta City web internship July 2026, marked as the latest revision.">
+          <svg class="rv-anim dC" viewBox="0 0 1200 470" role="img" aria-label="Engineering drawing of Rene Vincent Cosme's work, drawn in on load. Business systems: React and Vite, Node and Express, SQLite and Postgres, with 4,000+ tests on the ANF system; requests flow between them. AI systems: EyeDTrack, a Kotlin phone app and a Python server that finds the face with dlib's 68 facial landmarks, with 1,200+ automated checks; camera frames travel the pipeline in 713 milliseconds from camera capture to result, the 95th percentile on one phone at a desk in November 2026, and the loop runs to that time. Timeline: co-founded Pookies August 2023, led the EyeDTrack thesis February 2025, Highly Succeed internship March 2026, built the ANF system May 2026, Araneta City web internship July 2026, marked as the latest revision.">
             <defs>
               <pattern id="cGrid" width="20" height="20" patternUnits="userSpaceOnUse"><path class="gridl" d="M20 0H0V20"/></pattern>
             </defs>
@@ -560,11 +560,11 @@
             <circle class="pkt b2" cx="542" cy="322" r="5"/>
             <text class="note fade" x="600" y="278" text-anchor="end" style="--d:2.55s">1,200+ checks (EyeDTrack)</text><path class="redl plot" d="M606 272H690L705 292" style="--len:120;--d:2.35s"/>
 
-            <!-- dimension: camera to alert -->
+            <!-- dimension: camera to result, 713 ms -->
             <path class="thin fade" d="M60 358V420M800 358V420" style="--d:1.6s"/>
             <path class="ln plot" d="M72 410H788" style="--len:716;--d:1.7s"/>
             <path class="ah fade" d="M72 405L62 410L72 415z" style="--d:2.1s"/><path class="ah fade" d="M788 405L798 410L788 415z" style="--d:2.1s"/>
-            <g class="fade" style="--d:2.15s"><rect class="sheet" x="330" y="388" width="200" height="22"/><text class="dim" x="430" y="404">camera to alert</text></g>
+            <g class="fade" style="--d:2.15s"><rect class="sheet" x="330" y="388" width="200" height="22"/><text class="dim" x="430" y="404">713 ms to result (p95)</text></g>
             <circle class="tpulse" cx="62" cy="410" r="5"/>
             <circle class="ring" cx="798" cy="410" r="7"/>
 

@@ -62,7 +62,8 @@ export default {
       '<circle class="pkt b2" cx="542" cy="322" r="5"/>',
       `<text class="note fade" x="600" y="278" text-anchor="end" style="--d:2.55s">${esc(ai.markup)}</text><path class="redl plot" d="M606 272H690L705 292" style="--len:120;--d:2.35s"/>`,
 
-      // Dimension line: camera to alert. Its red pulse covers the first 31.67% of a 3 s loop; the loop is not to scale (ADR-004).
+      // Dimension line: camera to result. Its red pulse covers the first 31.67% of a 2.25 s loop, i.e. 0.71 s,
+      // EyeDTrack's published 713 ms (ADR-004).
       '<path class="thin fade" d="M60 358V420M800 358V420" style="--d:1.6s"/>',
       '<path class="ln plot" d="M72 410H788" style="--len:716;--d:1.7s"/>',
       '<path class="ah fade" d="M72 405L62 410L72 415z" style="--d:2.1s"/><path class="ah fade" d="M788 405L798 410L788 415z" style="--d:2.1s"/>',

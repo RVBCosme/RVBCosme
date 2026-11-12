@@ -1,6 +1,6 @@
 # ADR-004: Motion policy, where every animation tells a true story
 
-- Status: Accepted, 2026-09-23. Amended 2026-11-12 at the owner's request: the hero's AI loop no longer claims a time (rule 2).
+- Status: Accepted, 2026-09-23. Amended 2026-11-12 at the owner's request: the hero's AI loop no longer claims a time (rule 2). Amended again 2026-11-12: once the hero drew the rebuilt pipeline, the loop was timed to its published 713 ms (rule 2).
 - Reference: approved mockup, whose timings are canonical; spec section 6
 
 ## Context
@@ -12,7 +12,7 @@ The owner asked twice for more motion, and it has to feel enjoyable. Images star
 1. The hero is the only place with a one-time sequence. The drawing "plots" itself: frame, boxes, arrows, red markups, the "RVC" signature and a revision cloud around the newest role. A mint plotter crosshair travels the drawing as it plots, about 3.9 s in total. After that the hero loops.
 2. Everything else loops gently, and every loop mirrors something real:
    - request flow through React → Express → SQLite
-   - frames running the AI pipeline from camera to alert, in step with the dimension-line pulse and ending in an alert ping. This loop is not to scale: EyeDTrack's published timing was measured on a later rebuild, not on the chain the hero draws (spec section 13, 2026-11-12).
+   - frames running EyeDTrack's pipeline from camera to result, in step with the dimension-line pulse and ending in an alert ping. The pulse lasts 0.71 s of a 2.25 s loop, the published 713 ms (95th percentile, one phone at a desk), so the loop is to scale (spec section 13, 2026-11-12).
    - the ANF test-runner strip and receipt printer (Official Receipts No. 1041 to 1044)
    - the EyeDTrack eye-openness trace, an illustration of its time rule, with the landmark eye blinking in sync, the drowsy closure and "alert spoken"
    - the Pookies cookie turning, with "batch cost, live"
