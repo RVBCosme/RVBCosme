@@ -74,7 +74,7 @@ function approvedCopyProblems(c) {
     const header = line(text, 'Header');
     check(`${id} header`, [p.letter, p.group, p.sheet], [/bubble (\w)/.exec(header)[1], ...quoted(header)]);
     check(`${id} title and subtitle`, [p.title, p.subtitle], [line(text, 'Title'), line(text, 'Subtitle')]);
-    // A value can hold a space ("0.95 s"), so each metric is compared as "value label".
+    // A value can hold a space ("713 ms"), so each metric is compared as "value label".
     check(`${id} metrics`, p.metrics.map((m) => `${m.value} ${m.label}`), /^- Metrics: (.+)$/m.exec(text)?.[1].split(' · ') ?? []);
     check(`${id} title block`, p.titleBlock, labelled(line(text, 'Title block')));
   });

@@ -1,6 +1,6 @@
 # ADR-004: Motion policy, where every animation tells a true story
 
-- Status: Accepted, 2026-09-23
+- Status: Accepted, 2026-09-23. Amended 2026-11-12 at the owner's request: the hero's AI loop no longer claims a time (rule 2).
 - Reference: approved mockup, whose timings are canonical; spec section 6
 
 ## Context
@@ -12,7 +12,7 @@ The owner asked twice for more motion, and it has to feel enjoyable. Images star
 1. The hero is the only place with a one-time sequence. The drawing "plots" itself: frame, boxes, arrows, red markups, the "RVC" signature and a revision cloud around the newest role. A mint plotter crosshair travels the drawing as it plots, about 3.9 s in total. After that the hero loops.
 2. Everything else loops gently, and every loop mirrors something real:
    - request flow through React → Express → SQLite
-   - the AI pipeline finishing in exactly 0.95 s, in step with the dimension-line pulse and ending in an alert ping
+   - frames running the AI pipeline from camera to alert, in step with the dimension-line pulse and ending in an alert ping. This loop is not to scale: EyeDTrack's published timing was measured on a later rebuild, not on the chain the hero draws (spec section 13, 2026-11-12).
    - the ANF test-runner strip and receipt printer (Official Receipts No. 1041 to 1044)
    - the EyeDTrack eye-aspect-ratio trace, with the landmark eye blinking in sync, the drowsy closure and "alert sent"
    - the Pookies cookie turning, with "batch cost, live"

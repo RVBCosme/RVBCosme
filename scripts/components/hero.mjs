@@ -42,7 +42,7 @@ export default {
       '<circle class="pkt a2" cx="542" cy="138" r="5"/>',
       `<path class="redl plot" d="M520 108L548 80H604" style="--len:100;--d:2.25s"/><text class="note fade" x="610" y="86" style="--d:2.45s">${esc(business.markup)}</text>`,
 
-      // Group 2: AI systems, with the 0.95 s camera-to-alert chain.
+      // Group 2: AI systems, with the camera-to-alert chain.
       `<circle class="bubble plot" cx="76" cy="258" r="16" style="--len:101;--d:.8s"/><text class="bubt fade" x="76" y="264" style="--d:1.05s">${esc(ai.number)}</text>`,
       `<text class="asm fade" x="102" y="266" style="--d:.9s">${esc(ai.title)}</text>`,
       '<rect class="box plot" x="60" y="292" width="200" height="60" style="--len:520;--d:.85s"/>',
@@ -62,7 +62,7 @@ export default {
       '<circle class="pkt b2" cx="542" cy="322" r="5"/>',
       `<text class="note fade" x="600" y="278" text-anchor="end" style="--d:2.55s">${esc(ai.markup)}</text><path class="redl plot" d="M606 272H690L705 292" style="--len:120;--d:2.35s"/>`,
 
-      // Dimension line: camera to alert. Its red pulse covers the first 31.67% of a 3 s loop, i.e. 0.95 s.
+      // Dimension line: camera to alert. Its red pulse covers the first 31.67% of a 3 s loop; the loop is not to scale (ADR-004).
       '<path class="thin fade" d="M60 358V420M800 358V420" style="--d:1.6s"/>',
       '<path class="ln plot" d="M72 410H788" style="--len:716;--d:1.7s"/>',
       '<path class="ah fade" d="M72 405L62 410L72 415z" style="--d:2.1s"/><path class="ah fade" d="M788 405L798 410L788 415z" style="--d:2.1s"/>',

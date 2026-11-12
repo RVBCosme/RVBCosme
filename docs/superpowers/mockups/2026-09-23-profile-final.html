@@ -333,7 +333,7 @@
 @keyframes a2 { 0%, 29.7% { opacity:0; transform:translateX(0); } 31.5% { opacity:1; } 46.5% { opacity:1; } 48.4%, 100% { opacity:0; transform:translateX(62px); } }
 @keyframes h2 { 0%, 48% { opacity:0; } 50%, 57% { opacity:1; } 59.5%, 100% { opacity:0; } }
 
-/* camera to alert: the whole chain takes 0.95 s of a 3 s loop */
+/* camera to alert: the chain runs in the first 31.67% of a 3 s loop, not to scale */
 .dC .f1 { animation:fr 3s linear 3.5s infinite; } .dC .f2 { animation:fr 3s linear 3.55s infinite; } .dC .f3 { animation:fr 3s linear 3.6s infinite; }
 .dC .hp { animation:hp 3s linear 3.5s infinite; } .dC .b2 { animation:b2 3s linear 3.5s infinite; } .dC .hm { animation:hm 3s linear 3.5s infinite; }
 .dC .tpulse { fill:var(--red); opacity:0; animation:tp 3s linear 3.5s infinite; }
@@ -509,7 +509,7 @@
         <div class="gh-body">
 
           <!-- HERO (sheet 1 of 4) -->
-          <svg class="rv-anim dC" viewBox="0 0 1200 470" role="img" aria-label="Engineering drawing of Rene Vincent Cosme's work, drawn in on load. Business systems: React and Vite, Node and Express, SQLite and Postgres, with 4,000+ tests on the ANF system; requests flow between them. AI systems: EyeDTrack, a Kotlin app and Python server running MobileNetV2 and LLaVA; camera frames travel the pipeline in about 0.95 seconds from camera to alert at 87.12% accuracy. Timeline: co-founded Pookies August 2023, led the EyeDTrack thesis February 2025, Highly Succeed internship March 2026, built the ANF system May 2026, Araneta City web internship July 2026, marked as the latest revision.">
+          <svg class="rv-anim dC" viewBox="0 0 1200 470" role="img" aria-label="Engineering drawing of Rene Vincent Cosme's work, drawn in on load. Business systems: React and Vite, Node and Express, SQLite and Postgres, with 4,000+ tests on the ANF system; requests flow between them. AI systems: EyeDTrack, a Kotlin app and Python server running MobileNetV2 and LLaVA, with 1,200+ automated checks; camera frames travel the pipeline from camera to alert. Timeline: co-founded Pookies August 2023, led the EyeDTrack thesis February 2025, Highly Succeed internship March 2026, built the ANF system May 2026, Araneta City web internship July 2026, marked as the latest revision.">
             <defs>
               <pattern id="cGrid" width="20" height="20" patternUnits="userSpaceOnUse"><path class="gridl" d="M20 0H0V20"/></pattern>
             </defs>
@@ -558,13 +558,13 @@
             <rect class="pkt f2" x="258" y="318" width="8" height="8"/>
             <rect class="pkt f3" x="258" y="318" width="8" height="8"/>
             <circle class="pkt b2" cx="542" cy="322" r="5"/>
-            <text class="note fade" x="600" y="278" text-anchor="end" style="--d:2.55s">87.12% accuracy</text><path class="redl plot" d="M606 272H690L705 292" style="--len:120;--d:2.35s"/>
+            <text class="note fade" x="600" y="278" text-anchor="end" style="--d:2.55s">1,200+ checks (EyeDTrack)</text><path class="redl plot" d="M606 272H690L705 292" style="--len:120;--d:2.35s"/>
 
             <!-- dimension: camera to alert -->
             <path class="thin fade" d="M60 358V420M800 358V420" style="--d:1.6s"/>
             <path class="ln plot" d="M72 410H788" style="--len:716;--d:1.7s"/>
             <path class="ah fade" d="M72 405L62 410L72 415z" style="--d:2.1s"/><path class="ah fade" d="M788 405L798 410L788 415z" style="--d:2.1s"/>
-            <g class="fade" style="--d:2.15s"><rect class="sheet" x="330" y="388" width="200" height="22"/><text class="dim" x="430" y="404">≈ 0.95 s camera to alert</text></g>
+            <g class="fade" style="--d:2.15s"><rect class="sheet" x="330" y="388" width="200" height="22"/><text class="dim" x="430" y="404">camera to alert</text></g>
             <circle class="tpulse" cx="62" cy="410" r="5"/>
             <circle class="ring" cx="798" cy="410" r="7"/>
 
@@ -659,7 +659,7 @@
           <p class="muted"><code>TypeScript</code> <code>React</code> <code>Vite</code> <code>Tailwind</code> <code>Express</code> <code>SQLite</code> <code>Zod</code> <code>Vitest</code> <code>Playwright</code><br>Private repository, walkthrough on request. Next up: the Council's public website, in Laravel and Filament.</p>
 
           <!-- SHEET 3: EyeDTrack -->
-          <svg class="dC" viewBox="0 0 1200 300" role="img" aria-label="Sheet 3 of 4, detail B, AI systems, with a live eye aspect ratio trace that raises an alert on a drowsy dip: EyeDTrack, real-time driver attention monitoring, thesis. 87.12% detection accuracy, 96.32% yawn precision, 0.95 seconds camera to alert. Team lead; Kotlin, Python, OpenCV; MobileNetV2 and LLaVA; February to June 2025.">
+          <svg class="dC" viewBox="0 0 1200 300" role="img" aria-label="Sheet 3 of 4, detail B, AI systems, with a live eye aspect ratio trace that raises an alert on a drowsy dip: EyeDTrack, real-time driver attention monitoring, thesis. 713 milliseconds from camera capture to result at the 95th percentile, on one phone at a desk in November 2026; 1,200+ automated checks on the server, the app and the phone; 26 of 30 yawn alerts were real yawns, an idealized episode count from a sealed final test that met 0 of its 15 accuracy targets. Team lead; Kotlin, Python, OpenCV; MobileNetV2 and LLaVA; February to June 2025.">
             <defs><clipPath id="eyeClip"><path d="M622 116Q700 72 778 116Q700 160 622 116Z"/></clipPath><clipPath id="eClip"><rect x="40" y="176" width="750" height="40"/></clipPath><pattern id="gS3" width="20" height="20" patternUnits="userSpaceOnUse"><path class="gridl" d="M20 0H0V20"/></pattern></defs>
             <rect class="sheet" width="1200" height="300"/>
             <rect x="12" y="12" width="1176" height="276" fill="url(#gS3)"/>
@@ -673,9 +673,9 @@
             <path class="thr" d="M40 204H790"/>
             <text class="earlabel" x="790" y="182" text-anchor="end">eye aspect ratio, live</text>
             <g class="alertchip"><rect x="696" y="166" width="94" height="22" rx="4"/><text x="743" y="182" text-anchor="middle">alert sent</text></g>
-            <text class="met red" x="40" y="250">87.12%</text><text class="metl" x="40" y="276">detection accuracy</text>
-            <text class="met" x="300" y="250">96.32%</text><text class="metl" x="300" y="276">yawn precision</text>
-            <text class="met" x="560" y="250">0.95 s</text><text class="metl" x="560" y="276">camera to alert</text>
+            <text class="met red" x="40" y="250">713 ms</text><text class="metl" x="40" y="276">camera to result, p95</text>
+            <text class="met" x="300" y="250">1,200+</text><text class="metl" x="300" y="276">automated checks</text>
+            <text class="met" x="560" y="250">26 of 30</text><text class="metl" x="560" y="276">yawn alerts were real</text>
             <rect class="frame1" x="820" y="36" width="344" height="228"/>
             <path class="thin" d="M820 93H1164M820 150H1164M820 207H1164"/>
             <text class="tl2" x="834" y="57">Role</text><text class="tv2" x="834" y="84">Team lead</text>
@@ -690,7 +690,7 @@
               <circle class="lm" cx="778" cy="116" r="4"/><circle class="lm" cx="728" cy="135" r="4"/><circle class="lm" cx="672" cy="135" r="4"/>
             </g>
           </svg>
-          <p>I led our thesis team. A Kotlin Android app streams in-car camera frames to a Python server, which detects drowsiness, yawning and distracted head movement in real time using CLAHE, Haar Cascade, eye and mouth aspect ratios, MobileNetV2 and LLaVA. Alerts go out by voice and push, with an event log for history.</p>
+          <p>I led our thesis team. A Kotlin Android app streams in-car camera frames to a Python server, which detects drowsiness, yawning and distracted head movement in real time using CLAHE, Haar Cascade, eye and mouth aspect ratios, MobileNetV2 and LLaVA. Alerts go out by voice and push, with an event log for history. From October 2026 I rebuilt it and tested it once on people it had never seen: it missed its accuracy targets, and the project site says so. The 713 ms is the 95th percentile from camera capture to result, on one phone at a desk on Nov 11, 2026; it rose to 887 ms with the server PC heavily loaded. The 26 of 30 is an idealized episode count from that sealed final test, which met 0 of its 15 accuracy targets, and the same count missed 22 yawn episodes.</p>
           <p class="muted"><code>Kotlin</code> <code>Python</code> <code>Flask</code> <code>OpenCV</code> <code>TensorFlow</code> <code>PyTorch</code> <code>scikit-learn</code><br>Private repository, walkthrough on request. <a href="#">Project site</a></p>
 
           <!-- SHEET 4: Pookies -->

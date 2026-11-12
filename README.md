@@ -2,7 +2,7 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/profile/dark/hero.svg">
-  <img src="assets/profile/light/hero.svg" width="100%" alt="Engineering drawing of Rene Vincent Cosme's work, drawn in on load. Business systems: React and Vite, Node and Express, SQLite and Postgres, with 4,000+ tests on the ANF system; requests flow between them. AI systems: EyeDTrack, a Kotlin app and Python server running MobileNetV2 and LLaVA; camera frames travel the pipeline in about 0.95 seconds from camera to alert at 87.12% accuracy. Timeline: co-founded Pookies August 2023, led the EyeDTrack thesis February 2025, Highly Succeed internship March 2026, built the ANF system May 2026, Araneta City web internship July 2026, marked as the latest revision.">
+  <img src="assets/profile/light/hero.svg" width="100%" alt="Engineering drawing of Rene Vincent Cosme's work, drawn in on load. Business systems: React and Vite, Node and Express, SQLite and Postgres, with 4,000+ tests on the ANF system; requests flow between them. AI systems: EyeDTrack, a Kotlin app and Python server running MobileNetV2 and LLaVA, with 1,200+ automated checks; camera frames travel the pipeline from camera to alert. Timeline: co-founded Pookies August 2023, led the EyeDTrack thesis February 2025, Highly Succeed internship March 2026, built the ANF system May 2026, Araneta City web internship July 2026, marked as the latest revision.">
 </picture>
 
 I'm a fourth-year Computer Science student specializing in software engineering at FEU Tech. I build web applications, database systems and AI tools that solve practical problems, and I take them from the first sketch to the working system. I'm looking for full-time software engineering or AI/ML roles, based in Manila and open to on-site, hybrid or remote work.
@@ -25,10 +25,10 @@ I started it while working as the Council's assistant office manager, to automat
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/profile/dark/eyedtrack.svg">
-  <img src="assets/profile/light/eyedtrack.svg" width="100%" alt="Sheet 3 of 4, detail B, AI systems, with a live eye aspect ratio trace that raises an alert on a drowsy dip: EyeDTrack, real-time driver attention monitoring, thesis. 87.12% detection accuracy, 96.32% yawn precision, 0.95 seconds camera to alert. Team lead; Kotlin, Python, OpenCV; MobileNetV2 and LLaVA; February to June 2025.">
+  <img src="assets/profile/light/eyedtrack.svg" width="100%" alt="Sheet 3 of 4, detail B, AI systems, with a live eye aspect ratio trace that raises an alert on a drowsy dip: EyeDTrack, real-time driver attention monitoring, thesis. 713 milliseconds from camera capture to result at the 95th percentile, on one phone at a desk in November 2026; 1,200+ automated checks on the server, the app and the phone; 26 of 30 yawn alerts were real yawns, an idealized episode count from a sealed final test that met 0 of its 15 accuracy targets. Team lead; Kotlin, Python, OpenCV; MobileNetV2 and LLaVA; February to June 2025.">
 </picture>
 
-I led our thesis team. A Kotlin Android app streams in-car camera frames to a Python server, which detects drowsiness, yawning and distracted head movement in real time using CLAHE, Haar Cascade, eye and mouth aspect ratios, MobileNetV2 and LLaVA. Alerts go out by voice and push, with an event log for history.
+I led our thesis team. A Kotlin Android app streams in-car camera frames to a Python server, which detects drowsiness, yawning and distracted head movement in real time using CLAHE, Haar Cascade, eye and mouth aspect ratios, MobileNetV2 and LLaVA. Alerts go out by voice and push, with an event log for history. From October 2026 I rebuilt it and tested it once on people it had never seen: it missed its accuracy targets, and the project site says so. The 713 ms is the 95th percentile from camera capture to result, on one phone at a desk on Nov 11, 2026; it rose to 887 ms with the server PC heavily loaded. The 26 of 30 is an idealized episode count from that sealed final test, which met 0 of its 15 accuracy targets, and the same count missed 22 yawn episodes.
 
 `Kotlin` `Python` `Flask` `OpenCV` `TensorFlow` `PyTorch` `scikit-learn`<br>Private repository, walkthrough on request. [Project site](https://eyedtrack.vercel.app)
 

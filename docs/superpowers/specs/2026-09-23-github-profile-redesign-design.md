@@ -42,7 +42,8 @@ The profile should be unmistakably his own, with nothing that looks like a templ
 | Fact | Source |
 |---|---|
 | Headline, About, five roles with dates, EyeDTrack team lead and period (Feb to Jun 2025, from the project entry), the Cisco (5), Udacity and freeCodeCamp (2) certificates, pronouns he/him | LinkedIn, `linkedin.com/in/rene-vincent-cosme` (read 2026-09-23) |
-| EyeDTrack metrics: 87.12% accuracy, 96.32% yawn precision, about 0.95 s camera to alert; the PMI and Certiport certificates, which aren't on LinkedIn (8 + 2 = 10 certificates) | Resume PDF (owner's copy) |
+| The PMI and Certiport certificates, which aren't on LinkedIn (8 + 2 = 10 certificates) | Resume PDF (owner's copy) |
+| EyeDTrack figures, each with its caveat: 713 ms from camera capture to result, 95th percentile (one phone at a desk, Nov 11, 2026; 887 ms with the server PC heavily loaded); 1,200+ automated checks on the server, the app and the phone; 26 of 30 yawn alerts were real yawns (an idealized episode count from the sealed final test, which met 0 of its 15 accuracy targets; the same count missed 22 yawn episodes). The rebuild from October 2026, tested once on people it had never seen, missed its accuracy targets | The owner's portfolio (its EyeDTrack entry) and the project site, `eyedtrack.vercel.app`, read 2026-11-12 |
 | ANF System: 4,170 documented automated checks, shown as "4,000+"; 23 screens; 127 decision records; release v1.0.10 on 22 Sep 2026; built 31 May to 12 Sep 2026; features; stack (React, Vite, Tailwind, Express, better-sqlite3, Zod, Vitest, Playwright) | The ANF System's private repository: its system documentation and package files |
 | ANF status reads "v1.0.10 handover" until the owner says it should read "in use" | Owner ruling, 2026-09-23 |
 | ANF public website: Laravel 13, Filament, MySQL, Pest, Playwright | The ANF website's private repository: its README |
@@ -67,7 +68,7 @@ The README follows this order. Each visual is a `<picture>` with light and dark 
 
 | # | Block | Asset (viewBox) | What it shows | Markdown text |
 |---|---|---|---|---|
-| 1 | Hero, sheet 1 of 4 | `hero.svg` (1200×470) | Group 1, business systems: React + Vite → Node + Express → SQLite, Postgres, with the markup "4,000+ tests (ANF)". Group 2, AI systems: Kotlin app → Python server → MobileNetV2 + LLaVA, with "87.12% accuracy" and a dimension line "≈ 0.95 s camera to alert". Revision table by date. Title block with the RVC signature. | none |
+| 1 | Hero, sheet 1 of 4 | `hero.svg` (1200×470) | Group 1, business systems: React + Vite → Node + Express → SQLite, Postgres, with the markup "4,000+ tests (ANF)". Group 2, AI systems: Kotlin app → Python server → MobileNetV2 + LLaVA, with "1,200+ checks (EyeDTrack)" and a dimension line "camera to alert". Revision table by date. Title block with the RVC signature. | none |
 | 2 | Intro | none | none | Intro paragraph (appendix A1) |
 | 3 | In progress | `now.svg` (1200×262) | Four live rows and a "Next" row | none |
 | 4 | Selected work, A | `anf.svg` (1200×300) | ANF System sheet: metrics, title block, test strip, receipt printer | Paragraph, chips, note (A3) |
@@ -88,7 +89,7 @@ ADR-004 sets the policy. The values below are the canonical timings from the app
 |---|---|---|
 | hero | One-time plot. Frame 0 to 0.9 s; boxes from 0.55 to 1.15 s; arrows from 1.1 to 1.55 s; dimension line at 1.7 s; revision table from 1.6 s; title block from 1.75 s; markups from 2.25 to 2.55 s; RVC signature from 2.65 s (1.1 s long); revision cloud from 3.0 s. A mint crosshair tours the drawing from 0 to 3.9 s. | once |
 | hero | Business request flow: packet, API box lights up, packet, data box lights up | 3.2 s loop, starts at 3.4 s |
-| hero | AI chain completing in 0.95 s: three frames, server, inference, models, while the dimension-line pulse covers 0 to 31.67% of the loop, then an alert ring. REC dot blinks. | 3 s loop, starts at 3.5 s |
+| hero | AI chain from camera to alert, not to scale: three frames, server, inference, models, while the dimension-line pulse covers 0 to 31.67% of the loop, then an alert ring. REC dot blinks. | 3 s loop, starts at 3.5 s |
 | hero | Revision cloud breathes | 3 s loop |
 | now | Stripes slide; live dots ping (staggered 0.4 s); the "Next" ring turns | 0.8 s / 1.8 s / 6 s |
 | anf | Test strip (38 ticks, 40 to 600) turns mint in a wave | 4.2 s per tick, 0.06 s stagger |
@@ -240,6 +241,8 @@ These are separate efforts.
 **2026-11-12, owner request**
 
 - A4 and A5: the two EyeDTrack repositories the profile linked return 404, and the Pookies repository is now private. Both projects now carry the note "Private repository, walkthrough on request." EyeDTrack links its public project site instead; Pookies has no link, as on the owner's portfolio.
+- Section 3, A4 and A9: EyeDTrack's résumé figures are retired, because the project's own sealed final test superseded them. The sheet shows the figures the owner's portfolio publishes, and the paragraph and the alt text carry their caveats. No accuracy percentage is shown.
+- Sections 5 and 6, A9 and ADR-004: the hero's AI markup is "1,200+ checks (EyeDTrack)", and its dimension line reads "camera to alert" with no time. The published 713 ms was measured on the 2026 rebuild, on one phone at a desk, which the project site describes without MobileNetV2 or LLaVA, so it isn't drawn across the in-car chain the hero shows. That loop keeps its timings and is not to scale.
 
 ---
 
@@ -283,10 +286,10 @@ I'm a fourth-year Computer Science student specializing in software engineering 
 - Header: bubble B, "AI systems", "Sheet 3 of 4"
 - Title: EyeDTrack
 - Subtitle: Real-time driver attention monitoring, thesis
-- Metrics: 87.12% detection accuracy · 96.32% yawn precision · 0.95 s camera to alert
+- Metrics: 713 ms camera to result, p95 · 1,200+ automated checks · 26 of 30 yawn alerts were real
 - Title block: Role "Team lead"; Stack "Kotlin, Python, OpenCV"; Models "MobileNetV2, LLaVA"; Period "Feb to Jun 2025"
 - Trace label: "eye aspect ratio, live". Alert tag: "alert sent"
-- Paragraph: I led our thesis team. A Kotlin Android app streams in-car camera frames to a Python server, which detects drowsiness, yawning and distracted head movement in real time using CLAHE, Haar Cascade, eye and mouth aspect ratios, MobileNetV2 and LLaVA. Alerts go out by voice and push, with an event log for history.
+- Paragraph: I led our thesis team. A Kotlin Android app streams in-car camera frames to a Python server, which detects drowsiness, yawning and distracted head movement in real time using CLAHE, Haar Cascade, eye and mouth aspect ratios, MobileNetV2 and LLaVA. Alerts go out by voice and push, with an event log for history. From October 2026 I rebuilt it and tested it once on people it had never seen: it missed its accuracy targets, and the project site says so. The 713 ms is the 95th percentile from camera capture to result, on one phone at a desk on Nov 11, 2026; it rose to 887 ms with the server PC heavily loaded. The 26 of 30 is an idealized episode count from that sealed final test, which met 0 of its 15 accuracy targets, and the same count missed 22 yawn episodes.
 - Chips: Kotlin, Python, Flask, OpenCV, TensorFlow, PyTorch, scikit-learn
 - Note: Private repository, walkthrough on request.
 - Link: [Project site](https://eyedtrack.vercel.app)
@@ -388,10 +391,10 @@ No phone number.
 
 **A9. Alt text** (verbatim; each is the `aria-label` of the same SVG in the mockup)
 
-- `hero.svg`: Engineering drawing of Rene Vincent Cosme's work, drawn in on load. Business systems: React and Vite, Node and Express, SQLite and Postgres, with 4,000+ tests on the ANF system; requests flow between them. AI systems: EyeDTrack, a Kotlin app and Python server running MobileNetV2 and LLaVA; camera frames travel the pipeline in about 0.95 seconds from camera to alert at 87.12% accuracy. Timeline: co-founded Pookies August 2023, led the EyeDTrack thesis February 2025, Highly Succeed internship March 2026, built the ANF system May 2026, Araneta City web internship July 2026, marked as the latest revision.
+- `hero.svg`: Engineering drawing of Rene Vincent Cosme's work, drawn in on load. Business systems: React and Vite, Node and Express, SQLite and Postgres, with 4,000+ tests on the ANF system; requests flow between them. AI systems: EyeDTrack, a Kotlin app and Python server running MobileNetV2 and LLaVA, with 1,200+ automated checks; camera frames travel the pipeline from camera to alert. Timeline: co-founded Pookies August 2023, led the EyeDTrack thesis February 2025, Highly Succeed internship March 2026, built the ANF system May 2026, Araneta City web internship July 2026, marked as the latest revision.
 - `now.svg`: In progress: ANF Inventory System version 1.0.10 handover to the Council; the ANF public website in Laravel, Filament and MySQL; the Pookies System update; the web development internship at Araneta City. Next: a full-time software engineering or AI/ML role, open to offers.
 - `anf.svg`: Sheet 2 of 4, detail A, business systems, with a test-runner strip turning green: ANF Inventory System for the Adoración Nocturna Filipina National Council. 4,000+ automated tests, 23 screens, 127 decision records. Sole developer; React, Express, SQLite; version 1.0.10, September 2026; May 2026 to now.
-- `eyedtrack.svg`: Sheet 3 of 4, detail B, AI systems, with a live eye aspect ratio trace that raises an alert on a drowsy dip: EyeDTrack, real-time driver attention monitoring, thesis. 87.12% detection accuracy, 96.32% yawn precision, 0.95 seconds camera to alert. Team lead; Kotlin, Python, OpenCV; MobileNetV2 and LLaVA; February to June 2025.
+- `eyedtrack.svg`: Sheet 3 of 4, detail B, AI systems, with a live eye aspect ratio trace that raises an alert on a drowsy dip: EyeDTrack, real-time driver attention monitoring, thesis. 713 milliseconds from camera capture to result at the 95th percentile, on one phone at a desk in November 2026; 1,200+ automated checks on the server, the app and the phone; 26 of 30 yawn alerts were real yawns, an idealized episode count from a sealed final test that met 0 of its 15 accuracy targets. Team lead; Kotlin, Python, OpenCV; MobileNetV2 and LLaVA; February to June 2025.
 - `pookies.svg`: Sheet 4 of 4, detail C, business systems: Pookies System, point of sale and inventory for Pookies, the bakery Rene co-founded. React and Vite client, Express REST API, normalized SQLite. Co-founder and developer; update in progress; built March to June 2026.
 - `schedule.svg`: Schedule, 2022 to now. BSCS at FEU Tech since August 2022. Freelance research since November 2022. Co-founder of Pookies since August 2023. Software engineering intern at Highly Succeed, March to June 2026. Assistant office manager at ANF since April 2026. Web development intern at Araneta City since July 2026.
 - `stack.svg`: Bill of materials. Web clients: TypeScript, JavaScript, React, Vite, Tailwind CSS. APIs and services: Node.js, Express, REST APIs, Zod. Data: SQLite, PostgreSQL, MySQL. AI and ML: Python, TensorFlow, PyTorch, OpenCV, scikit-learn, Pandas. Quality and process: Vitest, Playwright, TDD, Scrum. Also shipped with: Kotlin, Java, C++, PHP, Laravel.
