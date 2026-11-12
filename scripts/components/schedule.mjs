@@ -37,7 +37,8 @@ export default {
     rows.forEach((row, i) => {
       const y = 111 + 38 * i;
       const start = monthX(row.start);
-      const end = row.end === null ? nowX : monthX(row.end) + yearWidth / 12;
+      // A finished role ends where the month after its end begins, but never past the now line.
+      const end = row.end === null ? nowX : Math.min(monthX(row.end) + yearWidth / 12, nowX);
       bars.push(`<text class="tv" x="36" y="${y + 14}">${esc(row.label)}</text>`);
       bars.push(`<rect class="gbar${row.outline ? ' hollow' : ''}" x="${r1(start)}" y="${y}" width="${r1(end - start)}" height="16" rx="3"/>`);
       if (row.end === null) {

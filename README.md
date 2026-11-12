@@ -45,10 +45,10 @@ Pookies is the bakery I co-founded in 2023. During my software engineering inter
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/profile/dark/schedule.svg">
-  <img src="assets/profile/light/schedule.svg" width="100%" alt="Schedule, 2022 to now. BSCS at FEU Tech since August 2022. Freelance research since November 2022. Co-founder of Pookies since August 2023. Software engineering intern at Highly Succeed, March to June 2026. Assistant office manager at ANF since April 2026. Web development intern at Araneta City since July 2026.">
+  <img src="assets/profile/light/schedule.svg" width="100%" alt="Schedule, 2022 to now. BSCS at FEU Tech since August 2022. Freelance research since November 2022. Co-founder of Pookies since August 2023. Software engineering intern at Highly Succeed, March to June 2026. Assistant office manager at ANF since April 2026. Web development intern at Araneta City, July to November 2026.">
 </picture>
 
-- **Web development intern (voluntary)**, Araneta City (ACI, Inc.), Quezon City. Jul 2026 to now.<br>Page updates in HTML, content in the CMS, and site checks for broken links and layout errors.
+- **Web development intern**, Araneta City (ACI, Inc.), Quezon City. Jul to Nov 2026.<br>Built an internal IT technical inventory system in CakePHP and MySQL in seven milestones, with 2,406 unit, property and browser tests, all passing in GitHub Actions CI on Oct 16, 2026. Manual and automated QA on the company's other products, and website updates through the CMS.
 - **Assistant office manager**, Adoración Nocturna Filipina main office, Manila. Apr 2026 to now.<br>Daily operations and sales, a three-person data-entry team, and the ANF System.
 - **Software engineering intern**, Highly Succeed, remote. Mar to Jun 2026.<br>Built the Pookies Platform. All 65 workdays with zero absences, plus four web and database certificates.
 - **Co-founder**, Pookies, Taguig. Aug 2023 to now.<br>Sales, stock and budgeting, the software behind them, and the cookies.

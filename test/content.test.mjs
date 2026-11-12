@@ -183,10 +183,10 @@ test('owner rulings are enforced: project order and exactly three contact links'
 
 test('the month shown in three places must agree (Review Focus 5)', () => {
   const c = fixture();
-  c.experience.now = '2026-10';
+  c.experience.now = '2026-12';
   assert.deepEqual(validateContent(c), [
-    'now.updated must be "Updated 2026-10" to match experience.now',
-    'hero.titleBlock.date.value must be "2026-10" to match experience.now',
+    'now.updated must be "Updated 2026-12" to match experience.now',
+    'hero.titleBlock.date.value must be "2026-12" to match experience.now',
   ]);
 });
 

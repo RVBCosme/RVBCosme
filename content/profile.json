@@ -143,7 +143,7 @@
     }
   ],
   "experience": {
-    "alt": "Schedule, 2022 to now. BSCS at FEU Tech since August 2022. Freelance research since November 2022. Co-founder of Pookies since August 2023. Software engineering intern at Highly Succeed, March to June 2026. Assistant office manager at ANF since April 2026. Web development intern at Araneta City since July 2026.",
+    "alt": "Schedule, 2022 to now. BSCS at FEU Tech since August 2022. Freelance research since November 2022. Co-founder of Pookies since August 2023. Software engineering intern at Highly Succeed, March to June 2026. Assistant office manager at ANF since April 2026. Web development intern at Araneta City, July to November 2026.",
     "title": "Schedule",
     "range": "2022 to now",
     "fromYear": 2022,
@@ -154,11 +154,11 @@
       { "label": "Freelance research", "start": "2022-11", "end": null },
       { "label": "Co-founder, Pookies", "start": "2023-08", "end": null },
       { "label": "SWE intern, Highly Succeed", "start": "2026-03", "end": "2026-06" },
-      { "label": "Office manager, ANF", "start": "2026-04", "end": null },
-      { "label": "Web dev intern, Araneta", "start": "2026-07", "end": null }
+      { "label": "Assistant office manager, ANF", "start": "2026-04", "end": null },
+      { "label": "Web dev intern, Araneta", "start": "2026-07", "end": "2026-11" }
     ],
     "list": [
-      { "role": "Web development intern (voluntary)", "where": "Araneta City (ACI, Inc.), Quezon City", "period": "Jul 2026 to now", "detail": "Page updates in HTML, content in the CMS, and site checks for broken links and layout errors." },
+      { "role": "Web development intern", "where": "Araneta City (ACI, Inc.), Quezon City", "period": "Jul to Nov 2026", "detail": "Built an internal IT technical inventory system in CakePHP and MySQL in seven milestones, with 2,406 unit, property and browser tests, all passing in GitHub Actions CI on Oct 16, 2026. Manual and automated QA on the company's other products, and website updates through the CMS." },
       { "role": "Assistant office manager", "where": "Adoración Nocturna Filipina main office, Manila", "period": "Apr 2026 to now", "detail": "Daily operations and sales, a three-person data-entry team, and the ANF System." },
       { "role": "Software engineering intern", "where": "Highly Succeed, remote", "period": "Mar to Jun 2026", "detail": "Built the Pookies Platform. All 65 workdays with zero absences, plus four web and database certificates." },
       { "role": "Co-founder", "where": "Pookies, Taguig", "period": "Aug 2023 to now", "detail": "Sales, stock and budgeting, the software behind them, and the cookies." },

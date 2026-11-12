@@ -29,6 +29,13 @@ test('a new year adds a column and the drawing rescales', () => {
 test('a finished role ends where the month after its end begins; an ongoing one ends at the now line', () => {
   const body = schedule.render(fixture());
   assert.match(body, /<rect class="gbar" x="1013\.3" y="225" width="54\.7" height="16" rx="3"\/>/);
-  assert.match(body, /<rect class="gbar" x="1068" y="301" width="64\.9" height="16" rx="3"\/>/);
+  assert.match(body, /<rect class="gbar" x="1027" y="263" width="105\.9" height="16" rx="3"\/>/);
   assert.match(body, /<path class="nowline" d="M1132\.9 94V330"\/>/);
+});
+
+test('a role that ends this month stops at the now line, with no striped tip', () => {
+  const body = schedule.render(fixture());
+  assert.equal(fixture().experience.rows[5].end, fixture().experience.now);
+  assert.match(body, /<rect class="gbar" x="1068" y="301" width="64\.9" height="16" rx="3"\/>/);
+  assert.doesNotMatch(body, /id="gt5"/);
 });
