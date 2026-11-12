@@ -12,7 +12,7 @@
 Recruiters and hiring managers should know in about ten seconds:
 
 - who Rene is: a full-stack developer (TypeScript, React, Node, SQLite) with an AI edge
-- what proves it: the ANF System, EyeDTrack and the Pookies System
+- what proves it: the ANF System, EyeDTrack and the Pookies Platform
 - how to reach him: email, LinkedIn and GitHub
 
 The profile should be unmistakably his own, with nothing that looks like a template.
@@ -50,6 +50,7 @@ The profile should be unmistakably his own, with nothing that looks like a templ
 | ANF public website: Laravel 13, Filament, MySQL, Pest, Playwright | The ANF website's private repository: its README |
 | Pookies stack: React, Vite and Tailwind on the front; Express and better-sqlite3 behind | Public repo `RVBCosme/Pookies-Inventory-System` |
 | Pookies status "Update in progress" | Owner ruling, 2026-09-23 |
+| Pookies: the name "Pookies Platform" and the period "Mar 2026 to now" | The owner's portfolio (its Pookies entry), read 2026-11-12 |
 | EyeDTrack and Pookies repositories are private, so both carry "Private repository, walkthrough on request"; EyeDTrack links its public project site, `eyedtrack.vercel.app`, and Pookies has no link | Owner request, 2026-11-12, matching the owner's portfolio |
 | EyeDTrack as rebuilt in Oct to Nov 2026, the system its figures were measured on: a Kotlin app on an Android phone, a Python and Flask server, dlib's 68 facial landmarks, OpenCV, NumPy and MySQL; a time rule; spoken alerts; "says so" when it can't see the face; role "Thesis team lead; sole developer of the rebuild"; period "2025 and Oct to Nov 2026"; a teammate updated the app in mid-2026; built with an AI coding agent | The owner's portfolio (its EyeDTrack entry and skills list), read 2026-11-12 |
 
@@ -252,6 +253,7 @@ The owner's portfolio was brought up to date on 2026-11-12, and these changes ma
 - Sections 3, 5 and 6, A4, A9 and ADR-004: EyeDTrack's sheet and the hero's AI boxes describe the 2026 rebuild that its figures were measured on: a Kotlin app on an Android phone, a Python and Flask server, and dlib's 68 facial landmarks with OpenCV, NumPy and MySQL. The thesis pipeline (MobileNetV2, LLaVA, CLAHE, Haar Cascade) is no longer drawn. The role, period, chips and paragraph follow the portfolio; the trace is labeled as an illustration, and the alert is spoken.
 - Sections 5 and 6, A9 and ADR-004: with the boxes naming the pipeline the 713 ms was measured on, the hero's dimension line carries the time again, "713 ms to result (p95)", and the AI loop runs in 2.25 s, so its pulse (the first 31.67%) lasts 0.71 s, to scale. The caveat that doesn't fit the drawing (one phone at a desk, November 2026) is in the hero's alt text and the EyeDTrack paragraph.
 - Sections 3 and 5, A3 and A9: the ANF sheet is titled "ANF System", shows 20+ screens and 140+ decision records, reads "In use since Sep 2026", and calls its 4,000+ "automated checks", as the portfolio does (the hero's markup too). The paragraph says every screen is checked at nine widths in two browser engines, 1,000+ layout checks, that online ordering is being added, and carries each number's caveat. The note no longer calls the public website "next up": it is built and not live yet, and its online shop is in progress.
+- Sections 1 and 3, A2, A5, A6 and A9: the Pookies system is named "Pookies Platform", as on the portfolio, and its title block reads Period "Mar 2026 to now" instead of Built "Mar to Jun 2026": he built it during the Highly Succeed internship and is still updating it.
 
 ---
 
@@ -273,7 +275,7 @@ I'm a fourth-year Computer Science student specializing in software engineering 
 
 - ANF Inventory System: v1.0.10 handover to the Council
 - ANF public website: Laravel, Filament, MySQL
-- Pookies System: update
+- Pookies Platform: update
 - Web development internship, Araneta City
 - Next: a full-time software engineering or AI/ML role (bar label: "open to offers"; header: "Updated 2026-09")
 
@@ -303,14 +305,14 @@ I'm a fourth-year Computer Science student specializing in software engineering 
 - Note: Private repository, walkthrough on request.
 - Link: [Project site](https://eyedtrack.vercel.app)
 
-**A5. C: Pookies System** (`pookies.svg`)
+**A5. C: Pookies Platform** (`pookies.svg`)
 
 - Header: bubble C, "Business systems", "Sheet 4 of 4"
-- Title: Pookies System
+- Title: Pookies Platform
 - Subtitle: POS and inventory for Pookies, the bakery I co-founded
 - Diagram: React + Vite →(REST)→ Express API →(SQL)→ SQLite, normalized
 - Figure: cookie with "Ø 8 cm" and the note "batch cost, live"
-- Title block: Role "Co-founder, developer"; Stack "React, Express, SQLite"; Status "Update in progress"; Built "Mar to Jun 2026"
+- Title block: Role "Co-founder, developer"; Stack "React, Express, SQLite"; Status "Update in progress"; Period "Mar 2026 to now"
 - Paragraph: Pookies is the bakery I co-founded in 2023. During my software engineering internship at Highly Succeed, I built its point-of-sale and inventory system, which tracks sales, stock and batch costs in real time. I designed the normalized SQLite schema, built the Express REST API, and worked with the QA and graphics teams on test cases and UI polish. I'm updating it now.
 - Chips: React, Vite, Tailwind, Express, SQLite
 - Note: Private repository, walkthrough on request.
@@ -335,7 +337,7 @@ List:
 
 - **Web development intern (voluntary)**, Araneta City (ACI, Inc.), Quezon City. Jul 2026 to now. Page updates in HTML, content in the CMS, and site checks for broken links and layout errors.
 - **Assistant office manager**, Adoración Nocturna Filipina main office, Manila. Apr 2026 to now. Daily operations and sales, a three-person data-entry team, and the ANF System.
-- **Software engineering intern**, Highly Succeed, remote. Mar to Jun 2026. Built the Pookies System. All 65 workdays with zero absences, plus four web and database certificates.
+- **Software engineering intern**, Highly Succeed, remote. Mar to Jun 2026. Built the Pookies Platform. All 65 workdays with zero absences, plus four web and database certificates.
 - **Co-founder**, Pookies, Taguig. Aug 2023 to now. Sales, stock and budgeting, the software behind them, and the cookies.
 - **Freelance research assistant and writer**, remote. Nov 2022 to now. Research, data analysis and reports for confidential clients.
 
@@ -401,10 +403,10 @@ No phone number.
 **A9. Alt text** (verbatim; each is the `aria-label` of the same SVG in the mockup)
 
 - `hero.svg`: Engineering drawing of Rene Vincent Cosme's work, drawn in on load. Business systems: React and Vite, Node and Express, SQLite and Postgres, with 4,000+ automated checks on the ANF system (4,170, all passing, in September 2026); requests flow between them. AI systems: EyeDTrack, a Kotlin phone app and a Python server that finds the face with dlib's 68 facial landmarks, with 1,200+ automated checks; camera frames travel the pipeline in 713 milliseconds from camera capture to result, the 95th percentile on one phone at a desk in November 2026, and the loop runs to that time. Timeline: co-founded Pookies August 2023, led the EyeDTrack thesis February 2025, Highly Succeed internship March 2026, built the ANF system May 2026, Araneta City web internship July 2026, marked as the latest revision.
-- `now.svg`: In progress: ANF Inventory System version 1.0.10 handover to the Council; the ANF public website in Laravel, Filament and MySQL; the Pookies System update; the web development internship at Araneta City. Next: a full-time software engineering or AI/ML role, open to offers.
+- `now.svg`: In progress: ANF Inventory System version 1.0.10 handover to the Council; the ANF public website in Laravel, Filament and MySQL; the Pookies Platform update; the web development internship at Araneta City. Next: a full-time software engineering or AI/ML role, open to offers.
 - `anf.svg`: Sheet 2 of 4, detail A, business systems, with a test-runner strip turning green: ANF System for the Adoración Nocturna Filipina National Council. 4,000+ automated checks (4,170, all passing, on September 12, 2026), 20+ screens, 140+ decision records. Sole developer; React, Express, SQLite; in use since September 2026, with online ordering in progress; May 2026 to now.
 - `eyedtrack.svg`: Sheet 3 of 4, detail B, AI systems, with an illustrated eye-openness trace that raises a spoken alert on a drowsy dip: EyeDTrack, driver attention monitoring, thesis and solo rebuild. 713 milliseconds from camera capture to result at the 95th percentile, on one phone at a desk in November 2026; 1,200+ automated checks on the server, the app and the phone; 26 of 30 yawn alerts were real yawns, an idealized episode count from a sealed final test that met 0 of its 15 accuracy targets. Thesis team lead, then sole developer of the rebuild; Kotlin, Python, Flask and MySQL; dlib's 68 facial landmarks and OpenCV; 2025, and October to November 2026.
-- `pookies.svg`: Sheet 4 of 4, detail C, business systems: Pookies System, point of sale and inventory for Pookies, the bakery Rene co-founded. React and Vite client, Express REST API, normalized SQLite. Co-founder and developer; update in progress; built March to June 2026.
+- `pookies.svg`: Sheet 4 of 4, detail C, business systems: Pookies Platform, point of sale and inventory for Pookies, the bakery Rene co-founded. React and Vite client, Express REST API, normalized SQLite. Co-founder and developer; update in progress; March 2026 to now.
 - `schedule.svg`: Schedule, 2022 to now. BSCS at FEU Tech since August 2022. Freelance research since November 2022. Co-founder of Pookies since August 2023. Software engineering intern at Highly Succeed, March to June 2026. Assistant office manager at ANF since April 2026. Web development intern at Araneta City since July 2026.
 - `stack.svg`: Bill of materials. Web clients: TypeScript, JavaScript, React, Vite, Tailwind CSS. APIs and services: Node.js, Express, REST APIs, Zod. Data: SQLite, PostgreSQL, MySQL. AI and ML: Python, TensorFlow, PyTorch, OpenCV, scikit-learn, Pandas. Quality and process: Vitest, Playwright, TDD, Scrum. Also shipped with: Kotlin, Java, C++, PHP, Laravel.
 - `certificates.svg`: Certificates: Cisco, 5 certificates in modern AI, data science, DevNet and cybersecurity; Udacity AWS AI Practitioner Challenge, 2026; freeCodeCamp Relational Database and Responsive Web Design, 2026; PMI Project Management Ready, 2025; Certiport IT Specialist in Python, 2024.

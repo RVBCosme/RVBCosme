@@ -45,13 +45,13 @@
   },
   "intro": "I'm a fourth-year Computer Science student specializing in software engineering at FEU Tech. I build web applications, database systems and AI tools that solve practical problems, and I take them from the first sketch to the working system. I'm looking for full-time software engineering or AI/ML roles, based in Manila and open to on-site, hybrid or remote work.",
   "now": {
-    "alt": "In progress: ANF Inventory System version 1.0.10 handover to the Council; the ANF public website in Laravel, Filament and MySQL; the Pookies System update; the web development internship at Araneta City. Next: a full-time software engineering or AI/ML role, open to offers.",
+    "alt": "In progress: ANF Inventory System version 1.0.10 handover to the Council; the ANF public website in Laravel, Filament and MySQL; the Pookies Platform update; the web development internship at Araneta City. Next: a full-time software engineering or AI/ML role, open to offers.",
     "title": "In progress",
     "updated": "Updated 2026-09",
     "items": [
       "ANF Inventory System: v1.0.10 handover to the Council",
       "ANF public website: Laravel, Filament, MySQL",
-      "Pookies System: update",
+      "Pookies Platform: update",
       "Web development internship, Araneta City"
     ],
     "next": { "text": "Next: a full-time software engineering or AI/ML role", "bar": "open to offers" }
@@ -120,14 +120,14 @@
       "letter": "C",
       "group": "Business systems",
       "sheet": "Sheet 4 of 4",
-      "title": "Pookies System",
+      "title": "Pookies Platform",
       "subtitle": "POS and inventory for Pookies, the bakery I co-founded",
       "metrics": [],
       "titleBlock": [
         { "label": "Role", "value": "Co-founder, developer" },
         { "label": "Stack", "value": "React, Express, SQLite" },
         { "label": "Status", "value": "Update in progress" },
-        { "label": "Built", "value": "Mar to Jun 2026" }
+        { "label": "Period", "value": "Mar 2026 to now" }
       ],
       "figure": {
         "boxes": ["React + Vite", "Express API", "SQLite, normalized"],
@@ -139,7 +139,7 @@
       "chips": ["React", "Vite", "Tailwind", "Express", "SQLite"],
       "note": "Private repository, walkthrough on request.",
       "links": [],
-      "alt": "Sheet 4 of 4, detail C, business systems: Pookies System, point of sale and inventory for Pookies, the bakery Rene co-founded. React and Vite client, Express REST API, normalized SQLite. Co-founder and developer; update in progress; built March to June 2026."
+      "alt": "Sheet 4 of 4, detail C, business systems: Pookies Platform, point of sale and inventory for Pookies, the bakery Rene co-founded. React and Vite client, Express REST API, normalized SQLite. Co-founder and developer; update in progress; March 2026 to now."
     }
   ],
   "experience": {
@@ -160,7 +160,7 @@
     "list": [
       { "role": "Web development intern (voluntary)", "where": "Araneta City (ACI, Inc.), Quezon City", "period": "Jul 2026 to now", "detail": "Page updates in HTML, content in the CMS, and site checks for broken links and layout errors." },
       { "role": "Assistant office manager", "where": "Adoración Nocturna Filipina main office, Manila", "period": "Apr 2026 to now", "detail": "Daily operations and sales, a three-person data-entry team, and the ANF System." },
-      { "role": "Software engineering intern", "where": "Highly Succeed, remote", "period": "Mar to Jun 2026", "detail": "Built the Pookies System. All 65 workdays with zero absences, plus four web and database certificates." },
+      { "role": "Software engineering intern", "where": "Highly Succeed, remote", "period": "Mar to Jun 2026", "detail": "Built the Pookies Platform. All 65 workdays with zero absences, plus four web and database certificates." },
       { "role": "Co-founder", "where": "Pookies, Taguig", "period": "Aug 2023 to now", "detail": "Sales, stock and budgeting, the software behind them, and the cookies." },
       { "role": "Freelance research assistant and writer", "where": "remote", "period": "Nov 2022 to now", "detail": "Research, data analysis and reports for confidential clients." }
     ]

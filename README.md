@@ -9,7 +9,7 @@ I'm a fourth-year Computer Science student specializing in software engineering 
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/profile/dark/now.svg">
-  <img src="assets/profile/light/now.svg" width="100%" alt="In progress: ANF Inventory System version 1.0.10 handover to the Council; the ANF public website in Laravel, Filament and MySQL; the Pookies System update; the web development internship at Araneta City. Next: a full-time software engineering or AI/ML role, open to offers.">
+  <img src="assets/profile/light/now.svg" width="100%" alt="In progress: ANF Inventory System version 1.0.10 handover to the Council; the ANF public website in Laravel, Filament and MySQL; the Pookies Platform update; the web development internship at Araneta City. Next: a full-time software engineering or AI/ML role, open to offers.">
 </picture>
 
 ## Selected work
@@ -34,7 +34,7 @@ I led our thesis team in 2025, and a teammate updated the app in mid-2026. From 
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/profile/dark/pookies.svg">
-  <img src="assets/profile/light/pookies.svg" width="100%" alt="Sheet 4 of 4, detail C, business systems: Pookies System, point of sale and inventory for Pookies, the bakery Rene co-founded. React and Vite client, Express REST API, normalized SQLite. Co-founder and developer; update in progress; built March to June 2026.">
+  <img src="assets/profile/light/pookies.svg" width="100%" alt="Sheet 4 of 4, detail C, business systems: Pookies Platform, point of sale and inventory for Pookies, the bakery Rene co-founded. React and Vite client, Express REST API, normalized SQLite. Co-founder and developer; update in progress; March 2026 to now.">
 </picture>
 
 Pookies is the bakery I co-founded in 2023. During my software engineering internship at Highly Succeed, I built its point-of-sale and inventory system, which tracks sales, stock and batch costs in real time. I designed the normalized SQLite schema, built the Express REST API, and worked with the QA and graphics teams on test cases and UI polish. I'm updating it now.
@@ -50,7 +50,7 @@ Pookies is the bakery I co-founded in 2023. During my software engineering inter
 
 - **Web development intern (voluntary)**, Araneta City (ACI, Inc.), Quezon City. Jul 2026 to now.<br>Page updates in HTML, content in the CMS, and site checks for broken links and layout errors.
 - **Assistant office manager**, Adoración Nocturna Filipina main office, Manila. Apr 2026 to now.<br>Daily operations and sales, a three-person data-entry team, and the ANF System.
-- **Software engineering intern**, Highly Succeed, remote. Mar to Jun 2026.<br>Built the Pookies System. All 65 workdays with zero absences, plus four web and database certificates.
+- **Software engineering intern**, Highly Succeed, remote. Mar to Jun 2026.<br>Built the Pookies Platform. All 65 workdays with zero absences, plus four web and database certificates.
 - **Co-founder**, Pookies, Taguig. Aug 2023 to now.<br>Sales, stock and budgeting, the software behind them, and the cookies.
 - **Freelance research assistant and writer**, remote. Nov 2022 to now.<br>Research, data analysis and reports for confidential clients.
 
