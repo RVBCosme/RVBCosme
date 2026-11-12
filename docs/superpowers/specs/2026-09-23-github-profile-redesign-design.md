@@ -3,7 +3,7 @@
 - **Date:** 2026-09-23
 - **Repo:** `RVBCosme/RVBCosme` (the public profile README repo)
 - **Owner:** Rene Vincent Cosme
-- **Status:** Approved by the owner, 2026-09-23. The design was approved in brainstorming using the visual companion; the owner then reviewed and approved this written spec, with the changes listed in section 13.
+- **Status:** Approved by the owner, 2026-09-23. The design was approved in brainstorming using the visual companion; the owner then reviewed and approved this written spec, with the changes listed in section 13. The Lusot and RATCHET sheets (section 13, 2026-11-12) are proposed on the branch `lusot-ratchet-sheets` and await his sign-off.
 - **Decisions:** `docs/adr/ADR-001` to `ADR-005`
 - **Approved mockup:** `docs/superpowers/mockups/2026-09-23-profile-final.html`. Open it in a browser. It holds the canonical copy, geometry, colors and animation timings.
 
@@ -12,7 +12,7 @@
 Recruiters and hiring managers should know in about ten seconds:
 
 - who Rene is: an AI engineer and full-stack developer (Python and computer vision; TypeScript, React, Node, SQLite)
-- what proves it: the ANF System, EyeDTrack and the Pookies Platform
+- what proves it: Lusot, EyeDTrack, RATCHET, the ANF System and the Pookies Platform
 - how to reach him: email, LinkedIn and GitHub
 
 The profile should be unmistakably his own, with nothing that looks like a template.
@@ -56,6 +56,10 @@ The profile should be unmistakably his own, with nothing that looks like a templ
 | Positioning "AI engineer and full-stack developer"; open to full-time roles now, on-site, hybrid or remote, from Manila; expects to graduate in January 2027; wants a software engineering or AI and machine learning role; what is in progress in November 2026 (NASA Space Apps Challenge 2026 as team owner, Nov 14 to 15; online ordering for the ANF System; EyeDTrack's newer yawn detector, frozen until it is tested once on new people; the Pookies update) | The owner's portfolio (profile, now list and FAQ), read 2026-11-12 |
 | EyeDTrack and Pookies repositories are private, so both carry "Private repository, walkthrough on request"; EyeDTrack links its public project site, `eyedtrack.vercel.app`, and Pookies has no link | Owner request, 2026-11-12, matching the owner's portfolio |
 | EyeDTrack as rebuilt in Oct to Nov 2026, the system its figures were measured on: a Kotlin app on an Android phone, a Python and Flask server, dlib's 68 facial landmarks, OpenCV, NumPy and MySQL; a time rule; spoken alerts; "says so" when it can't see the face; role "Thesis team lead; sole developer of the rebuild"; period "2025 and Oct to Nov 2026"; a teammate updated the app in mid-2026; built with an AI coding agent | The owner's portfolio (its EyeDTrack entry and skills list), read 2026-11-12 |
+| Lusot: a flood-depth reader for Metro Manila on Meta's SAM 3.1 and Muse Spark models, built alone as a solo entry to the Meta Global AI Developer Hackathon, Oct 27 to Nov 4, 2026, with Claude Code as a coding assistant; faces blurred on its own server first; published code, not the models, picks one of nine levels (MMDA's seven gauge levels plus "below gutter" and "above chest", with upper limits of 5, 8, 10, 13, 19, 26, 37 and 45 inches, the last open above), or "can't tell" when no car wheel or adult is clear; not affiliated with MMDA, and a reading is not advice to cross. Its figures with their caveats: 0 of 15 flood-free, open-license street photos reported as flooded (a small sample; the README calls its results indicative); 1 of 6 sealed test photos given a reading (scored once on Nov 3, 2026 with the system frozen; the other five refused; the one reading deeper than its label); 5,900+ automated tests in CI (5,986 passing in the run of Nov 10, 2026, rounded down). The live system was shut down on Nov 10, 2026; the demo replays saved real samples and simulates the rest. Chips: the first nine of its skills, in order. No placement is stated | The owner's portfolio (its Lusot entry and its sources: Lusot's public repository and CI run, and the live demo's Tested page), read 2026-11-12 |
+| RATCHET: a gated pipeline around IBM Bob, an AI coding agent, designed and built alone over the IBM TechXchange 2026 Pre-conference Dev Day Hackathon, Aug 29 to 30, 2026; five phases (Spec, Red, Green, Review, Memory); a hook that blocks any tool call outside the current phase; gates a person opens; hooks write every step to a ledger chained with a keyed hash (HMAC), which a verify script checks; the eight-record demo ledger with one refused call. Its figures with their caveats: Top 50, one of the 50 top-scoring qualified submissions (the organizers' email of Sep 29, 2026, which gives no rank); 8 of 8 hidden referee tests passed by the gated run (one run, one seed: an illustration, not a benchmark); 52 ledger records checked by the verify script (tamper-evident, not tamper-proof against someone with a shell). The repository reports both demo runs. Chips: its skills list, "tdd" written TDD as in the bill of materials. No team is named | The owner's portfolio (its RATCHET entry, ledger figure and sources: the public repository and its demo write-up), read 2026-11-12 |
+| Lusot's live demo `lusot.vercel.app` and public repository `RVBCosme/Lusot-submission`; RATCHET's public repository `RVBCosme/Bob-Passing`. Only Lusot and EyeDTrack are shown with live sites | The owner's portfolio (its links and live demos), read 2026-11-12 |
+| Project order: Lusot, EyeDTrack, RATCHET, ANF System, Pookies Platform. It is the portfolio's order of featured work; the portfolio's Araneta system sits between ANF and Pookies there, and the profile shows it under Experience | The owner's portfolio, read 2026-11-12; proposed for the owner's sign-off (ADR-005) |
 
 Rules (ADR-005): never invent a number, round growing numbers down, and name the source of every change.
 
@@ -73,16 +77,18 @@ The README follows this order. Each visual is a `<picture>` with light and dark 
 
 | # | Block | Asset (viewBox) | What it shows | Markdown text |
 |---|---|---|---|---|
-| 1 | Hero, sheet 1 of 4 | `hero.svg` (1200×470) | Group 1, business systems: React + Vite → Node + Express → SQLite, Postgres, with the markup "4,000+ checks (ANF)". Group 2, AI systems: Kotlin app → Python server → dlib 68 landmarks, with "1,200+ checks (EyeDTrack)" and a dimension line "713 ms to result (p95)". Revision table by date. Title block with the RVC signature. | none |
+| 1 | Hero, sheet 1 of 6 | `hero.svg` (1200×470) | Group 1, business systems: React + Vite → Node + Express → SQLite, Postgres, with the markup "4,000+ checks (ANF)". Group 2, AI systems: Kotlin app → Python server → dlib 68 landmarks, with "1,200+ checks (EyeDTrack)" and a dimension line "713 ms to result (p95)". Revision table by date. Title block with the RVC signature. | none |
 | 2 | Intro | none | none | Intro paragraph (appendix A1) |
 | 3 | In progress | `now.svg` (1200×262) | Four live rows and a "Next" row | none |
-| 4 | Selected work, A | `anf.svg` (1200×300) | ANF System sheet: metrics, title block, test strip, receipt printer | Paragraph, chips, note (A3) |
+| 4 | Selected work, A | `lusot.svg` (1200×300) | Lusot sheet: metrics, title block, an illustrated sample photo read on a nine-level depth gauge, or "can't tell" | Paragraph, chips, note, links (A3) |
 | 5 | Selected work, B | `eyedtrack.svg` (1200×300) | EyeDTrack sheet: metrics, title block, an illustrated eye-openness trace, landmark eye | Paragraph, chips, note, link (A4) |
-| 6 | Selected work, C | `pookies.svg` (1200×300) | Pookies sheet: mini diagram, title block, cookie figure | Paragraph, chips, note (A5) |
-| 7 | Experience | `schedule.svg` (1200×352) | Schedule chart of the roles, 2022 to now | Five-item list (A6) |
-| 8 | Stack | `stack.svg` (1200×316) | Bill of materials with six rows | none |
-| 9 | Certificates | `certificates.svg` (1200×290) | Five issuer stamps, led by AWS | `<details>` titled "All 14 certificates and badges" (A7) |
-| 10 | Contact | `contact.svg` (1200×280) | "Let's connect", wired to the Email, LinkedIn and GitHub cards | Three links (A8) |
+| 6 | Selected work, C | `ratchet.svg` (1200×300) | RATCHET sheet: metrics, title block, five phases, the hook's refusal, an illustrated chained ledger and its check | Paragraph, chips, note, link (A5) |
+| 7 | Selected work, D | `anf.svg` (1200×300) | ANF System sheet: metrics, title block, test strip, receipt printer | Paragraph, chips, note (A6) |
+| 8 | Selected work, E | `pookies.svg` (1200×300) | Pookies sheet: mini diagram, title block, cookie figure | Paragraph, chips, note (A7) |
+| 9 | Experience | `schedule.svg` (1200×352) | Schedule chart of the roles, 2022 to now | Five-item list (A8) |
+| 10 | Stack | `stack.svg` (1200×316) | Bill of materials with six rows | none |
+| 11 | Certificates | `certificates.svg` (1200×290) | Five issuer stamps, led by AWS | `<details>` titled "All 14 certificates and badges" (A9) |
+| 12 | Contact | `contact.svg` (1200×280) | "Let's connect", wired to the Email, LinkedIn and GitHub cards | Three links (A10) |
 
 There's no H1 in the README, because the profile sidebar already shows the name. Section headings are H2: Selected work, Experience, Stack, Certificates, Contact.
 
@@ -97,18 +103,20 @@ ADR-004 sets the policy. The values below are the canonical timings from the app
 | hero | AI chain from camera to result, to scale: three frames, server, inference, landmarks, while the dimension-line pulse covers 0 to 31.67% of the loop (0.71 s, EyeDTrack's published 713 ms), then an alert ring. REC dot blinks. | 2.25 s loop, starts at 3.5 s |
 | hero | Revision cloud breathes | 3 s loop |
 | now | Stripes slide; live dots ping (staggered 0.4 s); the "Next" ring turns | 0.8 s / 1.8 s / 6 s |
+| lusot | A sample photo (an illustration, not a real reading): water rises up a parked car's wheel while the gauge fills to the same level, knee, from 4% to 20%; the leader points at knee and its label darkens from 23% to 45%; the water drains by 50%. Then the photo shows no car wheel or adult clear enough to read: hatching covers it and the car fades from 50% to 54%, and the answer moves to "can't tell", whose box turns mint, from 58% to 90%. | 10 s loop |
+| eyedtrack | Eye-openness trace scrolls (an illustration, not driver data). Eye blinks at 14.7%, 38.7% and 57.3%. Drowsy closure from 76.7% to 84.7%, when the landmarks turn coral and "alert spoken" shows from 78% to 93%. | 6 s loop, all in sync |
+| ratchet | An illustrated run with eight ledger records, not the real run's 52. The current phase is outlined in mint: Spec, then Red from 14%, Green from 40%, Review from 52% and Memory from 62%. In Red the hook refuses a call outside the phase, shown by the red note from 24% to 36%. Each step adds its record when it happens (3%, 14%, 21%, 27%, 40%, 46%, 52%, 62%), the refused call in red; the records clear at 95% to 97%. From 7.9 s the verify script checks the records one after another, and "verify: PASS" shows from 78% to 94%. | 12 s loop, checks 0.15 s apart |
 | anf | Test strip (38 ticks, 40 to 600) turns mint in a wave | 4.2 s per tick, 0.06 s stagger |
 | anf | Receipt printer: Official Receipts No. 1041 to 1044 print, hold, then tear off | 12 s loop, receipts 3 s apart |
-| eyedtrack | Eye-openness trace scrolls (an illustration, not driver data). Eye blinks at 14.7%, 38.7% and 57.3%. Drowsy closure from 76.7% to 84.7%, when the landmarks turn coral and "alert spoken" shows from 78% to 93%. | 6 s loop, all in sync |
 | pookies | Request flow like the hero's; status dot pings; cookie turns | 3.2 s / 1.8 s / 24 s |
 | schedule | "Now" line pulses; ongoing bars have sliding stripe tips | 2.4 s / 0.8 s |
 | stack | Checkmarks draw down the six rows | 6 s loop, 0.35 s stagger |
 | certificates | Stamps press in one after another, hold, then fade | 11 s loop, 0.35 s stagger |
 | contact | "Let's connect" writes, fills, holds, fades. Hub pulses. Signals run to Email, LinkedIn and GitHub, and each card pings on arrival. | 10 s / 2.4 s / 3 s (cards 1 s apart) |
 
-The staggers are exact: tick *i* on the ANF strip starts 0.06 × *i* s after the first, and row or stamp *i* starts 0.35 × *i* s after the first. The mockup rounds these to 0.1 s steps; the values here win.
+The staggers are exact: tick *i* on the ANF strip starts 0.06 × *i* s after the first, row or stamp *i* starts 0.35 × *i* s after the first, and RATCHET's check on record *i* starts 7.9 + 0.15 × *i* s into its loop. The mockup rounds the first two to 0.1 s steps; the values here win.
 
-Only `transform`, `opacity`, `fill-opacity`, `stroke-dashoffset`, and stroke or fill color are animated. (Fill color is used once: the EyeDTrack landmarks turning coral.) Each SVG freezes to a meaningful final frame under `prefers-reduced-motion: reduce`: the hero fully drawn, one receipt out, the eye open, all checks drawn, the stamps showing and the handwriting filled.
+Only `transform`, `opacity`, `fill-opacity`, `stroke-dashoffset`, and stroke or fill color are animated. (Fill color is used twice: the EyeDTrack landmarks turning coral and Lusot's reading label darkening.) Each SVG freezes to a meaningful final frame under `prefers-reduced-motion: reduce`: the hero fully drawn, one receipt out, the eye open, the sample photo read at knee with "can't tell" drawn beside it as the other answer, the RATCHET run's ledger complete with the refusal and "verify: PASS", all checks drawn, the stamps showing and the handwriting filled.
 
 ## 7. Technical architecture
 
@@ -134,7 +142,7 @@ assets/profile/dark/*.svg          generated, committed
 scripts/build-profile.mjs          entry point: reads the content, writes the SVGs and the README
 scripts/lib/tokens.mjs             ADR-001 tokens for both themes
 scripts/lib/fonts.mjs              subsets and embeds fonts as WOFF2 data URIs
-scripts/components/*.mjs           hero, now, anf, eyedtrack, pookies, schedule, stack, certificates, contact
+scripts/components/*.mjs           hero, now, lusot, eyedtrack, ratchet, anf, pookies, schedule, stack, certificates, contact
 test/*.test.mjs                    node:test checks (section 10)
 package.json                       private; scripts: build, test, preview
 ```
@@ -261,6 +269,16 @@ The owner's portfolio was brought up to date on 2026-11-12, and these changes ma
 - Sections 3, A6 and A9: the Araneta internship ran from July to November 2026 and has ended, so its schedule bar stops at the now line (a role that ends in the current month no longer runs past it) and loses its striped tip. Its entry describes the IT technical inventory system he built there and his QA work, from the portfolio, and drops "(voluntary)", which the portfolio doesn't say. The ANF schedule row reads "Assistant office manager, ANF", his actual title, instead of "Office manager, ANF".
 - Sections 3, 5 and 8, A7 and A9: the certificates follow the portfolio's list of 14 from 6 issuers. The AWS Certified AI Practitioner, its featured one, takes the first stamp; Cisco's stamp counts 6 badges and freeCodeCamp's 4 certificates; Udacity's AWS AI Practitioner Challenge moves to the list only. DevNet Associate and CCNA: Introduction to Networks are labeled course badges, as on the portfolio. The README list isn't drawn, so the content check now lets it name more issuers than the five stamps show.
 
+**2026-11-12, owner request: the Lusot and RATCHET sheets (proposed, awaiting sign-off)**
+
+The owner asked for two more of his projects on the profile, Lusot and RATCHET. They are drawn as project sheets of their own and are merged only after he has seen them (section 10).
+
+- Sections 1, 3, 5 and 6, A3, A5 and A11, ADR-004: Lusot's sheet shows its three figures, a title block, and a sample street photo read on Lusot's nine-level depth gauge at knee, then a photo it can't read answered with "can't tell". RATCHET's sheet shows its three figures, a title block, and a run through its five phases in which the hook refuses one call, every step goes into a chained ledger, and the verify script checks it. Both figures are labeled as illustrations. Each paragraph carries every number's caveat, and the alt texts carry the ones the drawings have no room for. No placement is stated for Lusot, and no team for RATCHET.
+- Sections 3 and 5, A3 to A7, A8, ADR-001 and ADR-005: the sheets follow the owner's order, which his portfolio now publishes: Lusot, EyeDTrack, RATCHET, ANF System, Pookies Platform, lettered A to E as sheets 2 to 6. ANF moves from A to D and Pookies from C to E; EyeDTrack stays B. The hero's title block reads "1 / 6", which is the only change to the hero. This replaces the 2026-09-23 order (ANF, EyeDTrack, Pookies) if the owner signs it off.
+- Section 3 and ADR-005: Lusot's demo is the second live site the profile links, after EyeDTrack's project site; the owner shows only these two as live. Lusot and RATCHET have public repositories, so they link them instead of offering a walkthrough.
+- Appendix A is renumbered so the sheets stay in README order: Lusot A3, EyeDTrack A4, RATCHET A5, ANF A6, Pookies A7, Experience A8, Stack and certificates A9, Contact A10, Alt text A11. The entries above this one use the old numbers. The content check finds each section by its title or drawing, and the validation checks every sheet number against the number of sheets.
+- Mockup: the two sheets are added, rendered from their components. In the existing sheets only the letter, the sheet number, the alt text and the ids of the grid pattern and arrow marker change (`gS5`, `gS6`, `cArr6`, after the sheet numbers), because every drawing shares the mockup's one page and ids must stay unique there.
+
 ---
 
 ## Appendix A: Approved copy (verbatim)
@@ -285,22 +303,25 @@ I'm an AI engineer and full-stack developer, and a fourth-year Computer Science 
 - Pookies Platform: update
 - Next: a full-time software engineering or AI/ML role (bar label: "available now"; header: "Updated 2026-11")
 
-**A3. A: ANF System** (`anf.svg`)
+**A3. A: Lusot** (`lusot.svg`)
 
-- Header: bubble A, "Business systems", "Sheet 2 of 4"
-- Title: ANF System
-- Subtitle: Adoración Nocturna Filipina National Council
-- Metrics: 4,000+ automated checks · 20+ screens · 140+ decision records
-- Title block: Role "Sole developer"; Stack "React, Express, SQLite"; Status "In use since Sep 2026"; Period "May 2026 to now"
-- Figure caption: Official Receipts, numbered
-- Receipt figure (an illustration with sample values, not data): each receipt reads "OFFICIAL RECEIPT", "No. 1041" to "No. 1044", and "TOTAL" with "1,250.00"
-- Paragraph: I started it while working as the Council's assistant office manager, to automate the paperwork I was handling. It covers the Council's stock, Official Receipts, cash and check vouchers, petty cash, members, annual dues and officers, and runs on a single office PC. Officers can reach it from their phones over the office WiFi, and nothing goes to the cloud. Every peso and centavo is exact, and a checked backup is made within about two minutes of any change. Built test-first, with every screen checked at nine widths in two browser engines, 1,000+ layout checks in all. It has been in use since September 2026, and I'm adding online ordering. The 4,000+ is 4,170 checks, all passing, on Sep 12, 2026, and the layout checks were 1,092 at the release of Sep 24, 2026; both have grown since. The documentation counts the screens two ways, so I round down to 20+.
-- Chips: TypeScript, React, Vite, Tailwind, Express, SQLite, Zod, Vitest, Playwright
-- Note: Private repository, walkthrough on request. I also built the Council's new public website, in Laravel and Filament; it isn't live yet, and its online shop is in progress.
+- Header: bubble A, "AI systems", "Sheet 2 of 6"
+- Title: Lusot
+- Subtitle: Flood depth from a street photo, Metro Manila
+- Metrics: 0 of 15 false flood readings · 1 of 6 sealed photos read · 5,900+ automated tests in CI
+- Title block: Role "Sole developer"; Event "Meta Global AI hackathon"; Models "SAM 3.1, Muse Spark"; Period "Oct to Nov 2026"
+- Gauge levels, shallow to deep: "below gutter", "gutter", "half-knee", "half-tire", "knee", "tire", "waist", "chest", "above chest"
+- Gauge: drawn as Lusot draws it, deepest on top. The first and last levels lie outside MMDA's gauge, so they are dashed and set apart from its seven. The sample photo reads at the fifth level.
+- Other answer and caption: "can't tell" (a dashed box under the photo); "sample photos, illustrated"
+- Figure (an illustration with sample photos, not a real reading): a parked car's wheel in a street photo, water rising up it to knee level and the gauge filling to the same level; then a photo with no car wheel or adult clear enough to read, hatched over and answered with the other answer
+- Paragraph: I built it alone for the Meta Global AI Developer Hackathon, Oct 27 to Nov 4, 2026, with Claude Code as a coding assistant. A street photo of a flood in Metro Manila gets a depth reading in MMDA's flood-gauge levels, or an honest "can't tell" when no car wheel or adult in it is clear enough to read. Faces are blurred on Lusot's own server before Meta's models see the photo. SAM 3.1 outlines the water, wheels and people, Muse Spark describes where the water meets them, and published code, not the models, picks one of nine levels. Every figure comes from a small sample, and the project calls its results indicative. None of 15 flood-free, open-license street photos was reported as flooded. On the sealed test, scored once on Nov 3, 2026 with the system frozen, it gave a reading for 1 of 6 photos and refused the other five, and that one reading was deeper than its label. The 5,900+ is 5,986 tests passing in CI on Nov 10, 2026. Lusot is not affiliated with MMDA, and a reading is not advice to cross.
+- Chips: SAM 3.1, Muse Spark, Python, TypeScript, React, AWS, OpenCV, Node.js, Leaflet
+- Note: The live system was shut down on Nov 10, 2026; the demo replays saved real samples, and everything else in it is simulated.
+- Links: [Live demo](https://lusot.vercel.app) · [Repository](https://github.com/RVBCosme/Lusot-submission)
 
 **A4. B: EyeDTrack** (`eyedtrack.svg`)
 
-- Header: bubble B, "AI systems", "Sheet 3 of 4"
+- Header: bubble B, "AI systems", "Sheet 3 of 6"
 - Title: EyeDTrack
 - Subtitle: Driver attention monitoring, thesis and solo rebuild
 - Metrics: 713 ms camera to result, p95 · 1,200+ automated checks · 26 of 30 yawn alerts were real
@@ -311,9 +332,38 @@ I'm an AI engineer and full-stack developer, and a fourth-year Computer Science 
 - Note: Private repository, walkthrough on request.
 - Link: [Project site](https://eyedtrack.vercel.app)
 
-**A5. C: Pookies Platform** (`pookies.svg`)
+**A5. C: RATCHET** (`ratchet.svg`)
 
-- Header: bubble C, "Business systems", "Sheet 4 of 4"
+- Header: bubble C, "AI systems", "Sheet 4 of 6"
+- Title: RATCHET
+- Subtitle: A gated pipeline for IBM Bob, an AI coding agent
+- Metrics: Top 50 qualified submissions · 8 of 8 referee tests passed · 52 ledger records verified
+- Title block: Role "Sole developer"; Event "IBM TechXchange 2026 Dev Day"; Stack "Python, pytest, bandit"; Period "Aug 2026"
+- Phases: "Spec", "Red", "Green", "Review", "Memory"
+- Ledger records: "1 init", "2 gate", "3 write", "4 deny", "5 gate", "6 write", "7 gate", "8 gate". The fourth is the call the hook refused, drawn in red.
+- Notes and caption: "blocked: outside the phase" (red, from the Red phase); "verify: PASS" (mint, after the check); "a run and its ledger, illustrated"
+- Figure (an illustration with RATCHET's eight-record demo ledger, not the real run's 52 records): the run's current phase moves from Spec to Memory, each step adds a record that points back at the one before, and the verify script then checks them in order
+- Paragraph: I designed and built it alone over the two days of the IBM TechXchange 2026 Pre-conference Dev Day Hackathon, Aug 29 to 30, 2026. AI agents made writing code almost free, so the slow part became trusting it. RATCHET makes IBM Bob, an AI coding agent, work in five phases: Spec, Red (write a failing test), Green (the smallest change that makes it pass), Review and Memory. A hook that runs before every tool call blocks anything outside the current phase, and a person opens each gate with one command. Hooks, never the model, write every step to a ledger in which each line carries a keyed hash linking it to the line before, and a verify script checks the chain and names the first line that doesn't match. Top 50 means one of the 50 top-scoring qualified submissions, from the organizers' email of Sep 29, 2026, which gives no rank. The gated run passed 8 of 8 hidden referee tests, but that is one run with one seed: an illustration, not a benchmark. The verify script checked 52 ledger records; the ledger is tamper-evident, not tamper-proof against someone with a shell.
+- Chips: Python, IBM Bob, TDD, pytest, bandit, watsonx.ai Granite
+- Note: The repository reports both demo runs, gated and unguarded.
+- Link: [Repository](https://github.com/RVBCosme/Bob-Passing)
+
+**A6. D: ANF System** (`anf.svg`)
+
+- Header: bubble D, "Business systems", "Sheet 5 of 6"
+- Title: ANF System
+- Subtitle: Adoración Nocturna Filipina National Council
+- Metrics: 4,000+ automated checks · 20+ screens · 140+ decision records
+- Title block: Role "Sole developer"; Stack "React, Express, SQLite"; Status "In use since Sep 2026"; Period "May 2026 to now"
+- Figure caption: Official Receipts, numbered
+- Receipt figure (an illustration with sample values, not data): each receipt reads "OFFICIAL RECEIPT", "No. 1041" to "No. 1044", and "TOTAL" with "1,250.00"
+- Paragraph: I started it while working as the Council's assistant office manager, to automate the paperwork I was handling. It covers the Council's stock, Official Receipts, cash and check vouchers, petty cash, members, annual dues and officers, and runs on a single office PC. Officers can reach it from their phones over the office WiFi, and nothing goes to the cloud. Every peso and centavo is exact, and a checked backup is made within about two minutes of any change. Built test-first, with every screen checked at nine widths in two browser engines, 1,000+ layout checks in all. It has been in use since September 2026, and I'm adding online ordering. The 4,000+ is 4,170 checks, all passing, on Sep 12, 2026, and the layout checks were 1,092 at the release of Sep 24, 2026; both have grown since. The documentation counts the screens two ways, so I round down to 20+.
+- Chips: TypeScript, React, Vite, Tailwind, Express, SQLite, Zod, Vitest, Playwright
+- Note: Private repository, walkthrough on request. I also built the Council's new public website, in Laravel and Filament; it isn't live yet, and its online shop is in progress.
+
+**A7. E: Pookies Platform** (`pookies.svg`)
+
+- Header: bubble E, "Business systems", "Sheet 6 of 6"
 - Title: Pookies Platform
 - Subtitle: POS and inventory for Pookies, the bakery I co-founded
 - Diagram: React + Vite →(REST)→ Express API →(SQL)→ SQLite, normalized
@@ -324,7 +374,7 @@ I'm an AI engineer and full-stack developer, and a fourth-year Computer Science 
 - Note: Private repository, walkthrough on request.
 - Links: none. No demo link until the update ships.
 
-**A6. Experience**
+**A8. Experience**
 
 `schedule.svg` rows:
 
@@ -357,9 +407,9 @@ Hero revision table (Date, Revision):
 | 05/26 | Built the ANF system |
 | 07/26 | Araneta web intern (revision cloud) |
 
-Title block: Title "Rene Vincent Cosme"; Description "AI engineer and full-stack developer"; Drawn by "RVC" (signature); Date "2026-11"; Sheet "1 / 4"; Scale "1 : 1".
+Title block: Title "Rene Vincent Cosme"; Description "AI engineer and full-stack developer"; Drawn by "RVC" (signature); Date "2026-11"; Sheet "1 / 6"; Scale "1 : 1".
 
-**A7. Stack and certificates**
+**A9. Stack and certificates**
 
 `stack.svg` rows (Item, Parts, Used for):
 
@@ -393,7 +443,7 @@ Header: "Certificates", with "14 certificates and badges, 6 issuers". The five s
 - **Project Management Institute:** Project Management Ready (2025)
 - **Certiport:** IT Specialist in Python (2024)
 
-**A8. Contact** (`contact.svg`)
+**A10. Contact** (`contact.svg`)
 
 "Let's connect" is handwritten, wired to three cards:
 
@@ -407,13 +457,15 @@ Markdown under it:
 
 No phone number.
 
-**A9. Alt text** (verbatim; each is the `aria-label` of the same SVG in the mockup)
+**A11. Alt text** (verbatim; each is the `aria-label` of the same SVG in the mockup)
 
 - `hero.svg`: Engineering drawing of Rene Vincent Cosme's work, drawn in on load. Business systems: React and Vite, Node and Express, SQLite and Postgres, with 4,000+ automated checks on the ANF system (4,170, all passing, in September 2026); requests flow between them. AI systems: EyeDTrack, a Kotlin phone app and a Python server that finds the face with dlib's 68 facial landmarks, with 1,200+ automated checks; camera frames travel the pipeline in 713 milliseconds from camera capture to result, the 95th percentile on one phone at a desk in November 2026, and the loop runs to that time. Timeline: co-founded Pookies August 2023, led the EyeDTrack thesis February 2025, Highly Succeed internship March 2026, built the ANF system May 2026, Araneta City web internship July 2026, marked as the latest revision.
 - `now.svg`: In progress, updated November 2026: NASA Space Apps Challenge 2026 in Manila, as team owner, November 14 to 15; adding online ordering to the ANF System, with the shop pages in progress; EyeDTrack, still improving, with a newer yawn detector waiting to be tested once on new people; the Pookies Platform update. Next: a full-time software engineering or AI/ML role, available now.
-- `anf.svg`: Sheet 2 of 4, detail A, business systems, with a test-runner strip turning green: ANF System for the Adoración Nocturna Filipina National Council. 4,000+ automated checks (4,170, all passing, on September 12, 2026), 20+ screens, 140+ decision records. Sole developer; React, Express, SQLite; in use since September 2026, with online ordering in progress; May 2026 to now.
-- `eyedtrack.svg`: Sheet 3 of 4, detail B, AI systems, with an illustrated eye-openness trace that raises a spoken alert on a drowsy dip: EyeDTrack, driver attention monitoring, thesis and solo rebuild. 713 milliseconds from camera capture to result at the 95th percentile, on one phone at a desk in November 2026; 1,200+ automated checks on the server, the app and the phone; 26 of 30 yawn alerts were real yawns, an idealized episode count from a sealed final test that met 0 of its 15 accuracy targets. Thesis team lead, then sole developer of the rebuild; Kotlin, Python, Flask and MySQL; dlib's 68 facial landmarks and OpenCV; 2025, and October to November 2026.
-- `pookies.svg`: Sheet 4 of 4, detail C, business systems: Pookies Platform, point of sale and inventory for Pookies, the bakery Rene co-founded. React and Vite client, Express REST API, normalized SQLite. Co-founder and developer; update in progress; March 2026 to now.
+- `lusot.svg`: Sheet 2 of 6, detail A, AI systems, with an illustrated depth gauge of nine levels, two of them outside MMDA's gauge, that reads a sample flood photo at knee level, then answers can't tell for a photo with no car wheel or adult clear enough to read: Lusot, flood depth from a street photo, Metro Manila. 0 of 15 flood-free street photos reported as flooded; 1 of 6 sealed test photos given a reading, scored once on November 3, 2026, and that reading was deeper than its label; small samples, results the project calls indicative. 5,900+ automated tests in CI, 5,986 passing on November 10, 2026. Sole developer; Meta Global AI Developer Hackathon; Meta's SAM 3.1 and Muse Spark models; October to November 2026. The live system is shut down, and the demo replays saved real samples.
+- `eyedtrack.svg`: Sheet 3 of 6, detail B, AI systems, with an illustrated eye-openness trace that raises a spoken alert on a drowsy dip: EyeDTrack, driver attention monitoring, thesis and solo rebuild. 713 milliseconds from camera capture to result at the 95th percentile, on one phone at a desk in November 2026; 1,200+ automated checks on the server, the app and the phone; 26 of 30 yawn alerts were real yawns, an idealized episode count from a sealed final test that met 0 of its 15 accuracy targets. Thesis team lead, then sole developer of the rebuild; Kotlin, Python, Flask and MySQL; dlib's 68 facial landmarks and OpenCV; 2025, and October to November 2026.
+- `ratchet.svg`: Sheet 4 of 6, detail C, AI systems, with an illustrated run that moves through five phases, Spec, Red, Green, Review and Memory, while the hook blocks one call outside its phase and every step is added to a chained ledger that a verify script checks line by line: RATCHET, a gated pipeline for IBM Bob, an AI coding agent. Top 50: one of the 50 top-scoring qualified submissions, with no rank given; 8 of 8 hidden referee tests passed by the gated run, one run with one seed, an illustration, not a benchmark; 52 ledger records verified, tamper-evident, not tamper-proof. Sole developer; IBM TechXchange 2026 Pre-conference Dev Day Hackathon; Python, pytest and bandit; August 2026.
+- `anf.svg`: Sheet 5 of 6, detail D, business systems, with a test-runner strip turning green: ANF System for the Adoración Nocturna Filipina National Council. 4,000+ automated checks (4,170, all passing, on September 12, 2026), 20+ screens, 140+ decision records. Sole developer; React, Express, SQLite; in use since September 2026, with online ordering in progress; May 2026 to now.
+- `pookies.svg`: Sheet 6 of 6, detail E, business systems: Pookies Platform, point of sale and inventory for Pookies, the bakery Rene co-founded. React and Vite client, Express REST API, normalized SQLite. Co-founder and developer; update in progress; March 2026 to now.
 - `schedule.svg`: Schedule, 2022 to now. BSCS at FEU Tech since August 2022. Freelance research since November 2022. Co-founder of Pookies since August 2023. Software engineering intern at Highly Succeed, March to June 2026. Assistant office manager at ANF since April 2026. Web development intern at Araneta City, July to November 2026.
 - `stack.svg`: Bill of materials. Web clients: TypeScript, JavaScript, React, Vite, Tailwind CSS. APIs and services: Node.js, Express, REST APIs, Zod. Data: SQLite, PostgreSQL, MySQL. AI and ML: Python, TensorFlow, PyTorch, OpenCV, scikit-learn, Pandas. Quality and process: Vitest, Playwright, TDD, Scrum. Also shipped with: Kotlin, Java, C++, PHP, Laravel.
 - `certificates.svg`: Certificates: 14 certificates and badges from 6 issuers. Stamps for AWS Certified AI Practitioner, AIF-C01, 2026; Cisco, 6 badges in modern AI, data science, DevNet, networks and cybersecurity, two of them course badges; freeCodeCamp, 4 certificates in relational databases and responsive web design, 2026; PMI Project Management Ready, 2025; and Certiport IT Specialist in Python, 2024. The list below also names Udacity's AWS AI Practitioner Challenge, 2026.

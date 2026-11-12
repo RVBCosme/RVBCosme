@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 
 const MOCKUP = new URL('../../docs/superpowers/mockups/2026-09-23-profile-final.html', import.meta.url);
-export const MOCKUP_ORDER = ['hero', 'now', 'anf', 'eyedtrack', 'pookies', 'schedule', 'stack', 'certificates', 'contact'];
+export const MOCKUP_ORDER = ['hero', 'now', 'lusot', 'eyedtrack', 'ratchet', 'anf', 'pookies', 'schedule', 'stack', 'certificates', 'contact'];
 
 let html;
 const source = () => (html ??= readFileSync(MOCKUP, 'utf8').replace(/\r\n/g, '\n'));

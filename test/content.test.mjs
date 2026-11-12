@@ -47,6 +47,14 @@ function table(text, firstHeader) {
 
 // Each project sheet draws its own figure; these read its copy from the sheet's section.
 const FIGURE_COPY = {
+  lusot(text) {
+    const [cantTell, caption] = quoted(line(text, 'Other answer and caption'));
+    return { levels: quoted(line(text, 'Gauge levels, shallow to deep')), cantTell, caption };
+  },
+  ratchet(text) {
+    const [blocked, verified, caption] = quoted(line(text, 'Notes and caption'));
+    return { phases: quoted(line(text, 'Phases')), records: quoted(line(text, 'Ledger records')), blocked, verified, caption };
+  },
   anf(text) {
     const [receiptHeading, first, last, totalLabel, total] = quoted(/^- Receipt figure.*$/m.exec(text)[0]);
     const receiptNumbers = [];

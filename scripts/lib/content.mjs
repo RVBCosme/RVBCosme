@@ -1,8 +1,8 @@
 import { readFile } from 'node:fs/promises';
 
 export const CONTENT_URL = new URL('../../content/profile.json', import.meta.url);
-// The project sheets in README order, an owner ruling (ADR-005).
-export const PROJECT_IDS = ['anf', 'eyedtrack', 'pookies'];
+// The project sheets in README order, an owner ruling (ADR-005): his portfolio's order of featured work.
+export const PROJECT_IDS = ['lusot', 'eyedtrack', 'ratchet', 'anf', 'pookies'];
 export const CONTACT_KINDS = ['email', 'linkedin', 'github'];
 
 const STR = { type: 'string' };
@@ -58,11 +58,15 @@ const SCHEMA = obj({
 
 // Each project sheet draws a different figure.
 const FIGURES = {
-  anf: obj({ caption: STR, receiptHeading: STR, receiptNumbers: list(4, STR), totalLabel: STR, total: STR }),
+  // Lusot's nine depth levels, shallow to deep; the first and last lie outside MMDA's gauge.
+  lusot: obj({ levels: list(9, STR), cantTell: STR, caption: STR }),
   eyedtrack: obj({ traceLabel: STR, alert: STR }),
+  // RATCHET's five phases and the eight ledger records of the illustrated run.
+  ratchet: obj({ phases: list(5, STR), records: list(8, STR), blocked: STR, verified: STR, caption: STR }),
+  anf: obj({ caption: STR, receiptHeading: STR, receiptNumbers: list(4, STR), totalLabel: STR, total: STR }),
   pookies: obj({ boxes: list(3, STR), edges: list(2, STR), dimension: STR, note: STR }),
 };
-const METRIC_COUNTS = { anf: 3, eyedtrack: 3, pookies: 0 };
+const METRIC_COUNTS = { lusot: 3, eyedtrack: 3, ratchet: 3, anf: 3, pookies: 0 };
 
 const isObject = (value) => typeof value === 'object' && value !== null && !Array.isArray(value);
 

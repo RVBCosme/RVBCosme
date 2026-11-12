@@ -1,7 +1,7 @@
 import { esc } from '../lib/svg.mjs';
 import { gridPattern, project, sheetHead, sheetTitleBlock } from './sheet.mjs';
 
-const ARROW = '<marker id="cArr4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path class="ah" d="M0 0L10 5L0 10z"/></marker>';
+const ARROW = '<marker id="cArr6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path class="ah" d="M0 0L10 5L0 10z"/></marker>';
 const CHIPS = [[548, 95, 4.2], [573, 97, 3.3], [556, 119, 4.4], [578, 120, 3], [539, 112, 2.9], [566, 107, 2.4]];
 
 export default {
@@ -13,12 +13,12 @@ export default {
     const { boxes, edges, dimension, note } = pookies.figure;
     const chip = ([cx, cy, r]) => `<circle class="chip" cx="${cx}" cy="${cy}" r="${r}"/>`;
     return [
-      `<defs>${gridPattern('gS4')}${ARROW}</defs>`,
-      sheetHead(pookies, 'gS4'),
+      `<defs>${gridPattern('gS6')}${ARROW}</defs>`,
+      sheetHead(pookies, 'gS6'),
       `<rect class="box" x="40" y="204" width="200" height="56"/><text class="bx" x="140" y="239">${esc(boxes[0])}</text>`,
-      `<path class="ln" d="M242 232H306" marker-end="url(#cArr4)"/><text class="edge" x="274" y="222">${esc(edges[0])}</text>`,
+      `<path class="ln" d="M242 232H306" marker-end="url(#cArr6)"/><text class="edge" x="274" y="222">${esc(edges[0])}</text>`,
       `<rect class="box" x="310" y="204" width="200" height="56"/><text class="bx" x="410" y="239">${esc(boxes[1])}</text>`,
-      `<path class="ln" d="M512 232H576" marker-end="url(#cArr4)"/><text class="edge" x="544" y="222">${esc(edges[1])}</text>`,
+      `<path class="ln" d="M512 232H576" marker-end="url(#cArr6)"/><text class="edge" x="544" y="222">${esc(edges[1])}</text>`,
       `<rect class="box" x="580" y="204" width="200" height="56"/><text class="bx" x="680" y="239">${esc(boxes[2])}</text>`,
       sheetTitleBlock(pookies.titleBlock),
       // Request flow like the hero's, starting 0.6 s after load.

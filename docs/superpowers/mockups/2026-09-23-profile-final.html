@@ -478,9 +478,69 @@
 #rv.rm .dC .hwc { animation:none; stroke-dashoffset:0; fill-opacity:1; opacity:1; } #rv.rm .dC .cpk, #rv.rm .dC .cping { animation:none; display:none; } #rv.rm .dC .hub { animation:none; } #rv.rm .dC .pen { animation:none; opacity:0; } #rv.rm .dC .stripes, #rv.rm .dC .nextring, #rv.rm .dC .eye, #rv.rm .dC .lm, #rv.rm .dC .cookie, #rv.rm .dC .nowline { animation:none; } #rv.rm .dC .rc { animation:none; opacity:0; } #rv.rm .dC .rc1 { animation:none; opacity:1; transform:translateY(-80px); } #rv.rm .dC .stamp { animation:none; opacity:.95; } #rv.rm .dC .hw { animation:none; stroke-dashoffset:0; fill-opacity:1; opacity:1; }
 </style>
 
+<style>
+/* Lusot: depth gauge, a sample photo read at knee, then can't tell; RATCHET: gated phases and a chained ledger.
+ * Added 2026-11-12 for the owner to review (spec section 13). */
+.dC .lgphoto { fill:none;stroke:var(--line);stroke-width:1.5; }
+.dC .lgcar { fill:none;stroke:var(--line2);stroke-width:1.5; }
+.dC .lgtyre { fill:none;stroke:var(--line);stroke-width:2.2; }
+.dC .lgrim { fill:none;stroke:var(--line2);stroke-width:1.5; }
+.dC .lghub { fill:var(--line2); }
+.dC .lgwfill { fill:var(--live);fill-opacity:.2; }
+.dC .lgwline { fill:none;stroke:var(--live);stroke-width:2; }
+.dC .lghl { fill:none;stroke:var(--line2);stroke-width:1.2; }
+.dC .lgcell { fill:none;stroke:var(--line);stroke-width:1.5; }
+.dC .lgoff { stroke-dasharray:3 2; }
+.dC .lgalt { fill:none;stroke:var(--line2);stroke-width:1.25;stroke-dasharray:2 2; }
+.dC .rxrec { fill:var(--sheet);stroke:var(--line);stroke-width:1.5; }
+.dC .rxdeny .rxrec { stroke:var(--red); }
+.dC .rxdeny .figcap { fill:var(--red); }
+.dC .lgwater { animation:lgwater 10s ease-in-out infinite; }
+.dC .lgfill { fill:var(--live);fill-opacity:.25;animation:lgfill 10s ease-in-out infinite; }
+.dC .lgto { animation:lgto 10s linear infinite; }
+.dC .lgmark { fill:var(--title);animation:lgmark 10s linear infinite; }
+.dC .lgref { animation:lgref 10s linear infinite; }
+.dC .lghatch { opacity:0;animation:lghatch 10s linear infinite; }
+.dC .lgdown { opacity:0;animation:lgdown 10s linear infinite; }
+.dC .lgcant { fill:var(--sheet);stroke:var(--line2);stroke-width:1.5;stroke-dasharray:4 3;animation:lgcant 10s linear infinite; }
+@keyframes lgwater {0%,4%{transform:translateY(36px)}20%,46%{transform:translateY(0)}50%,100%{transform:translateY(36px)}}
+@keyframes lgfill {0%,4%{transform:translateY(74px)}20%,46%{transform:translateY(0)}50%,100%{transform:translateY(74px)}}
+@keyframes lgto {0%,20%{opacity:0}23%,45%{opacity:1}47%,100%{opacity:0}}
+@keyframes lgmark {0%,20%{fill:var(--line2)}23%,45%{fill:var(--title)}47%,100%{fill:var(--line2)}}
+@keyframes lgref {0%,50%{opacity:1}54%,90%{opacity:.3}94%,100%{opacity:1}}
+@keyframes lghatch {0%,50%{opacity:0}54%,90%{opacity:1}94%,100%{opacity:0}}
+@keyframes lgdown {0%,55%{opacity:0}58%,90%{opacity:1}93%,100%{opacity:0}}
+@keyframes lgcant {0%,55%{stroke:var(--line2)}58%,90%{stroke:var(--live)}93%,100%{stroke:var(--line2)}}
+.dC .rxcur { fill:none;stroke:var(--live);stroke-width:3;opacity:0;animation:rxcur 12s linear infinite; }
+@keyframes rxcur {0%{opacity:0;transform:translateX(0)}2%,12%{opacity:1;transform:translateX(0)}14%,38%{transform:translateX(94px)}40%,50%{transform:translateX(188px)}52%,60%{transform:translateX(282px)}62%,92%{opacity:1;transform:translateX(376px)}96%,100%{opacity:0;transform:translateX(376px)}}
+.dC .rxblock { opacity:0;animation:rxblock 12s linear infinite; }
+@keyframes rxblock {0%,22%{opacity:0}24%,36%{opacity:1}39%,100%{opacity:0}}
+.dC .rxr1 { animation:rxr1 12s linear infinite; }
+.dC .rxr2 { animation:rxr2 12s linear infinite; }
+.dC .rxr3 { animation:rxr3 12s linear infinite; }
+.dC .rxr4 { animation:rxr4 12s linear infinite; }
+.dC .rxr5 { animation:rxr5 12s linear infinite; }
+.dC .rxr6 { animation:rxr6 12s linear infinite; }
+.dC .rxr7 { animation:rxr7 12s linear infinite; }
+.dC .rxr8 { animation:rxr8 12s linear infinite; }
+@keyframes rxr1 {0%,2%{opacity:0}3%,95%{opacity:1}97%,100%{opacity:0}}
+@keyframes rxr2 {0%,13%{opacity:0}14%,95%{opacity:1}97%,100%{opacity:0}}
+@keyframes rxr3 {0%,20%{opacity:0}21%,95%{opacity:1}97%,100%{opacity:0}}
+@keyframes rxr4 {0%,26%{opacity:0}27%,95%{opacity:1}97%,100%{opacity:0}}
+@keyframes rxr5 {0%,39%{opacity:0}40%,95%{opacity:1}97%,100%{opacity:0}}
+@keyframes rxr6 {0%,45%{opacity:0}46%,95%{opacity:1}97%,100%{opacity:0}}
+@keyframes rxr7 {0%,51%{opacity:0}52%,95%{opacity:1}97%,100%{opacity:0}}
+@keyframes rxr8 {0%,61%{opacity:0}62%,95%{opacity:1}97%,100%{opacity:0}}
+.dC .rxok { fill:none;stroke:var(--live);stroke-width:2.5;opacity:0;animation:rxok 12s linear infinite; }
+@keyframes rxok {0%{opacity:0}2%,14%{opacity:1}18%,100%{opacity:0}}
+.dC .rxpass { opacity:0;animation:rxpass 12s linear infinite; }
+@keyframes rxpass {0%,76%{opacity:0}78%,94%{opacity:1}97%,100%{opacity:0}}
+@media (prefers-reduced-motion: reduce) { .dC .lgwater, .dC .lgfill, .dC .lgto, .dC .lgref { animation:none; } .dC .lgmark { animation:none;fill:var(--title); } .dC .lghatch, .dC .lgdown { animation:none;opacity:0; } .dC .lgcant { animation:none;stroke:var(--line2); } .dC .rxcur, .dC .rxok { animation:none;opacity:0; } .dC .rxr, .dC .rxblock, .dC .rxpass { animation:none;opacity:1; } }
+#rv.rm .dC .lgwater, #rv.rm .dC .lgfill, #rv.rm .dC .lgto, #rv.rm .dC .lgref { animation:none; } #rv.rm .dC .lgmark { animation:none;fill:var(--title); } #rv.rm .dC .lghatch, #rv.rm .dC .lgdown { animation:none;opacity:0; } #rv.rm .dC .lgcant { animation:none;stroke:var(--line2); } #rv.rm .dC .rxcur, #rv.rm .dC .rxok { animation:none;opacity:0; } #rv.rm .dC .rxr, #rv.rm .dC .rxblock, #rv.rm .dC .rxpass { animation:none;opacity:1; }
+</style>
 <div id="rv" class="theme-dark">
   <h2>RVBCosme profile: approved design</h2>
-  <p class="rv-lede">Approved design, 23 September 2026, with copy updated in the owner's spec review the same day. This is the reference for implementation: copy, layout, colors, geometry and animation timings. The buttons switch the GitHub theme, replay the banner and preview reduced motion. The spec is docs/superpowers/specs/2026-09-23-github-profile-redesign-design.md. <a href="#rv-contact">Jump to Contact</a>.</p>
+  <p class="rv-lede">Approved design, 23 September 2026, with copy updated in the owner's spec review the same day. The Lusot and RATCHET sheets (sheets 2 and 4) were added on 12 November 2026 and await the owner's sign-off. This is the reference for implementation: copy, layout, colors, geometry and animation timings. The buttons switch the GitHub theme, replay the banner and preview reduced motion. The spec is docs/superpowers/specs/2026-09-23-github-profile-redesign-design.md. <a href="#rv-contact">Jump to Contact</a>.</p>
 
   <div class="rv-bar">
     <span>GitHub theme</span>
@@ -508,7 +568,7 @@
         <div class="gh-readme-head">RVBCosme / README.md</div>
         <div class="gh-body">
 
-          <!-- HERO (sheet 1 of 4) -->
+          <!-- HERO (sheet 1 of 6) -->
           <svg class="rv-anim dC" viewBox="0 0 1200 470" role="img" aria-label="Engineering drawing of Rene Vincent Cosme's work, drawn in on load. Business systems: React and Vite, Node and Express, SQLite and Postgres, with 4,000+ automated checks on the ANF system (4,170, all passing, in September 2026); requests flow between them. AI systems: EyeDTrack, a Kotlin phone app and a Python server that finds the face with dlib's 68 facial landmarks, with 1,200+ automated checks; camera frames travel the pipeline in 713 milliseconds from camera capture to result, the 95th percentile on one phone at a desk in November 2026, and the loop runs to that time. Timeline: co-founded Pookies August 2023, led the EyeDTrack thesis February 2025, Highly Succeed internship March 2026, built the ANF system May 2026, Araneta City web internship July 2026, marked as the latest revision.">
             <defs>
               <pattern id="cGrid" width="20" height="20" patternUnits="userSpaceOnUse"><path class="gridl" d="M20 0H0V20"/></pattern>
@@ -586,7 +646,7 @@
             <g class="fade" style="--d:2.15s"><text class="tl" x="852" y="323">Description</text><text class="tv" x="852" y="346">AI engineer and full-stack developer</text></g>
             <g class="fade" style="--d:2.25s"><text class="tl" x="850" y="373">Drawn by</text>
               <text class="tl" x="922" y="373">Date</text><text class="tv" x="922" y="405">2026-11</text>
-              <text class="tl" x="1020" y="373">Sheet</text><text class="tv" x="1020" y="405">1 / 4</text>
+              <text class="tl" x="1020" y="373">Sheet</text><text class="tv" x="1020" y="405">1 / 6</text>
               <text class="tl" x="1090" y="373">Scale</text><text class="tv" x="1090" y="405">1 : 1</text></g>
             <text class="sig" x="852" y="409" style="--d:2.65s">RVC</text>
           <g class="pen"><circle class="penring" r="7"/><path class="pencross" d="M-15 0H-6M6 0H15M0 -15V-6M0 6V15"/></g>
@@ -628,45 +688,60 @@
 
           <h2>Selected work</h2>
 
-          <!-- SHEET 2: ANF -->
-          <svg class="dC" viewBox="0 0 1200 300" role="img" aria-label="Sheet 2 of 4, detail A, business systems, with a test-runner strip turning green: ANF System for the Adoración Nocturna Filipina National Council. 4,000+ automated checks (4,170, all passing, on September 12, 2026), 20+ screens, 140+ decision records. Sole developer; React, Express, SQLite; in use since September 2026, with online ordering in progress; May 2026 to now.">
-            <defs><clipPath id="orClip"><rect x="620" y="56" width="170" height="96"/></clipPath><pattern id="gS2" width="20" height="20" patternUnits="userSpaceOnUse"><path class="gridl" d="M20 0H0V20"/></pattern></defs>
+          <!-- SHEET 2: Lusot -->
+          <svg class="dC" viewBox="0 0 1200 300" role="img" aria-label="Sheet 2 of 6, detail A, AI systems, with an illustrated depth gauge of nine levels, two of them outside MMDA's gauge, that reads a sample flood photo at knee level, then answers can't tell for a photo with no car wheel or adult clear enough to read: Lusot, flood depth from a street photo, Metro Manila. 0 of 15 flood-free street photos reported as flooded; 1 of 6 sealed test photos given a reading, scored once on November 3, 2026, and that reading was deeper than its label; small samples, results the project calls indicative. 5,900+ automated tests in CI, 5,986 passing on November 10, 2026. Sole developer; Meta Global AI Developer Hackathon; Meta's SAM 3.1 and Muse Spark models; October to November 2026. The live system is shut down, and the demo replays saved real samples.">
+            <defs>
+            <clipPath id="luPhoto"><rect x="550" y="80" width="100" height="70"/></clipPath>
+            <clipPath id="luCells"><rect x="700" y="78" width="16" height="14"/><rect x="700" y="96" width="16" height="98"/><rect x="700" y="198" width="16" height="14"/></clipPath>
+            <pattern id="luHatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path class="lghl" d="M0 0V8"/></pattern>
+            <pattern id="gS2" width="20" height="20" patternUnits="userSpaceOnUse"><path class="gridl" d="M20 0H0V20"/></pattern>
+            </defs>
             <rect class="sheet" width="1200" height="300"/>
             <rect x="12" y="12" width="1176" height="276" fill="url(#gS2)"/>
             <rect class="frame" x="12" y="12" width="1176" height="276"/>
             <circle class="bubble" cx="54" cy="56" r="20"/><text class="bubt" x="54" y="62">A</text>
-            <text class="asm" x="86" y="64">Business systems</text>
-            <text class="sheetno" x="790" y="64">Sheet 2 of 4</text>
-            <text class="ttl" x="40" y="136">ANF System</text>
-            <text class="subt" x="40" y="174">Adoración Nocturna Filipina National Council</text>
-            <g class="tests"><line class="tk" x1="40" y1="189" x2="40" y2="203" style="animation-delay:0s"/><line class="tk" x1="55.1" y1="189" x2="55.1" y2="203" style="animation-delay:0.1s"/><line class="tk" x1="70.3" y1="189" x2="70.3" y2="203" style="animation-delay:0.1s"/><line class="tk" x1="85.4" y1="189" x2="85.4" y2="203" style="animation-delay:0.2s"/><line class="tk" x1="100.5" y1="189" x2="100.5" y2="203" style="animation-delay:0.2s"/><line class="tk" x1="115.7" y1="189" x2="115.7" y2="203" style="animation-delay:0.3s"/><line class="tk" x1="130.8" y1="189" x2="130.8" y2="203" style="animation-delay:0.4s"/><line class="tk" x1="145.9" y1="189" x2="145.9" y2="203" style="animation-delay:0.4s"/><line class="tk" x1="161.1" y1="189" x2="161.1" y2="203" style="animation-delay:0.5s"/><line class="tk" x1="176.2" y1="189" x2="176.2" y2="203" style="animation-delay:0.5s"/><line class="tk" x1="191.4" y1="189" x2="191.4" y2="203" style="animation-delay:0.6s"/><line class="tk" x1="206.5" y1="189" x2="206.5" y2="203" style="animation-delay:0.7s"/><line class="tk" x1="221.6" y1="189" x2="221.6" y2="203" style="animation-delay:0.7s"/><line class="tk" x1="236.8" y1="189" x2="236.8" y2="203" style="animation-delay:0.8s"/><line class="tk" x1="251.9" y1="189" x2="251.9" y2="203" style="animation-delay:0.8s"/><line class="tk" x1="267" y1="189" x2="267" y2="203" style="animation-delay:0.9s"/><line class="tk" x1="282.2" y1="189" x2="282.2" y2="203" style="animation-delay:1s"/><line class="tk" x1="297.3" y1="189" x2="297.3" y2="203" style="animation-delay:1s"/><line class="tk" x1="312.4" y1="189" x2="312.4" y2="203" style="animation-delay:1.1s"/><line class="tk" x1="327.6" y1="189" x2="327.6" y2="203" style="animation-delay:1.1s"/><line class="tk" x1="342.7" y1="189" x2="342.7" y2="203" style="animation-delay:1.2s"/><line class="tk" x1="357.8" y1="189" x2="357.8" y2="203" style="animation-delay:1.3s"/><line class="tk" x1="373" y1="189" x2="373" y2="203" style="animation-delay:1.3s"/><line class="tk" x1="388.1" y1="189" x2="388.1" y2="203" style="animation-delay:1.4s"/><line class="tk" x1="403.2" y1="189" x2="403.2" y2="203" style="animation-delay:1.4s"/><line class="tk" x1="418.4" y1="189" x2="418.4" y2="203" style="animation-delay:1.5s"/><line class="tk" x1="433.5" y1="189" x2="433.5" y2="203" style="animation-delay:1.6s"/><line class="tk" x1="448.6" y1="189" x2="448.6" y2="203" style="animation-delay:1.6s"/><line class="tk" x1="463.8" y1="189" x2="463.8" y2="203" style="animation-delay:1.7s"/><line class="tk" x1="478.9" y1="189" x2="478.9" y2="203" style="animation-delay:1.7s"/><line class="tk" x1="494.1" y1="189" x2="494.1" y2="203" style="animation-delay:1.8s"/><line class="tk" x1="509.2" y1="189" x2="509.2" y2="203" style="animation-delay:1.9s"/><line class="tk" x1="524.3" y1="189" x2="524.3" y2="203" style="animation-delay:1.9s"/><line class="tk" x1="539.5" y1="189" x2="539.5" y2="203" style="animation-delay:2s"/><line class="tk" x1="554.6" y1="189" x2="554.6" y2="203" style="animation-delay:2s"/><line class="tk" x1="569.7" y1="189" x2="569.7" y2="203" style="animation-delay:2.1s"/><line class="tk" x1="584.9" y1="189" x2="584.9" y2="203" style="animation-delay:2.2s"/><line class="tk" x1="600" y1="189" x2="600" y2="203" style="animation-delay:2.2s"/></g>
-            <text class="met red" x="40" y="250">4,000+</text><text class="metl" x="40" y="276">automated checks</text>
-            <text class="met" x="300" y="250">20+</text><text class="metl" x="300" y="276">screens</text>
-            <text class="met" x="520" y="250">140+</text><text class="metl" x="520" y="276">decision records</text>
+            <text class="asm" x="86" y="64">AI systems</text>
+            <text class="sheetno" x="790" y="64">Sheet 2 of 6</text>
+            <text class="ttl" x="40" y="136">Lusot</text>
+            <text class="subt" x="40" y="174">Flood depth from a street photo, Metro Manila</text>
+            <text class="met red" x="40" y="250">0 of 15</text><text class="metl" x="40" y="276">false flood readings</text>
+            <text class="met" x="300" y="250">1 of 6</text><text class="metl" x="300" y="276">sealed photos read</text>
+            <text class="met" x="560" y="250">5,900+</text><text class="metl" x="560" y="276">automated tests in CI</text>
             <rect class="frame1" x="820" y="36" width="344" height="228"/>
             <path class="thin" d="M820 93H1164M820 150H1164M820 207H1164"/>
             <text class="tl2" x="834" y="57">Role</text><text class="tv2" x="834" y="84">Sole developer</text>
-            <text class="tl2" x="834" y="114">Stack</text><text class="tv2" x="834" y="141">React, Express, SQLite</text>
-            <text class="tl2" x="834" y="171">Status</text><text class="tv2" x="834" y="198">In use since Sep 2026</text>
-            <text class="tl2" x="834" y="228">Period</text><text class="tv2" x="834" y="255">May 2026 to now</text>
-          <g clip-path="url(#orClip)"><g class="rc rc1"><rect class="paper" x="658" y="152" width="94" height="86"/><text class="rct" x="705" y="167" text-anchor="middle">OFFICIAL RECEIPT</text><text class="rcn" x="705" y="186" text-anchor="middle">No. 1041</text><rect class="rcl" x="668" y="194" width="74" height="3"/><rect class="rcl" x="668" y="202" width="52" height="3"/><text class="rct" x="668" y="224">TOTAL</text><text class="rct" x="742" y="224" text-anchor="end">1,250.00</text></g><g class="rc rc2"><rect class="paper" x="658" y="152" width="94" height="86"/><text class="rct" x="705" y="167" text-anchor="middle">OFFICIAL RECEIPT</text><text class="rcn" x="705" y="186" text-anchor="middle">No. 1042</text><rect class="rcl" x="668" y="194" width="74" height="3"/><rect class="rcl" x="668" y="202" width="52" height="3"/><text class="rct" x="668" y="224">TOTAL</text><text class="rct" x="742" y="224" text-anchor="end">1,250.00</text></g><g class="rc rc3"><rect class="paper" x="658" y="152" width="94" height="86"/><text class="rct" x="705" y="167" text-anchor="middle">OFFICIAL RECEIPT</text><text class="rcn" x="705" y="186" text-anchor="middle">No. 1043</text><rect class="rcl" x="668" y="194" width="74" height="3"/><rect class="rcl" x="668" y="202" width="52" height="3"/><text class="rct" x="668" y="224">TOTAL</text><text class="rct" x="742" y="224" text-anchor="end">1,250.00</text></g><g class="rc rc4"><rect class="paper" x="658" y="152" width="94" height="86"/><text class="rct" x="705" y="167" text-anchor="middle">OFFICIAL RECEIPT</text><text class="rcn" x="705" y="186" text-anchor="middle">No. 1044</text><rect class="rcl" x="668" y="194" width="74" height="3"/><rect class="rcl" x="668" y="202" width="52" height="3"/><text class="rct" x="668" y="224">TOTAL</text><text class="rct" x="742" y="224" text-anchor="end">1,250.00</text></g></g>
-            <rect class="box" x="628" y="150" width="154" height="22" rx="4"/>
-            <path class="ln" d="M646 156H764"/>
-            <circle class="livedot" cx="772" cy="164" r="3"/>
-            <text class="figcap" x="705" y="190" text-anchor="middle">Official Receipts, numbered</text>
+            <text class="tl2" x="834" y="114">Event</text><text class="tv2" x="834" y="141">Meta Global AI hackathon</text>
+            <text class="tl2" x="834" y="171">Models</text><text class="tv2" x="834" y="198">SAM 3.1, Muse Spark</text>
+            <text class="tl2" x="834" y="228">Period</text><text class="tv2" x="834" y="255">Oct to Nov 2026</text>
+            <rect class="sheet" x="550" y="80" width="100" height="70"/>
+            <g clip-path="url(#luPhoto)">
+            <path class="thin" d="M550 140H650"/>
+            <g class="lgref"><path class="lgcar" d="M550 118H561A24 24 0 0 1 609 118H642V105L636 100H614L598 86H550M556 98H604L594 90H556Z"/><circle class="lgtyre" cx="585" cy="120" r="20"/><circle class="lgrim" cx="585" cy="120" r="11"/><circle class="lghub" cx="585" cy="120" r="3"/></g>
+            <g class="lgwater"><rect class="lgwfill" x="550" y="115" width="100" height="35"/><path class="lgwline" d="M550 115H650"/></g>
+            <rect class="lghatch" x="550" y="80" width="100" height="70" fill="url(#luHatch)"/>
+            </g>
+            <rect class="lgphoto" x="550" y="80" width="100" height="70"/>
+            <g clip-path="url(#luCells)"><rect class="lgfill" x="700" y="138" width="16" height="74"/></g>
+            <rect class="lgcell" x="700" y="96" width="16" height="98"/><path class="thin" d="M700 180H716M700 166H716M700 152H716M700 138H716M700 124H716M700 110H716"/><rect class="lgcell lgoff" x="700" y="198" width="16" height="14"/><rect class="lgcell lgoff" x="700" y="78" width="16" height="14"/>
+            <text class="figcap" x="724" y="209.5">below gutter</text><text class="figcap" x="724" y="191.5">gutter</text><text class="figcap" x="724" y="177.5">half-knee</text><text class="figcap" x="724" y="163.5">half-tire</text><text class="figcap lgmark" x="724" y="149.5">knee</text><text class="figcap" x="724" y="135.5">tire</text><text class="figcap" x="724" y="121.5">waist</text><text class="figcap" x="724" y="107.5">chest</text><text class="figcap" x="724" y="89.5">above chest</text>
+            <g class="lgto"><path class="ln" d="M650 115H664L678 145H690"/><path class="ah" d="M690 140L699 145L690 150z"/></g>
+            <path class="lgalt" d="M600 151V163"/>
+            <g class="lgdown"><path class="ln" d="M600 150V156"/><path class="ah" d="M595 156L600 164L605 156z"/></g>
+            <rect class="lgcant" x="550" y="164" width="100" height="24" rx="3"/><text class="tv" x="600" y="182.5" text-anchor="middle">can't tell</text>
+            <text class="figcap" x="600" y="204" text-anchor="middle">sample photos, illustrated</text>
           </svg>
-          <p>I started it while working as the Council's assistant office manager, to automate the paperwork I was handling. It covers the Council's stock, Official Receipts, cash and check vouchers, petty cash, members, annual dues and officers, and runs on a single office PC. Officers can reach it from their phones over the office WiFi, and nothing goes to the cloud. Every peso and centavo is exact, and a checked backup is made within about two minutes of any change. Built test-first, with every screen checked at nine widths in two browser engines, 1,000+ layout checks in all. It has been in use since September 2026, and I'm adding online ordering. The 4,000+ is 4,170 checks, all passing, on Sep 12, 2026, and the layout checks were 1,092 at the release of Sep 24, 2026; both have grown since. The documentation counts the screens two ways, so I round down to 20+.</p>
-          <p class="muted"><code>TypeScript</code> <code>React</code> <code>Vite</code> <code>Tailwind</code> <code>Express</code> <code>SQLite</code> <code>Zod</code> <code>Vitest</code> <code>Playwright</code><br>Private repository, walkthrough on request. I also built the Council's new public website, in Laravel and Filament; it isn't live yet, and its online shop is in progress.</p>
+          <p>I built it alone for the Meta Global AI Developer Hackathon, Oct 27 to Nov 4, 2026, with Claude Code as a coding assistant. A street photo of a flood in Metro Manila gets a depth reading in MMDA's flood-gauge levels, or an honest "can't tell" when no car wheel or adult in it is clear enough to read. Faces are blurred on Lusot's own server before Meta's models see the photo. SAM 3.1 outlines the water, wheels and people, Muse Spark describes where the water meets them, and published code, not the models, picks one of nine levels. Every figure comes from a small sample, and the project calls its results indicative. None of 15 flood-free, open-license street photos was reported as flooded. On the sealed test, scored once on Nov 3, 2026 with the system frozen, it gave a reading for 1 of 6 photos and refused the other five, and that one reading was deeper than its label. The 5,900+ is 5,986 tests passing in CI on Nov 10, 2026. Lusot is not affiliated with MMDA, and a reading is not advice to cross.</p>
+          <p class="muted"><code>SAM 3.1</code> <code>Muse Spark</code> <code>Python</code> <code>TypeScript</code> <code>React</code> <code>AWS</code> <code>OpenCV</code> <code>Node.js</code> <code>Leaflet</code><br>The live system was shut down on Nov 10, 2026; the demo replays saved real samples, and everything else in it is simulated. <a href="#">Live demo</a> · <a href="#">Repository</a></p>
 
           <!-- SHEET 3: EyeDTrack -->
-          <svg class="dC" viewBox="0 0 1200 300" role="img" aria-label="Sheet 3 of 4, detail B, AI systems, with an illustrated eye-openness trace that raises a spoken alert on a drowsy dip: EyeDTrack, driver attention monitoring, thesis and solo rebuild. 713 milliseconds from camera capture to result at the 95th percentile, on one phone at a desk in November 2026; 1,200+ automated checks on the server, the app and the phone; 26 of 30 yawn alerts were real yawns, an idealized episode count from a sealed final test that met 0 of its 15 accuracy targets. Thesis team lead, then sole developer of the rebuild; Kotlin, Python, Flask and MySQL; dlib's 68 facial landmarks and OpenCV; 2025, and October to November 2026.">
+          <svg class="dC" viewBox="0 0 1200 300" role="img" aria-label="Sheet 3 of 6, detail B, AI systems, with an illustrated eye-openness trace that raises a spoken alert on a drowsy dip: EyeDTrack, driver attention monitoring, thesis and solo rebuild. 713 milliseconds from camera capture to result at the 95th percentile, on one phone at a desk in November 2026; 1,200+ automated checks on the server, the app and the phone; 26 of 30 yawn alerts were real yawns, an idealized episode count from a sealed final test that met 0 of its 15 accuracy targets. Thesis team lead, then sole developer of the rebuild; Kotlin, Python, Flask and MySQL; dlib's 68 facial landmarks and OpenCV; 2025, and October to November 2026.">
             <defs><clipPath id="eyeClip"><path d="M622 116Q700 72 778 116Q700 160 622 116Z"/></clipPath><clipPath id="eClip"><rect x="40" y="176" width="750" height="40"/></clipPath><pattern id="gS3" width="20" height="20" patternUnits="userSpaceOnUse"><path class="gridl" d="M20 0H0V20"/></pattern></defs>
             <rect class="sheet" width="1200" height="300"/>
             <rect x="12" y="12" width="1176" height="276" fill="url(#gS3)"/>
             <rect class="frame" x="12" y="12" width="1176" height="276"/>
             <circle class="bubble" cx="54" cy="56" r="20"/><text class="bubt" x="54" y="62">B</text>
             <text class="asm" x="86" y="64">AI systems</text>
-            <text class="sheetno" x="790" y="64">Sheet 3 of 4</text>
+            <text class="sheetno" x="790" y="64">Sheet 3 of 6</text>
             <text class="ttl" x="40" y="136">EyeDTrack</text>
             <text class="subt" x="40" y="174">Driver attention monitoring, thesis and solo rebuild</text>
             <g clip-path="url(#eClip)"><path class="wave" d="M40 192L45 193.3L50 192.6L55 193.2L60 192.7L65 190.9L70 191.2L75 191.1L80 190.8L85 192.6L90 193.1L95 192.6L100 193.4L105 192.2L110 190.8L115 191.4L120 190.8L125 191.1L130 192.9L135 192.7L140 192.9L141 192L145 199.1L150 208L155 199.1L159 192L160 191.4L165 190.5L170 191.7L175 193L180 192.5L185 193.3L190 193.1L195 191.2L200 191.3L205 191.1L210 190.5L215 192.2L220 192.8L225 192.6L230 193.6L235 192.5L240 191.1L245 191.5L250 190.7L255 190.8L260 192.6L265 192.5L270 192.9L275 193.6L280 191.9L285 191.3L290 191.5L295 190.4L300 191.3L305 192.7L310 192.4L315 193.3L320 193.3L321 192L325 199.1L330 208L335 199.1L339 192L340 190.3L345 191.9L350 192.5L355 192.4L360 193.7L365 192.8L370 191.5L375 191.7L380 190.7L385 190.6L390 192.3L395 192.3L400 192.8L405 193.7L410 192.3L415 191.6L420 191.7L425 190.3L430 191.1L435 192.4L440 192.1L445 193.3L450 193.5L455 191.9L460 191.9L461 192L465 199.1L470 208L475 199.1L479 192L480 192.2L485 192.2L490 193.7L495 193L500 191.8L505 192L510 190.8L515 190.4L520 192L525 192L530 192.6L535 193.8L540 192.5L545 191.9L550 191.9L555 190.4L560 190.9L565 192.1L570 191.8L575 193.1L580 193.6L585 192.2L590 192.2L595 191.5L600 192L605 197L610 202L615 207L620 208.1L625 208.8L630 209L635 208.6L640 207.7L645 206.6L650 205.6L655 205.1L660 205.1L665 205.7L670 206.7L675 207.7L680 202L685 197L690 192L695 191.8L700 191.5L705 192.9L710 193.6L715 192.4L720 192.5L725 191.8L730 190.3L735 191.2L740 191.6L745 191.6L750 193.4L755 193.3L760 192.3L765 192.6L770 191.3L775 190.4L780 191.5L785 191.4L790 192L795 193.3L800 192.6L805 193.2L810 192.7L815 190.9L820 191.2L825 191.1L830 190.8L835 192.6L840 193.1L845 192.6L850 193.4L855 192.2L860 190.8L865 191.4L870 190.8L875 191.1L880 192.9L885 192.7L890 192.9L891 192L895 199.1L900 208L905 199.1L909 192L910 191.4L915 190.5L920 191.7L925 193L930 192.5L935 193.3L940 193.1L945 191.2L950 191.3L955 191.1L960 190.5L965 192.2L970 192.8L975 192.6L980 193.6L985 192.5L990 191.1L995 191.5L1000 190.7L1005 190.8L1010 192.6L1015 192.5L1020 192.9L1025 193.6L1030 191.9L1035 191.3L1040 191.5L1045 190.4L1050 191.3L1055 192.7L1060 192.4L1065 193.3L1070 193.3L1071 192L1075 199.1L1080 208L1085 199.1L1089 192L1090 190.3L1095 191.9L1100 192.5L1105 192.4L1110 193.7L1115 192.8L1120 191.5L1125 191.7L1130 190.7L1135 190.6L1140 192.3L1145 192.3L1150 192.8L1155 193.7L1160 192.3L1165 191.6L1170 191.7L1175 190.3L1180 191.1L1185 192.4L1190 192.1L1195 193.3L1200 193.5L1205 191.9L1210 191.9L1211 192L1215 199.1L1220 208L1225 199.1L1229 192L1230 192.2L1235 192.2L1240 193.7L1245 193L1250 191.8L1255 192L1260 190.8L1265 190.4L1270 192L1275 192L1280 192.6L1285 193.8L1290 192.5L1295 191.9L1300 191.9L1305 190.4L1310 190.9L1315 192.1L1320 191.8L1325 193.1L1330 193.6L1335 192.2L1340 192.2L1345 191.5L1350 192L1355 197L1360 202L1365 207L1370 208.1L1375 208.8L1380 209L1385 208.6L1390 207.7L1395 206.6L1400 205.6L1405 205.1L1410 205.1L1415 205.7L1420 206.7L1425 207.7L1430 202L1435 197L1440 192L1445 191.8L1450 191.5L1455 192.9L1460 193.6L1465 192.4L1470 192.5L1475 191.8L1480 190.3L1485 191.2L1490 191.6L1495 191.6L1500 193.4L1505 193.3L1510 192.3L1515 192.6L1520 191.3L1525 190.4L1530 191.5L1535 191.4L1540 192"/></g>
@@ -693,24 +768,96 @@
           <p>I led our thesis team in 2025, and a teammate updated the app in mid-2026. From October 2026 I rebuilt it alone, directing an AI coding agent, and measured it. A Kotlin app on an Android phone sends camera frames over the driver's own network to a Python and Flask server, which finds the face with dlib's 68 facial landmarks and OpenCV and measures how open the eyes and mouth are and where the head points. A time rule decides what counts, the app speaks the alert, and when it can't see the face it says so instead of guessing. I tested it once on people it had never seen: it met 0 of its 15 accuracy targets, and the project site says so. The 713 ms is the 95th percentile from camera capture to result, on one phone at a desk on Nov 11, 2026; it rose to 887 ms with the server PC heavily loaded. The 26 of 30 is an idealized episode count from that sealed final test, and the same count missed 22 yawn episodes. It's an academic prototype, not a safety device.</p>
           <p class="muted"><code>Kotlin</code> <code>Android</code> <code>Python</code> <code>Flask</code> <code>OpenCV</code> <code>dlib</code> <code>NumPy</code> <code>MySQL</code><br>Private repository, walkthrough on request. <a href="#">Project site</a></p>
 
-          <!-- SHEET 4: Pookies -->
-          <svg class="dC" viewBox="0 0 1200 300" role="img" aria-label="Sheet 4 of 4, detail C, business systems: Pookies Platform, point of sale and inventory for Pookies, the bakery Rene co-founded. React and Vite client, Express REST API, normalized SQLite. Co-founder and developer; update in progress; March 2026 to now.">
-            <defs>
-              <pattern id="gS4" width="20" height="20" patternUnits="userSpaceOnUse"><path class="gridl" d="M20 0H0V20"/></pattern>
-              <marker id="cArr4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path class="ah" d="M0 0L10 5L0 10z"/></marker>
-            </defs>
+          <!-- SHEET 4: RATCHET -->
+          <svg class="dC" viewBox="0 0 1200 300" role="img" aria-label="Sheet 4 of 6, detail C, AI systems, with an illustrated run that moves through five phases, Spec, Red, Green, Review and Memory, while the hook blocks one call outside its phase and every step is added to a chained ledger that a verify script checks line by line: RATCHET, a gated pipeline for IBM Bob, an AI coding agent. Top 50: one of the 50 top-scoring qualified submissions, with no rank given; 8 of 8 hidden referee tests passed by the gated run, one run with one seed, an illustration, not a benchmark; 52 ledger records verified, tamper-evident, not tamper-proof. Sole developer; IBM TechXchange 2026 Pre-conference Dev Day Hackathon; Python, pytest and bandit; August 2026.">
+            <defs><pattern id="gS4" width="20" height="20" patternUnits="userSpaceOnUse"><path class="gridl" d="M20 0H0V20"/></pattern></defs>
             <rect class="sheet" width="1200" height="300"/>
             <rect x="12" y="12" width="1176" height="276" fill="url(#gS4)"/>
             <rect class="frame" x="12" y="12" width="1176" height="276"/>
             <circle class="bubble" cx="54" cy="56" r="20"/><text class="bubt" x="54" y="62">C</text>
+            <text class="asm" x="86" y="64">AI systems</text>
+            <text class="sheetno" x="790" y="64">Sheet 4 of 6</text>
+            <text class="ttl" x="40" y="136">RATCHET</text>
+            <text class="subt" x="40" y="174">A gated pipeline for IBM Bob, an AI coding agent</text>
+            <text class="met red" x="40" y="250">Top 50</text><text class="metl" x="40" y="276">qualified submissions</text>
+            <text class="met" x="300" y="250">8 of 8</text><text class="metl" x="300" y="276">referee tests passed</text>
+            <text class="met" x="560" y="250">52</text><text class="metl" x="560" y="276">ledger records verified</text>
+            <rect class="frame1" x="820" y="36" width="344" height="228"/>
+            <path class="thin" d="M820 93H1164M820 150H1164M820 207H1164"/>
+            <text class="tl2" x="834" y="57">Role</text><text class="tv2" x="834" y="84">Sole developer</text>
+            <text class="tl2" x="834" y="114">Event</text><text class="tv2" x="834" y="141">IBM TechXchange 2026 Dev Day</text>
+            <text class="tl2" x="834" y="171">Stack</text><text class="tv2" x="834" y="198">Python, pytest, bandit</text>
+            <text class="tl2" x="834" y="228">Period</text><text class="tv2" x="834" y="255">Aug 2026</text>
+            <rect class="box" x="322" y="84" width="74" height="26"/><text class="tv" x="359" y="103.5" text-anchor="middle">Spec</text><path class="ln" d="M398 97H408"/><path class="ah" d="M408 93L415 97L408 101z"/>
+            <rect class="box" x="416" y="84" width="74" height="26"/><text class="tv" x="453" y="103.5" text-anchor="middle">Red</text><path class="ln" d="M492 97H502"/><path class="ah" d="M502 93L509 97L502 101z"/>
+            <rect class="box" x="510" y="84" width="74" height="26"/><text class="tv" x="547" y="103.5" text-anchor="middle">Green</text><path class="ln" d="M586 97H596"/><path class="ah" d="M596 93L603 97L596 101z"/>
+            <rect class="box" x="604" y="84" width="74" height="26"/><text class="tv" x="641" y="103.5" text-anchor="middle">Review</text><path class="ln" d="M680 97H690"/><path class="ah" d="M690 93L697 97L690 101z"/>
+            <rect class="box" x="698" y="84" width="74" height="26"/><text class="tv" x="735" y="103.5" text-anchor="middle">Memory</text>
+            <rect class="rxcur" x="322" y="84" width="74" height="26"/>
+            <g class="rxblock"><path class="redl" d="M453 110V132H462"/><text class="note" x="466" y="138">blocked: outside the phase</text></g>
+            <text class="figcap" x="790" y="182" text-anchor="end">a run and its ledger, illustrated</text>
+            <g class="rxr rxr1"><rect class="rxrec" x="40" y="186" width="56" height="24"/><text class="figcap" x="68" y="202.5" text-anchor="middle">1 init</text></g>
+            <g class="rxr rxr2"><path class="thin" d="M110 198H103"/><path class="ah" d="M103 194.5L97 198L103 201.5z"/><rect class="rxrec" x="110" y="186" width="56" height="24"/><text class="figcap" x="138" y="202.5" text-anchor="middle">2 gate</text></g>
+            <g class="rxr rxr3"><path class="thin" d="M180 198H173"/><path class="ah" d="M173 194.5L167 198L173 201.5z"/><rect class="rxrec" x="180" y="186" width="56" height="24"/><text class="figcap" x="208" y="202.5" text-anchor="middle">3 write</text></g>
+            <g class="rxr rxr4 rxdeny"><path class="thin" d="M250 198H243"/><path class="ah" d="M243 194.5L237 198L243 201.5z"/><rect class="rxrec" x="250" y="186" width="56" height="24"/><text class="figcap" x="278" y="202.5" text-anchor="middle">4 deny</text></g>
+            <g class="rxr rxr5"><path class="thin" d="M320 198H313"/><path class="ah" d="M313 194.5L307 198L313 201.5z"/><rect class="rxrec" x="320" y="186" width="56" height="24"/><text class="figcap" x="348" y="202.5" text-anchor="middle">5 gate</text></g>
+            <g class="rxr rxr6"><path class="thin" d="M390 198H383"/><path class="ah" d="M383 194.5L377 198L383 201.5z"/><rect class="rxrec" x="390" y="186" width="56" height="24"/><text class="figcap" x="418" y="202.5" text-anchor="middle">6 write</text></g>
+            <g class="rxr rxr7"><path class="thin" d="M460 198H453"/><path class="ah" d="M453 194.5L447 198L453 201.5z"/><rect class="rxrec" x="460" y="186" width="56" height="24"/><text class="figcap" x="488" y="202.5" text-anchor="middle">7 gate</text></g>
+            <g class="rxr rxr8"><path class="thin" d="M530 198H523"/><path class="ah" d="M523 194.5L517 198L523 201.5z"/><rect class="rxrec" x="530" y="186" width="56" height="24"/><text class="figcap" x="558" y="202.5" text-anchor="middle">8 gate</text></g>
+            <rect class="rxok" x="40" y="186" width="56" height="24" style="animation-delay:7.9s"/><rect class="rxok" x="110" y="186" width="56" height="24" style="animation-delay:8.05s"/><rect class="rxok" x="180" y="186" width="56" height="24" style="animation-delay:8.2s"/><rect class="rxok" x="250" y="186" width="56" height="24" style="animation-delay:8.35s"/><rect class="rxok" x="320" y="186" width="56" height="24" style="animation-delay:8.5s"/><rect class="rxok" x="390" y="186" width="56" height="24" style="animation-delay:8.65s"/><rect class="rxok" x="460" y="186" width="56" height="24" style="animation-delay:8.8s"/><rect class="rxok" x="530" y="186" width="56" height="24" style="animation-delay:8.95s"/>
+            <text class="livenote rxpass" x="600" y="203">verify: PASS</text>
+          </svg>
+          <p>I designed and built it alone over the two days of the IBM TechXchange 2026 Pre-conference Dev Day Hackathon, Aug 29 to 30, 2026. AI agents made writing code almost free, so the slow part became trusting it. RATCHET makes IBM Bob, an AI coding agent, work in five phases: Spec, Red (write a failing test), Green (the smallest change that makes it pass), Review and Memory. A hook that runs before every tool call blocks anything outside the current phase, and a person opens each gate with one command. Hooks, never the model, write every step to a ledger in which each line carries a keyed hash linking it to the line before, and a verify script checks the chain and names the first line that doesn't match. Top 50 means one of the 50 top-scoring qualified submissions, from the organizers' email of Sep 29, 2026, which gives no rank. The gated run passed 8 of 8 hidden referee tests, but that is one run with one seed: an illustration, not a benchmark. The verify script checked 52 ledger records; the ledger is tamper-evident, not tamper-proof against someone with a shell.</p>
+          <p class="muted"><code>Python</code> <code>IBM Bob</code> <code>TDD</code> <code>pytest</code> <code>bandit</code> <code>watsonx.ai Granite</code><br>The repository reports both demo runs, gated and unguarded. <a href="#">Repository</a></p>
+
+          <!-- SHEET 5: ANF -->
+          <svg class="dC" viewBox="0 0 1200 300" role="img" aria-label="Sheet 5 of 6, detail D, business systems, with a test-runner strip turning green: ANF System for the Adoración Nocturna Filipina National Council. 4,000+ automated checks (4,170, all passing, on September 12, 2026), 20+ screens, 140+ decision records. Sole developer; React, Express, SQLite; in use since September 2026, with online ordering in progress; May 2026 to now.">
+            <defs><clipPath id="orClip"><rect x="620" y="56" width="170" height="96"/></clipPath><pattern id="gS5" width="20" height="20" patternUnits="userSpaceOnUse"><path class="gridl" d="M20 0H0V20"/></pattern></defs>
+            <rect class="sheet" width="1200" height="300"/>
+            <rect x="12" y="12" width="1176" height="276" fill="url(#gS5)"/>
+            <rect class="frame" x="12" y="12" width="1176" height="276"/>
+            <circle class="bubble" cx="54" cy="56" r="20"/><text class="bubt" x="54" y="62">D</text>
             <text class="asm" x="86" y="64">Business systems</text>
-            <text class="sheetno" x="790" y="64">Sheet 4 of 4</text>
+            <text class="sheetno" x="790" y="64">Sheet 5 of 6</text>
+            <text class="ttl" x="40" y="136">ANF System</text>
+            <text class="subt" x="40" y="174">Adoración Nocturna Filipina National Council</text>
+            <g class="tests"><line class="tk" x1="40" y1="189" x2="40" y2="203" style="animation-delay:0s"/><line class="tk" x1="55.1" y1="189" x2="55.1" y2="203" style="animation-delay:0.1s"/><line class="tk" x1="70.3" y1="189" x2="70.3" y2="203" style="animation-delay:0.1s"/><line class="tk" x1="85.4" y1="189" x2="85.4" y2="203" style="animation-delay:0.2s"/><line class="tk" x1="100.5" y1="189" x2="100.5" y2="203" style="animation-delay:0.2s"/><line class="tk" x1="115.7" y1="189" x2="115.7" y2="203" style="animation-delay:0.3s"/><line class="tk" x1="130.8" y1="189" x2="130.8" y2="203" style="animation-delay:0.4s"/><line class="tk" x1="145.9" y1="189" x2="145.9" y2="203" style="animation-delay:0.4s"/><line class="tk" x1="161.1" y1="189" x2="161.1" y2="203" style="animation-delay:0.5s"/><line class="tk" x1="176.2" y1="189" x2="176.2" y2="203" style="animation-delay:0.5s"/><line class="tk" x1="191.4" y1="189" x2="191.4" y2="203" style="animation-delay:0.6s"/><line class="tk" x1="206.5" y1="189" x2="206.5" y2="203" style="animation-delay:0.7s"/><line class="tk" x1="221.6" y1="189" x2="221.6" y2="203" style="animation-delay:0.7s"/><line class="tk" x1="236.8" y1="189" x2="236.8" y2="203" style="animation-delay:0.8s"/><line class="tk" x1="251.9" y1="189" x2="251.9" y2="203" style="animation-delay:0.8s"/><line class="tk" x1="267" y1="189" x2="267" y2="203" style="animation-delay:0.9s"/><line class="tk" x1="282.2" y1="189" x2="282.2" y2="203" style="animation-delay:1s"/><line class="tk" x1="297.3" y1="189" x2="297.3" y2="203" style="animation-delay:1s"/><line class="tk" x1="312.4" y1="189" x2="312.4" y2="203" style="animation-delay:1.1s"/><line class="tk" x1="327.6" y1="189" x2="327.6" y2="203" style="animation-delay:1.1s"/><line class="tk" x1="342.7" y1="189" x2="342.7" y2="203" style="animation-delay:1.2s"/><line class="tk" x1="357.8" y1="189" x2="357.8" y2="203" style="animation-delay:1.3s"/><line class="tk" x1="373" y1="189" x2="373" y2="203" style="animation-delay:1.3s"/><line class="tk" x1="388.1" y1="189" x2="388.1" y2="203" style="animation-delay:1.4s"/><line class="tk" x1="403.2" y1="189" x2="403.2" y2="203" style="animation-delay:1.4s"/><line class="tk" x1="418.4" y1="189" x2="418.4" y2="203" style="animation-delay:1.5s"/><line class="tk" x1="433.5" y1="189" x2="433.5" y2="203" style="animation-delay:1.6s"/><line class="tk" x1="448.6" y1="189" x2="448.6" y2="203" style="animation-delay:1.6s"/><line class="tk" x1="463.8" y1="189" x2="463.8" y2="203" style="animation-delay:1.7s"/><line class="tk" x1="478.9" y1="189" x2="478.9" y2="203" style="animation-delay:1.7s"/><line class="tk" x1="494.1" y1="189" x2="494.1" y2="203" style="animation-delay:1.8s"/><line class="tk" x1="509.2" y1="189" x2="509.2" y2="203" style="animation-delay:1.9s"/><line class="tk" x1="524.3" y1="189" x2="524.3" y2="203" style="animation-delay:1.9s"/><line class="tk" x1="539.5" y1="189" x2="539.5" y2="203" style="animation-delay:2s"/><line class="tk" x1="554.6" y1="189" x2="554.6" y2="203" style="animation-delay:2s"/><line class="tk" x1="569.7" y1="189" x2="569.7" y2="203" style="animation-delay:2.1s"/><line class="tk" x1="584.9" y1="189" x2="584.9" y2="203" style="animation-delay:2.2s"/><line class="tk" x1="600" y1="189" x2="600" y2="203" style="animation-delay:2.2s"/></g>
+            <text class="met red" x="40" y="250">4,000+</text><text class="metl" x="40" y="276">automated checks</text>
+            <text class="met" x="300" y="250">20+</text><text class="metl" x="300" y="276">screens</text>
+            <text class="met" x="520" y="250">140+</text><text class="metl" x="520" y="276">decision records</text>
+            <rect class="frame1" x="820" y="36" width="344" height="228"/>
+            <path class="thin" d="M820 93H1164M820 150H1164M820 207H1164"/>
+            <text class="tl2" x="834" y="57">Role</text><text class="tv2" x="834" y="84">Sole developer</text>
+            <text class="tl2" x="834" y="114">Stack</text><text class="tv2" x="834" y="141">React, Express, SQLite</text>
+            <text class="tl2" x="834" y="171">Status</text><text class="tv2" x="834" y="198">In use since Sep 2026</text>
+            <text class="tl2" x="834" y="228">Period</text><text class="tv2" x="834" y="255">May 2026 to now</text>
+          <g clip-path="url(#orClip)"><g class="rc rc1"><rect class="paper" x="658" y="152" width="94" height="86"/><text class="rct" x="705" y="167" text-anchor="middle">OFFICIAL RECEIPT</text><text class="rcn" x="705" y="186" text-anchor="middle">No. 1041</text><rect class="rcl" x="668" y="194" width="74" height="3"/><rect class="rcl" x="668" y="202" width="52" height="3"/><text class="rct" x="668" y="224">TOTAL</text><text class="rct" x="742" y="224" text-anchor="end">1,250.00</text></g><g class="rc rc2"><rect class="paper" x="658" y="152" width="94" height="86"/><text class="rct" x="705" y="167" text-anchor="middle">OFFICIAL RECEIPT</text><text class="rcn" x="705" y="186" text-anchor="middle">No. 1042</text><rect class="rcl" x="668" y="194" width="74" height="3"/><rect class="rcl" x="668" y="202" width="52" height="3"/><text class="rct" x="668" y="224">TOTAL</text><text class="rct" x="742" y="224" text-anchor="end">1,250.00</text></g><g class="rc rc3"><rect class="paper" x="658" y="152" width="94" height="86"/><text class="rct" x="705" y="167" text-anchor="middle">OFFICIAL RECEIPT</text><text class="rcn" x="705" y="186" text-anchor="middle">No. 1043</text><rect class="rcl" x="668" y="194" width="74" height="3"/><rect class="rcl" x="668" y="202" width="52" height="3"/><text class="rct" x="668" y="224">TOTAL</text><text class="rct" x="742" y="224" text-anchor="end">1,250.00</text></g><g class="rc rc4"><rect class="paper" x="658" y="152" width="94" height="86"/><text class="rct" x="705" y="167" text-anchor="middle">OFFICIAL RECEIPT</text><text class="rcn" x="705" y="186" text-anchor="middle">No. 1044</text><rect class="rcl" x="668" y="194" width="74" height="3"/><rect class="rcl" x="668" y="202" width="52" height="3"/><text class="rct" x="668" y="224">TOTAL</text><text class="rct" x="742" y="224" text-anchor="end">1,250.00</text></g></g>
+            <rect class="box" x="628" y="150" width="154" height="22" rx="4"/>
+            <path class="ln" d="M646 156H764"/>
+            <circle class="livedot" cx="772" cy="164" r="3"/>
+            <text class="figcap" x="705" y="190" text-anchor="middle">Official Receipts, numbered</text>
+          </svg>
+          <p>I started it while working as the Council's assistant office manager, to automate the paperwork I was handling. It covers the Council's stock, Official Receipts, cash and check vouchers, petty cash, members, annual dues and officers, and runs on a single office PC. Officers can reach it from their phones over the office WiFi, and nothing goes to the cloud. Every peso and centavo is exact, and a checked backup is made within about two minutes of any change. Built test-first, with every screen checked at nine widths in two browser engines, 1,000+ layout checks in all. It has been in use since September 2026, and I'm adding online ordering. The 4,000+ is 4,170 checks, all passing, on Sep 12, 2026, and the layout checks were 1,092 at the release of Sep 24, 2026; both have grown since. The documentation counts the screens two ways, so I round down to 20+.</p>
+          <p class="muted"><code>TypeScript</code> <code>React</code> <code>Vite</code> <code>Tailwind</code> <code>Express</code> <code>SQLite</code> <code>Zod</code> <code>Vitest</code> <code>Playwright</code><br>Private repository, walkthrough on request. I also built the Council's new public website, in Laravel and Filament; it isn't live yet, and its online shop is in progress.</p>
+
+          <!-- SHEET 6: Pookies -->
+          <svg class="dC" viewBox="0 0 1200 300" role="img" aria-label="Sheet 6 of 6, detail E, business systems: Pookies Platform, point of sale and inventory for Pookies, the bakery Rene co-founded. React and Vite client, Express REST API, normalized SQLite. Co-founder and developer; update in progress; March 2026 to now.">
+            <defs>
+              <pattern id="gS6" width="20" height="20" patternUnits="userSpaceOnUse"><path class="gridl" d="M20 0H0V20"/></pattern>
+              <marker id="cArr6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path class="ah" d="M0 0L10 5L0 10z"/></marker>
+            </defs>
+            <rect class="sheet" width="1200" height="300"/>
+            <rect x="12" y="12" width="1176" height="276" fill="url(#gS6)"/>
+            <rect class="frame" x="12" y="12" width="1176" height="276"/>
+            <circle class="bubble" cx="54" cy="56" r="20"/><text class="bubt" x="54" y="62">E</text>
+            <text class="asm" x="86" y="64">Business systems</text>
+            <text class="sheetno" x="790" y="64">Sheet 6 of 6</text>
             <text class="ttl" x="40" y="136">Pookies Platform</text>
             <text class="subt" x="40" y="174">POS and inventory for Pookies, the bakery I co-founded</text>
             <rect class="box" x="40" y="204" width="200" height="56"/><text class="bx" x="140" y="239">React + Vite</text>
-            <path class="ln" d="M242 232H306" marker-end="url(#cArr4)"/><text class="edge" x="274" y="222">REST</text>
+            <path class="ln" d="M242 232H306" marker-end="url(#cArr6)"/><text class="edge" x="274" y="222">REST</text>
             <rect class="box" x="310" y="204" width="200" height="56"/><text class="bx" x="410" y="239">Express API</text>
-            <path class="ln" d="M512 232H576" marker-end="url(#cArr4)"/><text class="edge" x="544" y="222">SQL</text>
+            <path class="ln" d="M512 232H576" marker-end="url(#cArr6)"/><text class="edge" x="544" y="222">SQL</text>
             <rect class="box" x="580" y="204" width="200" height="56"/><text class="bx" x="680" y="239">SQLite, normalized</text>
             <rect class="frame1" x="820" y="36" width="344" height="228"/>
             <path class="thin" d="M820 93H1164M820 150H1164M820 207H1164"/>

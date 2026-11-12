@@ -33,6 +33,8 @@ test('project blocks: picture, paragraph, then chips as inline code with the not
   assert.ok(readme.includes("`TypeScript` `React` `Vite` `Tailwind` `Express` `SQLite` `Zod` `Vitest` `Playwright`<br>Private repository, walkthrough on request. I also built the Council's new public website, in Laravel and Filament; it isn't live yet, and its online shop is in progress."));
   assert.ok(readme.includes('`Kotlin` `Android` `Python` `Flask` `OpenCV` `dlib` `NumPy` `MySQL`<br>Private repository, walkthrough on request. [Project site](https://eyedtrack.vercel.app)\n'));
   assert.ok(readme.includes('`React` `Vite` `Tailwind` `Express` `SQLite`<br>Private repository, walkthrough on request.\n'));
+  assert.ok(readme.includes('`SAM 3.1` `Muse Spark` `Python` `TypeScript` `React` `AWS` `OpenCV` `Node.js` `Leaflet`<br>The live system was shut down on Nov 10, 2026; the demo replays saved real samples, and everything else in it is simulated. [Live demo](https://lusot.vercel.app) · [Repository](https://github.com/RVBCosme/Lusot-submission)\n'));
+  assert.ok(readme.includes('`Python` `IBM Bob` `TDD` `pytest` `bandit` `watsonx.ai Granite`<br>The repository reports both demo runs, gated and unguarded. [Repository](https://github.com/RVBCosme/Bob-Passing)\n'));
 });
 
 test('experience list and certificate details (spec A6, A7)', () => {

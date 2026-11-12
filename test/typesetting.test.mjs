@@ -82,6 +82,20 @@ const SLOTS = [
   ['Pookies diagram boxes', 'bx', 184, `${P.pookies}.figure.boxes[*]`],
   ['Pookies dimension (centered over the cookie)', 'edge', 80, `${P.pookies}.figure.dimension`],
   ['Pookies live note (the title block starts at x 820)', 'livenote', 156, `${P.pookies}.figure.note`],
+  // lusot.svg
+  ['Lusot title (the photo starts at x 550)', 'ttl', 500, `${P.lusot}.title`],
+  ["Lusot subtitle (the can't-tell box starts at x 550)", 'subt', 500, `${P.lusot}.subtitle`],
+  ['Lusot gauge levels (the title block starts at x 820)', 'figcap', 90, `${P.lusot}.figure.levels[*]`],
+  ["Lusot can't-tell box (100 wide)", 'tv', 90, `${P.lusot}.figure.cantTell`],
+  ['Lusot caption (centered at x 600; the gauge starts at x 700)', 'figcap', 196, `${P.lusot}.figure.caption`],
+  // ratchet.svg
+  ['RATCHET title (the phases start at x 322)', 'ttl', 270, `${P.ratchet}.title`],
+  ['RATCHET subtitle (the caption can start at x 580)', 'subt', 530, `${P.ratchet}.subtitle`],
+  ['RATCHET phases (the boxes are 74 wide)', 'tv', 66, `${P.ratchet}.figure.phases[*]`],
+  ['RATCHET ledger records (the records are 56 wide)', 'figcap', 50, `${P.ratchet}.figure.records[*]`],
+  ['RATCHET blocked note (the title block starts at x 820)', 'note', 330, `${P.ratchet}.figure.blocked`],
+  ['RATCHET verify note (the title block starts at x 820)', 'livenote', 200, `${P.ratchet}.figure.verified`],
+  ['RATCHET caption (right-aligned at x 790, beside the subtitle)', 'figcap', 210, `${P.ratchet}.figure.caption`],
   // schedule.svg
   ['schedule labels (the year grid starts at x 330)', 'tv', 286, 'experience.rows[*].label'],
   ['schedule now label (19 units from the frame in December)', 'nowlabel', 30, 'experience.nowLabel'],

@@ -75,6 +75,20 @@
 .card{fill:var(--sheet);stroke:var(--line);stroke-width:1.5}
 .ico{fill:var(--icon)}
 .icol{fill:none;stroke:var(--icon);stroke-width:2;stroke-linejoin:round}
+.lgphoto{fill:none;stroke:var(--line);stroke-width:1.5}
+.lgcar{fill:none;stroke:var(--line2);stroke-width:1.5}
+.lgtyre{fill:none;stroke:var(--line);stroke-width:2.2}
+.lgrim{fill:none;stroke:var(--line2);stroke-width:1.5}
+.lghub{fill:var(--line2)}
+.lgwfill{fill:var(--live);fill-opacity:.2}
+.lgwline{fill:none;stroke:var(--live);stroke-width:2}
+.lghl{fill:none;stroke:var(--line2);stroke-width:1.2}
+.lgcell{fill:none;stroke:var(--line);stroke-width:1.5}
+.lgoff{stroke-dasharray:3 2}
+.lgalt{fill:none;stroke:var(--line2);stroke-width:1.25;stroke-dasharray:2 2}
+.rxrec{fill:var(--sheet);stroke:var(--line);stroke-width:1.5}
+.rxdeny .rxrec{stroke:var(--red)}
+.rxdeny .figcap{fill:var(--red)}
 .plot{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:plot .8s cubic-bezier(.3,.7,.2,1) var(--d,0s) forwards}
 .fade{opacity:0;animation:fadein .45s ease-out var(--d,0s) forwards}
 .gridfill{opacity:0;animation:fadein 1s ease-out .3s forwards}
@@ -157,6 +171,46 @@
 @keyframes c0{0%{opacity:1;transform:translate(0,0)}6.6%{transform:translate(68px,0)}13.2%{transform:translate(68px,-68px)}20%{opacity:1;transform:translate(138px,-68px)}21%,100%{opacity:0;transform:translate(138px,-68px)}}
 @keyframes c1{0%{opacity:1;transform:translate(0,0)}20%{opacity:1;transform:translate(138px,0)}21%,100%{opacity:0;transform:translate(138px,0)}}
 @keyframes c2{0%{opacity:1;transform:translate(0,0)}6.6%{transform:translate(68px,0)}13.2%{transform:translate(68px,68px)}20%{opacity:1;transform:translate(138px,68px)}21%,100%{opacity:0;transform:translate(138px,68px)}}
+.lgwater{animation:lgwater 10s ease-in-out infinite}
+.lgfill{fill:var(--live);fill-opacity:.25;animation:lgfill 10s ease-in-out infinite}
+.lgto{animation:lgto 10s linear infinite}
+.lgmark{fill:var(--title);animation:lgmark 10s linear infinite}
+.lgref{animation:lgref 10s linear infinite}
+.lghatch{opacity:0;animation:lghatch 10s linear infinite}
+.lgdown{opacity:0;animation:lgdown 10s linear infinite}
+.lgcant{fill:var(--sheet);stroke:var(--line2);stroke-width:1.5;stroke-dasharray:4 3;animation:lgcant 10s linear infinite}
+@keyframes lgwater{0%,4%{transform:translateY(36px)}20%,46%{transform:translateY(0)}50%,100%{transform:translateY(36px)}}
+@keyframes lgfill{0%,4%{transform:translateY(74px)}20%,46%{transform:translateY(0)}50%,100%{transform:translateY(74px)}}
+@keyframes lgto{0%,20%{opacity:0}23%,45%{opacity:1}47%,100%{opacity:0}}
+@keyframes lgmark{0%,20%{fill:var(--line2)}23%,45%{fill:var(--title)}47%,100%{fill:var(--line2)}}
+@keyframes lgref{0%,50%{opacity:1}54%,90%{opacity:.3}94%,100%{opacity:1}}
+@keyframes lghatch{0%,50%{opacity:0}54%,90%{opacity:1}94%,100%{opacity:0}}
+@keyframes lgdown{0%,55%{opacity:0}58%,90%{opacity:1}93%,100%{opacity:0}}
+@keyframes lgcant{0%,55%{stroke:var(--line2)}58%,90%{stroke:var(--live)}93%,100%{stroke:var(--line2)}}
+.rxcur{fill:none;stroke:var(--live);stroke-width:3;opacity:0;animation:rxcur 12s linear infinite}
+@keyframes rxcur{0%{opacity:0;transform:translateX(0)}2%,12%{opacity:1;transform:translateX(0)}14%,38%{transform:translateX(94px)}40%,50%{transform:translateX(188px)}52%,60%{transform:translateX(282px)}62%,92%{opacity:1;transform:translateX(376px)}96%,100%{opacity:0;transform:translateX(376px)}}
+.rxblock{opacity:0;animation:rxblock 12s linear infinite}
+@keyframes rxblock{0%,22%{opacity:0}24%,36%{opacity:1}39%,100%{opacity:0}}
+.rxr1{animation:rxr1 12s linear infinite}
+.rxr2{animation:rxr2 12s linear infinite}
+.rxr3{animation:rxr3 12s linear infinite}
+.rxr4{animation:rxr4 12s linear infinite}
+.rxr5{animation:rxr5 12s linear infinite}
+.rxr6{animation:rxr6 12s linear infinite}
+.rxr7{animation:rxr7 12s linear infinite}
+.rxr8{animation:rxr8 12s linear infinite}
+@keyframes rxr1{0%,2%{opacity:0}3%,95%{opacity:1}97%,100%{opacity:0}}
+@keyframes rxr2{0%,13%{opacity:0}14%,95%{opacity:1}97%,100%{opacity:0}}
+@keyframes rxr3{0%,20%{opacity:0}21%,95%{opacity:1}97%,100%{opacity:0}}
+@keyframes rxr4{0%,26%{opacity:0}27%,95%{opacity:1}97%,100%{opacity:0}}
+@keyframes rxr5{0%,39%{opacity:0}40%,95%{opacity:1}97%,100%{opacity:0}}
+@keyframes rxr6{0%,45%{opacity:0}46%,95%{opacity:1}97%,100%{opacity:0}}
+@keyframes rxr7{0%,51%{opacity:0}52%,95%{opacity:1}97%,100%{opacity:0}}
+@keyframes rxr8{0%,61%{opacity:0}62%,95%{opacity:1}97%,100%{opacity:0}}
+.rxok{fill:none;stroke:var(--live);stroke-width:2.5;opacity:0;animation:rxok 12s linear infinite}
+@keyframes rxok{0%{opacity:0}2%,14%{opacity:1}18%,100%{opacity:0}}
+.rxpass{opacity:0;animation:rxpass 12s linear infinite}
+@keyframes rxpass{0%,76%{opacity:0}78%,94%{opacity:1}97%,100%{opacity:0}}
 @media (prefers-reduced-motion: reduce){
 .plot,.cloud{animation:none;stroke-dashoffset:0}
 .fade,.gridfill{animation:none;opacity:1}
@@ -174,6 +228,12 @@
 .rc{animation:none;opacity:0}
 .rc1{animation:none;opacity:1;transform:translateY(-80px)}
 .stamp{animation:none;opacity:.95}
+.lgwater,.lgfill,.lgto,.lgref{animation:none}
+.lgmark{animation:none;fill:var(--title)}
+.lghatch,.lgdown{animation:none;opacity:0}
+.lgcant{animation:none;stroke:var(--line2)}
+.rxcur,.rxok{animation:none;opacity:0}
+.rxr,.rxblock,.rxpass{animation:none;opacity:1}
 }
 </style>
 <defs><clipPath id="gt0"><rect x="1106.9" y="111" width="26" height="16" rx="3"/></clipPath><clipPath id="gt1"><rect x="1106.9" y="149" width="26" height="16" rx="3"/></clipPath><clipPath id="gt2"><rect x="1106.9" y="187" width="26" height="16" rx="3"/></clipPath><clipPath id="gt4"><rect x="1106.9" y="263" width="26" height="16" rx="3"/></clipPath></defs>

@@ -22,8 +22,8 @@ export default {
       `<text class="rct" x="668" y="224">${esc(totalLabel)}</text><text class="rct" x="742" y="224" text-anchor="end">${esc(total)}</text></g>`,
     ].join('')).join('');
     return [
-      `<defs><clipPath id="orClip"><rect x="620" y="56" width="170" height="96"/></clipPath>${gridPattern('gS2')}</defs>`,
-      sheetHead(anf, 'gS2'),
+      `<defs><clipPath id="orClip"><rect x="620" y="56" width="170" height="96"/></clipPath>${gridPattern('gS5')}</defs>`,
+      sheetHead(anf, 'gS5'),
       `<g class="tests">${ticks}</g>`,
       sheetMetrics(anf.metrics, [40, 300, 520]),
       sheetTitleBlock(anf.titleBlock),

@@ -39,7 +39,7 @@
       "description": { "label": "Description", "value": "AI engineer and full-stack developer" },
       "drawnBy": { "label": "Drawn by", "value": "RVC" },
       "date": { "label": "Date", "value": "2026-11" },
-      "sheet": { "label": "Sheet", "value": "1 / 4" },
+      "sheet": { "label": "Sheet", "value": "1 / 6" },
       "scale": { "label": "Scale", "value": "1 : 1" }
     }
   },
@@ -58,10 +58,102 @@
   },
   "projects": [
     {
-      "id": "anf",
+      "id": "lusot",
       "letter": "A",
+      "group": "AI systems",
+      "sheet": "Sheet 2 of 6",
+      "title": "Lusot",
+      "subtitle": "Flood depth from a street photo, Metro Manila",
+      "metrics": [
+        { "value": "0 of 15", "label": "false flood readings" },
+        { "value": "1 of 6", "label": "sealed photos read" },
+        { "value": "5,900+", "label": "automated tests in CI" }
+      ],
+      "titleBlock": [
+        { "label": "Role", "value": "Sole developer" },
+        { "label": "Event", "value": "Meta Global AI hackathon" },
+        { "label": "Models", "value": "SAM 3.1, Muse Spark" },
+        { "label": "Period", "value": "Oct to Nov 2026" }
+      ],
+      "figure": {
+        "levels": ["below gutter", "gutter", "half-knee", "half-tire", "knee", "tire", "waist", "chest", "above chest"],
+        "cantTell": "can't tell",
+        "caption": "sample photos, illustrated"
+      },
+      "paragraph": "I built it alone for the Meta Global AI Developer Hackathon, Oct 27 to Nov 4, 2026, with Claude Code as a coding assistant. A street photo of a flood in Metro Manila gets a depth reading in MMDA's flood-gauge levels, or an honest \"can't tell\" when no car wheel or adult in it is clear enough to read. Faces are blurred on Lusot's own server before Meta's models see the photo. SAM 3.1 outlines the water, wheels and people, Muse Spark describes where the water meets them, and published code, not the models, picks one of nine levels. Every figure comes from a small sample, and the project calls its results indicative. None of 15 flood-free, open-license street photos was reported as flooded. On the sealed test, scored once on Nov 3, 2026 with the system frozen, it gave a reading for 1 of 6 photos and refused the other five, and that one reading was deeper than its label. The 5,900+ is 5,986 tests passing in CI on Nov 10, 2026. Lusot is not affiliated with MMDA, and a reading is not advice to cross.",
+      "chips": ["SAM 3.1", "Muse Spark", "Python", "TypeScript", "React", "AWS", "OpenCV", "Node.js", "Leaflet"],
+      "note": "The live system was shut down on Nov 10, 2026; the demo replays saved real samples, and everything else in it is simulated.",
+      "links": [
+        { "text": "Live demo", "href": "https://lusot.vercel.app" },
+        { "text": "Repository", "href": "https://github.com/RVBCosme/Lusot-submission" }
+      ],
+      "alt": "Sheet 2 of 6, detail A, AI systems, with an illustrated depth gauge of nine levels, two of them outside MMDA's gauge, that reads a sample flood photo at knee level, then answers can't tell for a photo with no car wheel or adult clear enough to read: Lusot, flood depth from a street photo, Metro Manila. 0 of 15 flood-free street photos reported as flooded; 1 of 6 sealed test photos given a reading, scored once on November 3, 2026, and that reading was deeper than its label; small samples, results the project calls indicative. 5,900+ automated tests in CI, 5,986 passing on November 10, 2026. Sole developer; Meta Global AI Developer Hackathon; Meta's SAM 3.1 and Muse Spark models; October to November 2026. The live system is shut down, and the demo replays saved real samples."
+    },
+    {
+      "id": "eyedtrack",
+      "letter": "B",
+      "group": "AI systems",
+      "sheet": "Sheet 3 of 6",
+      "title": "EyeDTrack",
+      "subtitle": "Driver attention monitoring, thesis and solo rebuild",
+      "metrics": [
+        { "value": "713 ms", "label": "camera to result, p95" },
+        { "value": "1,200+", "label": "automated checks" },
+        { "value": "26 of 30", "label": "yawn alerts were real" }
+      ],
+      "titleBlock": [
+        { "label": "Role", "value": "Thesis team lead; solo rebuild" },
+        { "label": "Stack", "value": "Kotlin, Python, Flask, MySQL" },
+        { "label": "Vision", "value": "dlib 68 landmarks, OpenCV" },
+        { "label": "Period", "value": "2025 and Oct to Nov 2026" }
+      ],
+      "figure": { "traceLabel": "eye openness, illustrated", "alert": "alert spoken" },
+      "paragraph": "I led our thesis team in 2025, and a teammate updated the app in mid-2026. From October 2026 I rebuilt it alone, directing an AI coding agent, and measured it. A Kotlin app on an Android phone sends camera frames over the driver's own network to a Python and Flask server, which finds the face with dlib's 68 facial landmarks and OpenCV and measures how open the eyes and mouth are and where the head points. A time rule decides what counts, the app speaks the alert, and when it can't see the face it says so instead of guessing. I tested it once on people it had never seen: it met 0 of its 15 accuracy targets, and the project site says so. The 713 ms is the 95th percentile from camera capture to result, on one phone at a desk on Nov 11, 2026; it rose to 887 ms with the server PC heavily loaded. The 26 of 30 is an idealized episode count from that sealed final test, and the same count missed 22 yawn episodes. It's an academic prototype, not a safety device.",
+      "chips": ["Kotlin", "Android", "Python", "Flask", "OpenCV", "dlib", "NumPy", "MySQL"],
+      "note": "Private repository, walkthrough on request.",
+      "links": [
+        { "text": "Project site", "href": "https://eyedtrack.vercel.app" }
+      ],
+      "alt": "Sheet 3 of 6, detail B, AI systems, with an illustrated eye-openness trace that raises a spoken alert on a drowsy dip: EyeDTrack, driver attention monitoring, thesis and solo rebuild. 713 milliseconds from camera capture to result at the 95th percentile, on one phone at a desk in November 2026; 1,200+ automated checks on the server, the app and the phone; 26 of 30 yawn alerts were real yawns, an idealized episode count from a sealed final test that met 0 of its 15 accuracy targets. Thesis team lead, then sole developer of the rebuild; Kotlin, Python, Flask and MySQL; dlib's 68 facial landmarks and OpenCV; 2025, and October to November 2026."
+    },
+    {
+      "id": "ratchet",
+      "letter": "C",
+      "group": "AI systems",
+      "sheet": "Sheet 4 of 6",
+      "title": "RATCHET",
+      "subtitle": "A gated pipeline for IBM Bob, an AI coding agent",
+      "metrics": [
+        { "value": "Top 50", "label": "qualified submissions" },
+        { "value": "8 of 8", "label": "referee tests passed" },
+        { "value": "52", "label": "ledger records verified" }
+      ],
+      "titleBlock": [
+        { "label": "Role", "value": "Sole developer" },
+        { "label": "Event", "value": "IBM TechXchange 2026 Dev Day" },
+        { "label": "Stack", "value": "Python, pytest, bandit" },
+        { "label": "Period", "value": "Aug 2026" }
+      ],
+      "figure": {
+        "phases": ["Spec", "Red", "Green", "Review", "Memory"],
+        "records": ["1 init", "2 gate", "3 write", "4 deny", "5 gate", "6 write", "7 gate", "8 gate"],
+        "blocked": "blocked: outside the phase",
+        "verified": "verify: PASS",
+        "caption": "a run and its ledger, illustrated"
+      },
+      "paragraph": "I designed and built it alone over the two days of the IBM TechXchange 2026 Pre-conference Dev Day Hackathon, Aug 29 to 30, 2026. AI agents made writing code almost free, so the slow part became trusting it. RATCHET makes IBM Bob, an AI coding agent, work in five phases: Spec, Red (write a failing test), Green (the smallest change that makes it pass), Review and Memory. A hook that runs before every tool call blocks anything outside the current phase, and a person opens each gate with one command. Hooks, never the model, write every step to a ledger in which each line carries a keyed hash linking it to the line before, and a verify script checks the chain and names the first line that doesn't match. Top 50 means one of the 50 top-scoring qualified submissions, from the organizers' email of Sep 29, 2026, which gives no rank. The gated run passed 8 of 8 hidden referee tests, but that is one run with one seed: an illustration, not a benchmark. The verify script checked 52 ledger records; the ledger is tamper-evident, not tamper-proof against someone with a shell.",
+      "chips": ["Python", "IBM Bob", "TDD", "pytest", "bandit", "watsonx.ai Granite"],
+      "note": "The repository reports both demo runs, gated and unguarded.",
+      "links": [
+        { "text": "Repository", "href": "https://github.com/RVBCosme/Bob-Passing" }
+      ],
+      "alt": "Sheet 4 of 6, detail C, AI systems, with an illustrated run that moves through five phases, Spec, Red, Green, Review and Memory, while the hook blocks one call outside its phase and every step is added to a chained ledger that a verify script checks line by line: RATCHET, a gated pipeline for IBM Bob, an AI coding agent. Top 50: one of the 50 top-scoring qualified submissions, with no rank given; 8 of 8 hidden referee tests passed by the gated run, one run with one seed, an illustration, not a benchmark; 52 ledger records verified, tamper-evident, not tamper-proof. Sole developer; IBM TechXchange 2026 Pre-conference Dev Day Hackathon; Python, pytest and bandit; August 2026."
+    },
+    {
+      "id": "anf",
+      "letter": "D",
       "group": "Business systems",
-      "sheet": "Sheet 2 of 4",
+      "sheet": "Sheet 5 of 6",
       "title": "ANF System",
       "subtitle": "Adoración Nocturna Filipina National Council",
       "metrics": [
@@ -86,40 +178,13 @@
       "chips": ["TypeScript", "React", "Vite", "Tailwind", "Express", "SQLite", "Zod", "Vitest", "Playwright"],
       "note": "Private repository, walkthrough on request. I also built the Council's new public website, in Laravel and Filament; it isn't live yet, and its online shop is in progress.",
       "links": [],
-      "alt": "Sheet 2 of 4, detail A, business systems, with a test-runner strip turning green: ANF System for the Adoración Nocturna Filipina National Council. 4,000+ automated checks (4,170, all passing, on September 12, 2026), 20+ screens, 140+ decision records. Sole developer; React, Express, SQLite; in use since September 2026, with online ordering in progress; May 2026 to now."
-    },
-    {
-      "id": "eyedtrack",
-      "letter": "B",
-      "group": "AI systems",
-      "sheet": "Sheet 3 of 4",
-      "title": "EyeDTrack",
-      "subtitle": "Driver attention monitoring, thesis and solo rebuild",
-      "metrics": [
-        { "value": "713 ms", "label": "camera to result, p95" },
-        { "value": "1,200+", "label": "automated checks" },
-        { "value": "26 of 30", "label": "yawn alerts were real" }
-      ],
-      "titleBlock": [
-        { "label": "Role", "value": "Thesis team lead; solo rebuild" },
-        { "label": "Stack", "value": "Kotlin, Python, Flask, MySQL" },
-        { "label": "Vision", "value": "dlib 68 landmarks, OpenCV" },
-        { "label": "Period", "value": "2025 and Oct to Nov 2026" }
-      ],
-      "figure": { "traceLabel": "eye openness, illustrated", "alert": "alert spoken" },
-      "paragraph": "I led our thesis team in 2025, and a teammate updated the app in mid-2026. From October 2026 I rebuilt it alone, directing an AI coding agent, and measured it. A Kotlin app on an Android phone sends camera frames over the driver's own network to a Python and Flask server, which finds the face with dlib's 68 facial landmarks and OpenCV and measures how open the eyes and mouth are and where the head points. A time rule decides what counts, the app speaks the alert, and when it can't see the face it says so instead of guessing. I tested it once on people it had never seen: it met 0 of its 15 accuracy targets, and the project site says so. The 713 ms is the 95th percentile from camera capture to result, on one phone at a desk on Nov 11, 2026; it rose to 887 ms with the server PC heavily loaded. The 26 of 30 is an idealized episode count from that sealed final test, and the same count missed 22 yawn episodes. It's an academic prototype, not a safety device.",
-      "chips": ["Kotlin", "Android", "Python", "Flask", "OpenCV", "dlib", "NumPy", "MySQL"],
-      "note": "Private repository, walkthrough on request.",
-      "links": [
-        { "text": "Project site", "href": "https://eyedtrack.vercel.app" }
-      ],
-      "alt": "Sheet 3 of 4, detail B, AI systems, with an illustrated eye-openness trace that raises a spoken alert on a drowsy dip: EyeDTrack, driver attention monitoring, thesis and solo rebuild. 713 milliseconds from camera capture to result at the 95th percentile, on one phone at a desk in November 2026; 1,200+ automated checks on the server, the app and the phone; 26 of 30 yawn alerts were real yawns, an idealized episode count from a sealed final test that met 0 of its 15 accuracy targets. Thesis team lead, then sole developer of the rebuild; Kotlin, Python, Flask and MySQL; dlib's 68 facial landmarks and OpenCV; 2025, and October to November 2026."
+      "alt": "Sheet 5 of 6, detail D, business systems, with a test-runner strip turning green: ANF System for the Adoración Nocturna Filipina National Council. 4,000+ automated checks (4,170, all passing, on September 12, 2026), 20+ screens, 140+ decision records. Sole developer; React, Express, SQLite; in use since September 2026, with online ordering in progress; May 2026 to now."
     },
     {
       "id": "pookies",
-      "letter": "C",
+      "letter": "E",
       "group": "Business systems",
-      "sheet": "Sheet 4 of 4",
+      "sheet": "Sheet 6 of 6",
       "title": "Pookies Platform",
       "subtitle": "POS and inventory for Pookies, the bakery I co-founded",
       "metrics": [],
@@ -139,7 +204,7 @@
       "chips": ["React", "Vite", "Tailwind", "Express", "SQLite"],
       "note": "Private repository, walkthrough on request.",
       "links": [],
-      "alt": "Sheet 4 of 4, detail C, business systems: Pookies Platform, point of sale and inventory for Pookies, the bakery Rene co-founded. React and Vite client, Express REST API, normalized SQLite. Co-founder and developer; update in progress; March 2026 to now."
+      "alt": "Sheet 6 of 6, detail E, business systems: Pookies Platform, point of sale and inventory for Pookies, the bakery Rene co-founded. React and Vite client, Express REST API, normalized SQLite. Co-founder and developer; update in progress; March 2026 to now."
     }
   ],
   "experience": {
